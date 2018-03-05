@@ -8,6 +8,7 @@ import (
 	"github.com/ORBAT/Peerdoc/log"
 	"github.com/attic-labs/noms/go/chunks"
 	"github.com/attic-labs/noms/go/datas"
+	"github.com/attic-labs/noms/go/merge"
 	"github.com/attic-labs/noms/go/types"
 	"go.uber.org/zap"
 )
@@ -89,7 +90,7 @@ func main() {
 	dir1Struct, ds1 = AddFileTo(ds1, dir1Struct, file12Struct, "file2")
 	log1.Infow("wrote two files to root", "dir_hash", dir1Struct.Hash(), "struct", ToHuman(dir1Struct))
 
-	log1.Infow("head status", "head1", ToHuman(ds1.Head()), "head_hash", ds1.Head().Hash())
+	log1.Infow("head status", "head1", ToHuman(ds1.Head()), "head_hash", ds1.Head().Hash(), "file11_struct_hash", file11Struct.Hash())
 
 	cs2, db2 := NewMemNoms("second")
 	ds2 := db2.GetDataset("files")
@@ -108,7 +109,7 @@ func main() {
 	dir2Struct, ds2 = AddFileTo(ds2, dir2Struct, file23Struct, "file3")
 	log2.Infow("wrote two files to root", "dir_hash", dir2Struct.Hash(), "struct", ToHuman(dir2Struct))
 
-	log2.Infow("head status", "head2", ToHuman(ds2.Head()), "head_hash", ds2.Head().Hash())
+	log2.Infow("head status", "head", ToHuman(ds2.Head()), "head_hash", ds2.Head().Hash())
 
 	progCh := make(chan datas.PullProgress, 256)
 
@@ -132,7 +133,7 @@ func main() {
 
 	log2.Infow("did the pull go through?", "has_file12_blob_tgt", cs2.Has(file12BlobRef.TargetHash()), "has_file12_struct", cs2.Has(file12Struct.Hash()))
 
-	log2.Infow("head status", "head2", ToHuman(ds2.Head()), "head_hash", ds2.Head().Hash())
+	log2.Infow("head status", "head", ToHuman(ds2.Head()), "head_hash", ds2.Head().Hash())
 
 	log2.Infow("finding common ancestor for merge", "src", ds1.Head().Hash(), "our", ds2.Head().Hash())
 	anc, foundAnc := datas.FindCommonAncestor(ds1.HeadRef(), ds2.HeadRef(), db2)
@@ -142,16 +143,34 @@ func main() {
 		log2.DPanic("couldn't find ancestor")
 	}
 
-	//
+	// this won't happen with the setup above, it's here just for "completeness"
 	if anc.Equals(ds2.HeadRef()) {
 		log2.Infow("can do ff merge")
 		newDs2, err := db2.SetHead(ds2, ds1.HeadRef())
 		if err != nil {
-			log2.DPanic("SetHead went boom", "err", zap.Error(err))
+			log2.DPanic("SetHead went boom", zap.Error(err))
 		}
 		ds2 = newDs2
+	} else {
+		log2.Info("doing 3-way merge")
+		merged, err := merge.ThreeWay(ds2.HeadValue(),
+			ds1.HeadValue(),
+			anc.TargetValue(db2).(types.Struct).Get("value"),
+			db2, nil, nil)
+		if err != nil {
+			log2.DPanicw("merge fuckup", zap.Error(err))
+		}
+		newCommit := datas.NewCommit(merged, types.NewSet(db2, ds2.HeadRef(), ds1.HeadRef()), types.EmptyStruct)
+		commitRef := db2.WriteValue(newCommit)
+		log2.Infow("wrote new commit", "ref_tgt", commitRef.TargetHash())
+		if newds, err := db2.SetHead(ds2, commitRef); err != nil {
+			log2.DPanicw("SetHead fuckup", zap.Error(err))
+		} else {
+			ds2 = newds
+		}
+
 	}
 
-	log2.Infow("head status", "head2", ToHuman(ds2.Head()), "head_hash", ds2.Head().Hash())
+	log2.Infow("head status", "head", ToHuman(ds2.Head()), "head_hash", ds2.Head().Hash())
 
 }

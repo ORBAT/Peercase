@@ -1,20 +1,15 @@
 package log
 
 import (
-	"github.com/go-kit/kit/log"
-	"os"
+	"go.uber.org/zap"
 )
 
-var DevLogger log.Logger
-
-type Logger = log.Logger
+var DevLogger *zap.SugaredLogger
 
 func init() {
-	DevLogger = log.With(log.NewLogfmtLogger(log.NewSyncWriter(os.Stdout)),
-		"ts", log.DefaultTimestampUTC,
-			"caller", log.DefaultCaller)
-}
-
-func WithComponent(logger log.Logger, component string) Logger {
-	return log.With(logger, "component", component)
+	l, err := zap.NewDevelopment(zap.AddCaller())
+	if err != nil {
+		panic(err)
+	}
+	DevLogger = l.Sugar()
 }

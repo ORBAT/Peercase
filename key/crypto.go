@@ -14,9 +14,11 @@ import (
 
 var Hash = ecrypto.Keccak256
 
-var (
-	ErrSignatureKeyMismatch = errors.New("signature key mismatch")
-)
+type ErrSignatureKeyMismatch struct{ Pub, Recovered string }
+
+func (e ErrSignatureKeyMismatch) Error() string {
+	return fmt.Sprintf("signature key mismatch: %s != %s", e.Pub, e.Recovered)
+}
 
 // A Fingerprint identifies something
 type Fingerprint []byte
@@ -67,6 +69,7 @@ func (epubk *ECDSAPublic) Std() *ec.PublicKey {
 
 func (epubk *ECDSAPublic) Verify(sig Signature, message []byte) (ok bool, err error) {
 	digest := Hash(message)
+	ok = true
 	if len(digest) != 32 {
 		panic(fmt.Errorf("digest is required to be exactly 32 bytes (%d)", len(digest)))
 	}
@@ -81,8 +84,9 @@ func (epubk *ECDSAPublic) Verify(sig Signature, message []byte) (ok bool, err er
 	recoveredAddr := ecrypto.PubkeyToAddress(*recoveredPub)
 	pubAddress := ecrypto.PubkeyToAddress(*epubk.Std())
 
-	if ok = recoveredAddr == pubAddress; !ok {
-		err = ErrSignatureKeyMismatch
+	if recoveredAddr != pubAddress {
+		err = ErrSignatureKeyMismatch{pubAddress.String(), recoveredAddr.String()}
+		ok = false
 	}
 
 	return

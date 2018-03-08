@@ -1,0 +1,731 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "+Bo3QheGAtKFk7QPb+pdIEZNiYI=",
+			"path": "github.com/AndreasBriese/bbloom",
+			"revision": "28f7e881ca57bc00e028f9ede9f0d9104cfeef5e",
+			"revisionTime": "2017-07-02T08:40:17Z"
+		},
+		{
+			"checksumSHA1": "2yW3rBWoTBeorkr2CkRtvQVvYEg=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql",
+			"path": "github.com/attic-labs/graphql",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "PyRdNW2SO7+wXCdlidW2f07WhnQ=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/gqlerrors",
+			"path": "github.com/attic-labs/graphql/gqlerrors",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "siqzwhvA8uV+9N/EYnLvtQCuLYU=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/ast",
+			"path": "github.com/attic-labs/graphql/language/ast",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "VIY8cl8/ZzsK6by8BfJtGz5YZME=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/kinds",
+			"path": "github.com/attic-labs/graphql/language/kinds",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "VyU/Wv64d/Ys1KaQI0YiN8fZoPs=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/lexer",
+			"path": "github.com/attic-labs/graphql/language/lexer",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "VZ3GcvYo7ZXdAQeBYGhsSFGyYaU=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/location",
+			"path": "github.com/attic-labs/graphql/language/location",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "TqCzffaBSXU/0GZnzwcuGi0bM7E=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/parser",
+			"path": "github.com/attic-labs/graphql/language/parser",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "SBjKOEfU2LbZke7P8R/KPVLkt8I=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/printer",
+			"path": "github.com/attic-labs/graphql/language/printer",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "HS1BAlagtS19SOyv12ct6ADIrnE=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/source",
+			"path": "github.com/attic-labs/graphql/language/source",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "JT+hiskurzI13rBxfXnPf57ePxs=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/typeInfo",
+			"path": "github.com/attic-labs/graphql/language/typeInfo",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "53XPR4gQwmeqErbM27FzoUaFM3M=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/attic-labs/graphql/language/visitor",
+			"path": "github.com/attic-labs/graphql/language/visitor",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "RJQnZEBcRDPVGO8HQ3DrMXmbIwc=",
+			"path": "github.com/attic-labs/noms/go/chunks",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "mS8rcIxDLGMxKYY+rgBXbD5rgXM=",
+			"path": "github.com/attic-labs/noms/go/constants",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "864MlumC7P3xBPzMyaDIkf3O/sI=",
+			"path": "github.com/attic-labs/noms/go/d",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "9nQQeztTwLnRvuJrnX1KQ5UgU8U=",
+			"path": "github.com/attic-labs/noms/go/datas",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "wXXPDY11ry1hZ7j+z5VUVUJez7Q=",
+			"path": "github.com/attic-labs/noms/go/hash",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "SusuCPod2mUB17jvg15Dz9RPmZg=",
+			"path": "github.com/attic-labs/noms/go/merge",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "eLpvm5tkpJNyz1ipGfGhyz5ojZI=",
+			"path": "github.com/attic-labs/noms/go/metrics",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "jRffcxuKbwB9dj69mmWpBsg+9ag=",
+			"path": "github.com/attic-labs/noms/go/nbs",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "tQzPbzu53Iya3+dtpBe8ILfQKLc=",
+			"path": "github.com/attic-labs/noms/go/ngql",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "93Wnwx/1M63VCymTnKmGEeueo28=",
+			"path": "github.com/attic-labs/noms/go/nomdl",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "ufrVwJIAN3eegpXge7sEEL5Yzjc=",
+			"path": "github.com/attic-labs/noms/go/sloppy",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "0onDVolf5k3+H+3ptujkOuPloBA=",
+			"path": "github.com/attic-labs/noms/go/types",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "HBZM55R2+3uRbKrRTWpWwLyLnbs=",
+			"path": "github.com/attic-labs/noms/go/util/exit",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "TT9lBhu8H3nzGklK0BGs4KoQR3I=",
+			"path": "github.com/attic-labs/noms/go/util/functions",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "+pvVUNPDXJNDC3sDmqa3i1IUzVk=",
+			"path": "github.com/attic-labs/noms/go/util/random",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "FMFB4R0OhdlMTDOBQ0gptMutVR8=",
+			"path": "github.com/attic-labs/noms/go/util/sizecache",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "WDEaGFCEP3QhW4QkZH/2pnLYNew=",
+			"path": "github.com/attic-labs/noms/go/util/verbose",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "e2cjvTqWFLmdhbputO4vXFCBwts=",
+			"path": "github.com/attic-labs/noms/go/util/writers",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "Tz17gZWVyupDcZCIi8OxKEXqq+w=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws",
+			"path": "github.com/aws/aws-sdk-go/aws",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "Y9W+4GimK4Fuxq+vyIskVYFRnX4=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/awserr",
+			"path": "github.com/aws/aws-sdk-go/aws/awserr",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "yyYr41HZ1Aq0hWc3J5ijXwYEcac=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/awsutil",
+			"path": "github.com/aws/aws-sdk-go/aws/awsutil",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "wGf8GkrbZe2VFXOo28K0jq68A+g=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/client",
+			"path": "github.com/aws/aws-sdk-go/aws/client",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "ieAJ+Cvp/PKv1LpUEnUXpc3OI6E=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/client/metadata",
+			"path": "github.com/aws/aws-sdk-go/aws/client/metadata",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "U2W3pMTHfONS6R/QP/Zg18+89TQ=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/corehandlers",
+			"path": "github.com/aws/aws-sdk-go/aws/corehandlers",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "Y+cPwQL0dZMyqp3wI+KJWmA9KQ8=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/credentials",
+			"path": "github.com/aws/aws-sdk-go/aws/credentials",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "u3GOAJLmdvbuNUeUEcZSEAOeL/0=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds",
+			"path": "github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "NUJUTWlc1sV8b7WjfiYc4JZbXl0=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds",
+			"path": "github.com/aws/aws-sdk-go/aws/credentials/endpointcreds",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "JEYqmF83O5n5bHkupAzA6STm0no=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/credentials/stscreds",
+			"path": "github.com/aws/aws-sdk-go/aws/credentials/stscreds",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "OnU/n7R33oYXiB4SAGd5pK7I0Bs=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/defaults",
+			"path": "github.com/aws/aws-sdk-go/aws/defaults",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "pDnK93CqjQ4ROSW8Y/RuHXjv52M=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/ec2metadata",
+			"path": "github.com/aws/aws-sdk-go/aws/ec2metadata",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "Jy4jXZArzEyS8sHvi0Hi9GrWNRA=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/endpoints",
+			"path": "github.com/aws/aws-sdk-go/aws/endpoints",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "FpjCPoRNsVKM1hOg9EpC7jn5pRI=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/request",
+			"path": "github.com/aws/aws-sdk-go/aws/request",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "NSUxDbxBtCToRUoMRUKn61WJWmE=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/session",
+			"path": "github.com/aws/aws-sdk-go/aws/session",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "4gwCpxPnVQISJGF/skyWpzzxFAc=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/aws/signer/v4",
+			"path": "github.com/aws/aws-sdk-go/aws/signer/v4",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "MYLldFRnsZh21TfCkgkXCT3maPU=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/internal/sdkrand",
+			"path": "github.com/aws/aws-sdk-go/internal/sdkrand",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "04ypv4x12l4q0TksA1zEVsmgpvw=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/internal/shareddefaults",
+			"path": "github.com/aws/aws-sdk-go/internal/shareddefaults",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "NStHCXEvYqG72GknZyv1jaKaeH0=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol",
+			"path": "github.com/aws/aws-sdk-go/private/protocol",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "yHfT5DTbeCLs4NE2Rgnqrhe15ls=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/json/jsonutil",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/json/jsonutil",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "R00RL5jJXRYq1iiK1+PGvMfvXyM=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/jsonrpc",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/jsonrpc",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "ZqY5RWavBLWTo6j9xqdyBEaNFRk=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/query",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/query",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "9V1PvtFQ9MObZTc3sa86WcuOtOU=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/query/queryutil",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/query/queryutil",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "pkeoOfZpHRvFG/AOZeTf0lwtsFg=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/rest",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/rest",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "ODo+ko8D6unAxZuN1jGzMcN4QCc=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/restxml",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/restxml",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "0qYPUga28aQVkxZgBR3Z86AbGUQ=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "8JiVrxMjFSdBOfVWCy1QU+JzB08=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/service/dynamodb",
+			"path": "github.com/aws/aws-sdk-go/service/dynamodb",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "fXQn3V0ZRBZpTXUEHl4/yOjR4mQ=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/service/s3",
+			"path": "github.com/aws/aws-sdk-go/service/s3",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "tH1Pzc7jUUGJv47Cy6uuWl/86bU=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/aws/aws-sdk-go/service/sts",
+			"path": "github.com/aws/aws-sdk-go/service/sts",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "gZQ6HheWahvZzIc3phBnOwoWHjE=",
+			"origin": "github.com/ethereum/go-ethereum/vendor/github.com/btcsuite/btcd/btcec",
+			"path": "github.com/btcsuite/btcd/btcec",
+			"revision": "704840a8ad9e75d4a00e734f901cac21c51b7eb5",
+			"revisionTime": "2018-03-08T08:22:21Z"
+		},
+		{
+			"checksumSHA1": "dvabztWVQX8f6oMLRyv4dLH+TGY=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/davecgh/go-spew/spew",
+			"path": "github.com/davecgh/go-spew/spew",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "XUbCVvSICsbNPiCPybEGiQ+L9BY=",
+			"path": "github.com/dgraph-io/badger",
+			"revision": "0f4d4236dcab53a316cc778b1a7fd5bdbf5b0da2",
+			"revisionTime": "2017-10-24T06:20:10Z"
+		},
+		{
+			"checksumSHA1": "oOuT7ebEiZ1ViHLKdFxKFOvobAQ=",
+			"path": "github.com/dgraph-io/badger/options",
+			"revision": "0f4d4236dcab53a316cc778b1a7fd5bdbf5b0da2",
+			"revisionTime": "2017-10-24T06:20:10Z"
+		},
+		{
+			"checksumSHA1": "FB7rDZgiLfpIGi9RqWbgxjZ0Vjg=",
+			"path": "github.com/dgraph-io/badger/protos",
+			"revision": "0f4d4236dcab53a316cc778b1a7fd5bdbf5b0da2",
+			"revisionTime": "2017-10-24T06:20:10Z"
+		},
+		{
+			"checksumSHA1": "PbfYA5nvlgi/zvRHlKJQRDb149s=",
+			"path": "github.com/dgraph-io/badger/skl",
+			"revision": "0f4d4236dcab53a316cc778b1a7fd5bdbf5b0da2",
+			"revisionTime": "2017-10-24T06:20:10Z"
+		},
+		{
+			"checksumSHA1": "BzVv53FxzPfogVEHIBwf8BGxiRQ=",
+			"path": "github.com/dgraph-io/badger/table",
+			"revision": "0f4d4236dcab53a316cc778b1a7fd5bdbf5b0da2",
+			"revisionTime": "2017-10-24T06:20:10Z"
+		},
+		{
+			"checksumSHA1": "wfXCTe4hMkTrrMPtU8N1SxTFR08=",
+			"path": "github.com/dgraph-io/badger/y",
+			"revision": "0f4d4236dcab53a316cc778b1a7fd5bdbf5b0da2",
+			"revisionTime": "2017-10-24T06:20:10Z"
+		},
+		{
+			"checksumSHA1": "FCHRnXIurWk5RfGtQWiFE60XVK4=",
+			"path": "github.com/dgryski/go-farm",
+			"revision": "e2d0fe22b456fa0a35cd883ba355ecfcf1881490",
+			"revisionTime": "2017-05-02T03:43:17Z"
+		},
+		{
+			"checksumSHA1": "tJd2T/eyW6ejAev7WzGxTeUVOPQ=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/dustin/go-humanize",
+			"path": "github.com/dustin/go-humanize",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "UyE/zzupdUo8ZK7w8d8In++s7SQ=",
+			"path": "github.com/ethereum/go-ethereum/common",
+			"revision": "704840a8ad9e75d4a00e734f901cac21c51b7eb5",
+			"revisionTime": "2018-03-08T08:22:21Z"
+		},
+		{
+			"checksumSHA1": "tMtGtURWx29lWZYsLtLOQaPvGqs=",
+			"path": "github.com/ethereum/go-ethereum/common/hexutil",
+			"revision": "704840a8ad9e75d4a00e734f901cac21c51b7eb5",
+			"revisionTime": "2018-03-08T08:22:21Z"
+		},
+		{
+			"checksumSHA1": "Hd1Y5DkzYULQzJlSgYv2w5SiEAo=",
+			"path": "github.com/ethereum/go-ethereum/common/math",
+			"revision": "704840a8ad9e75d4a00e734f901cac21c51b7eb5",
+			"revisionTime": "2018-03-08T08:22:21Z"
+		},
+		{
+			"checksumSHA1": "EKRKLj0VOvvsJ5qq6rSFTZxgXTs=",
+			"path": "github.com/ethereum/go-ethereum/crypto",
+			"revision": "b2f53f962175ed8f7483065d19ab8b8130f72e83",
+			"revisionTime": "2018-03-08T15:26:14Z",
+			"tree": true
+		},
+		{
+			"checksumSHA1": "f2Asra5yXCMDxwx/TF6m4h3ZqOw=",
+			"path": "github.com/ethereum/go-ethereum/rlp",
+			"revision": "704840a8ad9e75d4a00e734f901cac21c51b7eb5",
+			"revisionTime": "2018-03-08T08:22:21Z"
+		},
+		{
+			"checksumSHA1": "VvZKmbuBN1QAG699KduTdmSPwA4=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/go-ini/ini",
+			"path": "github.com/go-ini/ini",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "yqF125xVSkmfLpIVGrLlfE05IUk=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "1643683e1b54a9e88ad26d98f81400c8c9d9f4f9",
+			"revisionTime": "2017-10-21T04:39:52Z"
+		},
+		{
+			"checksumSHA1": "p/8vSviYF91gFflhrt5vkyksroo=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/golang/snappy",
+			"path": "github.com/golang/snappy",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "0ZrwvB6KoGPj2PoDNSEJwxQ6Mog=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/jmespath/go-jmespath",
+			"path": "github.com/jmespath/go-jmespath",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "qekNouYjoxRxaEZeD6GtySY1wlM=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/jpillora/backoff",
+			"path": "github.com/jpillora/backoff",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "xYSDkYLKyc/PSJDpsZYJ31io8r0=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/juju/gnuflag",
+			"path": "github.com/juju/gnuflag",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "T+kh2poktvucf6QrY3nRo09otto=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/julienschmidt/httprouter",
+			"path": "github.com/julienschmidt/httprouter",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "zwuhhoAM7Ugl4YX6glXyPxtVTw0=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/kch42/buzhash",
+			"path": "github.com/kch42/buzhash",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "rJab1YdNhQooDiBWNnt7TLWPyBU=",
+			"path": "github.com/pkg/errors",
+			"revision": "f15c970de5b76fac0b59abb32d62c17cc7bed265",
+			"revisionTime": "2017-10-18T19:55:50Z"
+		},
+		{
+			"checksumSHA1": "LuFv4/jlrmFNnDb/5SCSEPAM9vU=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/pmezard/go-difflib/difflib",
+			"path": "github.com/pmezard/go-difflib/difflib",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "5QKvAdxb0E47Nzn7iI25AfgAvOI=",
+			"path": "github.com/stretchr/testify/assert",
+			"revision": "b89eecf5ca5db6d3ba60b237ffe3df7bafb7662f",
+			"revisionTime": "2018-03-03T13:51:14Z"
+		},
+		{
+			"checksumSHA1": "3Y2ZemkxaOSr6yq5xAyItl/vYMk=",
+			"path": "github.com/stretchr/testify/require",
+			"revision": "b89eecf5ca5db6d3ba60b237ffe3df7bafb7662f",
+			"revisionTime": "2018-03-03T13:51:14Z"
+		},
+		{
+			"checksumSHA1": "3QsnhPTXGytTbW3uDvQLgSo9s9M=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb",
+			"path": "github.com/syndtr/goleveldb/leveldb",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "EKIow7XkgNdWvR/982ffIZxKG8Y=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/cache",
+			"path": "github.com/syndtr/goleveldb/leveldb/cache",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "5KPgnvCPlR0ysDAqo6jApzRQ3tw=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/comparer",
+			"path": "github.com/syndtr/goleveldb/leveldb/comparer",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "1DRAxdlWzS4U0xKN/yQ/fdNN7f0=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/errors",
+			"path": "github.com/syndtr/goleveldb/leveldb/errors",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "eqKeD6DS7eNCtxVYZEHHRKkyZrw=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/filter",
+			"path": "github.com/syndtr/goleveldb/leveldb/filter",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "weSsccMav4BCerDpSLzh3mMxAYo=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/iterator",
+			"path": "github.com/syndtr/goleveldb/leveldb/iterator",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "gJY7bRpELtO0PJpZXgPQ2BYFJ88=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/journal",
+			"path": "github.com/syndtr/goleveldb/leveldb/journal",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "MtYY1b2234y/MlS+djL8tXVAcQs=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/memdb",
+			"path": "github.com/syndtr/goleveldb/leveldb/memdb",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "UmQeotV+m8/FduKEfLOhjdp18rs=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/opt",
+			"path": "github.com/syndtr/goleveldb/leveldb/opt",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "QCSae2ub87f8awH+PKMpd8ZYOtg=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/storage",
+			"path": "github.com/syndtr/goleveldb/leveldb/storage",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "gWFPMz8OQeul0t54RM66yMTX49g=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/table",
+			"path": "github.com/syndtr/goleveldb/leveldb/table",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "V/Dh7NV0/fy/5jX1KaAjmGcNbzI=",
+			"origin": "github.com/attic-labs/noms/vendor/github.com/syndtr/goleveldb/leveldb/util",
+			"path": "github.com/syndtr/goleveldb/leveldb/util",
+			"revision": "b48750a1c518410e663fa6aa2496e06892370954",
+			"revisionTime": "2018-03-05T16:33:24Z"
+		},
+		{
+			"checksumSHA1": "HedK9m8E8iyib4bIBtIX7xprOgo=",
+			"path": "go.uber.org/atomic",
+			"revision": "8474b86a5a6f79c443ce4b2992817ff32cf208b8",
+			"revisionTime": "2017-11-14T20:44:01Z"
+		},
+		{
+			"checksumSHA1": "HephvKOmm5xmOrCzhKEtcw7lqE8=",
+			"path": "go.uber.org/multierr",
+			"revision": "ddea229ff1dff9e6fe8a6c0344ac73b09e81fce5",
+			"revisionTime": "2018-01-22T17:25:45Z"
+		},
+		{
+			"checksumSHA1": "hTsGbLDKo7/2jp1UZUjeUT0+xkA=",
+			"path": "go.uber.org/zap",
+			"revision": "f85c78b1dd998214c5f2138155b320a4a43fbe36",
+			"revisionTime": "2017-10-30T23:38:06Z"
+		},
+		{
+			"checksumSHA1": "HYo/9nwrY08NQA+2ItPOAH8IFW8=",
+			"path": "go.uber.org/zap/buffer",
+			"revision": "f85c78b1dd998214c5f2138155b320a4a43fbe36",
+			"revisionTime": "2017-10-30T23:38:06Z"
+		},
+		{
+			"checksumSHA1": "MuxOAtZEsJitlWBzhmpm2vGiHok=",
+			"path": "go.uber.org/zap/internal/bufferpool",
+			"revision": "f85c78b1dd998214c5f2138155b320a4a43fbe36",
+			"revisionTime": "2017-10-30T23:38:06Z"
+		},
+		{
+			"checksumSHA1": "uC0L9eCSAYcCWNC8udJk/t1vvIU=",
+			"path": "go.uber.org/zap/internal/color",
+			"revision": "f85c78b1dd998214c5f2138155b320a4a43fbe36",
+			"revisionTime": "2017-10-30T23:38:06Z"
+		},
+		{
+			"checksumSHA1": "b80CJExrVpXu3SA1iCQ6uLqTn2c=",
+			"path": "go.uber.org/zap/internal/exit",
+			"revision": "f85c78b1dd998214c5f2138155b320a4a43fbe36",
+			"revisionTime": "2017-10-30T23:38:06Z"
+		},
+		{
+			"checksumSHA1": "mRD6lujPvXPkbC3+byNwO/bNVu8=",
+			"path": "go.uber.org/zap/zapcore",
+			"revision": "f85c78b1dd998214c5f2138155b320a4a43fbe36",
+			"revisionTime": "2017-10-30T23:38:06Z"
+		},
+		{
+			"checksumSHA1": "GtamqiJoL7PGHsN454AoffBFMa8=",
+			"path": "golang.org/x/net/context",
+			"revision": "07e8617a6db2368fa55d4616f371ee1b1403c817",
+			"revisionTime": "2018-03-07T20:24:50Z"
+		},
+		{
+			"checksumSHA1": "UxahDzW2v4mf/+aFxruuupaoIwo=",
+			"path": "golang.org/x/net/internal/timeseries",
+			"revision": "07e8617a6db2368fa55d4616f371ee1b1403c817",
+			"revisionTime": "2018-03-07T20:24:50Z"
+		},
+		{
+			"checksumSHA1": "u/r66lwYfgg682u5hZG7/E7+VCY=",
+			"path": "golang.org/x/net/trace",
+			"revision": "07e8617a6db2368fa55d4616f371ee1b1403c817",
+			"revisionTime": "2018-03-07T20:24:50Z"
+		},
+		{
+			"checksumSHA1": "ElyYFL/fVxkuxNDxTxPyni4A0qo=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "349b81fb5c64ec1734eb6ee148df25459ea48517",
+			"revisionTime": "2018-03-08T02:43:59Z"
+		}
+	],
+	"rootPath": "github.com/ORBAT/Peerdoc"
+}

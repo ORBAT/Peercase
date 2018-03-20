@@ -62,7 +62,7 @@ func AddFileTo(ds datas.Dataset, dir types.Struct, file types.Struct, name strin
 }
 
 func main() {
-	logger := log.DevLogger
+	logger := log.DevLogger("scratch")
 	defer logger.Sync()
 
 	log1 := logger.With("node", "node1")

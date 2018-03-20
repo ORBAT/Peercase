@@ -2,14 +2,15 @@ package log
 
 import (
 	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
-var DevLogger *zap.SugaredLogger
-
-func init() {
-	l, err := zap.NewDevelopment(zap.AddCaller())
+func DevLogger(name string) *zap.SugaredLogger {
+	conf := zap.NewDevelopmentConfig()
+	conf.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
+	l, err := conf.Build(zap.AddCaller())
 	if err != nil {
 		panic(err)
 	}
-	DevLogger = l.Sugar()
+	return l.Sugar().Named(name)
 }

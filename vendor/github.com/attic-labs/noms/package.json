@@ -1,0 +1,45 @@
+{
+  "author": "ORBAT",
+  "bugs": {},
+  "gx": {
+    "dvcsimport": "github.com/attic-labs/noms"
+  },
+  "gxDependencies": [
+    {
+      "author": "whyrusleeping",
+      "hash": "QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY",
+      "name": "go-cid",
+      "version": "0.7.20"
+    },
+    {
+      "author": "stebalien",
+      "hash": "Qmej7nf81hi2x2tvjRBF3mcp74sQyuDH4VMYDGd1YtXjb2",
+      "name": "go-block-format",
+      "version": "0.1.6"
+    },
+    {
+      "author": "multiformats",
+      "hash": "QmZyZDi491cCNTLfAhwcaDii2Kg4pwKRkhqQzURGDvY6ua",
+      "name": "go-multihash",
+      "version": "1.0.7"
+    },
+    {
+      "author": "hsanjuan",
+      "hash": "QmPwNSAKhfSDEjQ2LYx8bemvnoyXYTaL96JxsAvjzphT75",
+      "name": "go-ipfs-blockstore",
+      "version": "0.0.3"
+    },
+    {
+      "hash": "QmXporsyf5xMvffd2eiTDoq85dNpYUynGJhfabzDjwP8uR",
+      "name": "go-ipfs",
+      "version": "0.4.14-rc1"
+    }
+  ],
+  "gxVersion": "0.12.1",
+  "language": "go",
+  "license": "",
+  "name": "noms",
+  "releaseCmd": "git commit -a -m \"gx publish $VERSION\"",
+  "version": "0.0.0"
+}
+

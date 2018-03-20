@@ -23,10 +23,6 @@ import (
 )
 
 var (
-	// ErrInvalidDir is returned when Badger cannot find the directory
-	// from where it is supposed to load the key-value store.
-	ErrInvalidDir = errors.New("Invalid Dir, directory does not exist")
-
 	// ErrValueLogSize is returned when opt.ValueLogFileSize option is not within the valid
 	// range.
 	ErrValueLogSize = errors.New("Invalid ValueLogFileSize, must be between 1MB and 2GB")
@@ -75,16 +71,34 @@ var (
 	// allowed due to external management of transactions, when using ManagedDB.
 	ErrManagedTxn = errors.New(
 		"Invalid API request. Not allowed to perform this action using ManagedDB")
+
+	// ErrInvalidDump if a data dump made previously cannot be loaded into the database.
+	ErrInvalidDump = errors.New("Data dump cannot be read")
+
+	// ErrZeroBandwidth is returned if the user passes in zero bandwidth for sequence.
+	ErrZeroBandwidth = errors.New("Bandwidth must be greater than zero")
+
+	// ErrInvalidLoadingMode is returned when opt.ValueLogLoadingMode option is not
+	// within the valid range
+	ErrInvalidLoadingMode = errors.New("Invalid ValueLogLoadingMode, must be FileIO or MemoryMap")
+
+	// ErrReplayNeeded is returned when opt.ReadOnly is set but the
+	// database requires a value log replay.
+	ErrReplayNeeded = errors.New("Database was not properly closed, cannot open read-only")
+
+	// ErrWindowsNotSupported is returned when opt.ReadOnly is used on Windows
+	ErrWindowsNotSupported = errors.New("Read-only mode is not supported on Windows")
 )
 
-const maxKeySize = 1 << 20
+// Key length can't be more than uint16, as determined by table::header.
+const maxKeySize = 1<<16 - 8 // 8 bytes are for storing timestamp
 
 func exceedsMaxKeySizeError(key []byte) error {
-	return errors.Errorf("Key with size %d exceeded %dMiB limit. Key:\n%s",
-		len(key), maxKeySize>>20, hex.Dump(key[:1<<10]))
+	return errors.Errorf("Key with size %d exceeded %d limit. Key:\n%s",
+		len(key), maxKeySize, hex.Dump(key[:1<<10]))
 }
 
 func exceedsMaxValueSizeError(value []byte, maxValueSize int64) error {
-	return errors.Errorf("Value with size %d exceeded ValueLogFileSize (%dMiB). Key:\n%s",
-		len(value), maxValueSize>>20, hex.Dump(value[:1<<10]))
+	return errors.Errorf("Value with size %d exceeded ValueLogFileSize (%d). Key:\n%s",
+		len(value), maxValueSize, hex.Dump(value[:1<<10]))
 }

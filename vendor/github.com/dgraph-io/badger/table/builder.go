@@ -144,11 +144,7 @@ func (b *Builder) addHelper(key []byte, v y.ValueStruct) {
 	b.buf.Write(hbuf[:])
 	b.buf.Write(diffKey) // We only need to store the key difference.
 
-	// This should be kept in sync with ValueStruct encode function.
-	b.buf.WriteByte(v.Meta) // Meta byte precedes actual value.
-	b.buf.WriteByte(v.UserMeta)
-	b.buf.Write(v.Value)
-
+	v.EncodeTo(b.buf)
 	b.counter++ // Increment number of keys added for this current block.
 }
 
@@ -216,7 +212,7 @@ func (b *Builder) Finish() []byte {
 		}
 		kl := int(binary.BigEndian.Uint16(klen[:]))
 		if cap(key) < kl {
-			key = make([]byte, 2*kl)
+			key = make([]byte, 2*int(kl)) // 2 * uint16 will overflow
 		}
 		key = key[:kl]
 		y.Check2(b.keyBuf.Read(key))

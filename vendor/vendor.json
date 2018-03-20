@@ -133,11 +133,11 @@
 			"revisionTime": "2015-09-24T21:51:34Z"
 		},
 		{
-			"checksumSHA1": "iuTNroTBIWWRSPMQ3fUPOLevGmY=",
-			"origin": "github.com/ORBAT/Peerdoc/vendor/github.com/dgraph-io/badger",
+			"checksumSHA1": "JoW23X1vjzS1sJk4DWc3FGNFZ08=",
 			"path": "github.com/dgraph-io/badger",
 			"revision": "8b89769ed71e56cf7f80abdcfd3576efc97bd412",
-			"revisionTime": "2018-03-13T05:23:53Z"
+			"revisionTime": "2018-03-13T05:23:53Z",
+			"tree": true
 		},
 		{
 			"checksumSHA1": "UyE/zzupdUo8ZK7w8d8In++s7SQ=",

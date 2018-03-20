@@ -1,5 +1,3 @@
-// +build !dragonfly,!freebsd,!windows
-
 /*
  * Copyright 2017 Dgraph Labs, Inc. and Contributors
  *
@@ -16,10 +14,10 @@
  * limitations under the License.
  */
 
-package y
+package main
 
-import "golang.org/x/sys/unix"
+import "github.com/dgraph-io/badger/cmd/badger/cmd"
 
-func init() {
-	datasyncFileFlag = unix.O_DSYNC
+func main() {
+	cmd.Execute()
 }

@@ -31,6 +31,15 @@ import (
 // and encountering the end of slice.
 var ErrEOF = errors.New("End of mapped region")
 
+const (
+	// Sync indicates that O_DSYNC should be set on the underlying file,
+	// ensuring that data writes do not return until the data is flushed
+	// to disk.
+	Sync = 1 << iota
+	// ReadOnly opens the underlying file on a read-only basis.
+	ReadOnly
+)
+
 var (
 	// This is O_DSYNC (datasync) on platforms that support it -- see file_unix.go
 	datasyncFileFlag = 0x0
@@ -39,13 +48,17 @@ var (
 	CastagnoliCrcTable = crc32.MakeTable(crc32.Castagnoli)
 )
 
-// OpenExistingSyncedFile opens an existing file, errors if it doesn't exist.
-func OpenExistingSyncedFile(filename string, sync bool) (*os.File, error) {
-	flags := os.O_RDWR
-	if sync {
-		flags |= datasyncFileFlag
+// OpenExistingFile opens an existing file, errors if it doesn't exist.
+func OpenExistingFile(filename string, flags uint32) (*os.File, error) {
+	openFlags := os.O_RDWR
+	if flags&ReadOnly != 0 {
+		openFlags = os.O_RDONLY
 	}
-	return os.OpenFile(filename, flags, 0)
+
+	if flags&Sync != 0 {
+		openFlags |= datasyncFileFlag
+	}
+	return os.OpenFile(filename, openFlags, 0)
 }
 
 // CreateSyncedFile creates a new file (using O_EXCL), errors if it already existed.
@@ -75,9 +88,16 @@ func OpenTruncFile(filename string, sync bool) (*os.File, error) {
 	return os.OpenFile(filename, flags, 0666)
 }
 
-// Safecopy does append(a[:0], src...).
-func Safecopy(a []byte, src []byte) []byte {
+// SafeCopy does append(a[:0], src...).
+func SafeCopy(a []byte, src []byte) []byte {
 	return append(a[:0], src...)
+}
+
+// Copy copies a byte slice and returns the copied slice.
+func Copy(a []byte) []byte {
+	b := make([]byte, len(a))
+	copy(b, a)
+	return b
 }
 
 // KeyWithTs generates a new key by appending ts to key.
@@ -101,7 +121,7 @@ func ParseTs(key []byte) uint64 {
 // a<timestamp> would be sorted higher than aa<timestamp> if we use bytes.compare
 // All keys should have timestamp.
 func CompareKeys(key1 []byte, key2 []byte) int {
-	AssertTruef(len(key1) > 8 && len(key2) > 8, "%q %q", key1, key2)
+	AssertTrue(len(key1) > 8 && len(key2) > 8)
 	if cmp := bytes.Compare(key1[:len(key1)-8], key2[:len(key2)-8]); cmp != 0 {
 		return cmp
 	}

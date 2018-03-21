@@ -6,7 +6,7 @@ import (
 	"sort"
 
 	"github.com/ORBAT/Peerdoc/common"
-	"github.com/ORBAT/Peerdoc/key"
+	"github.com/ORBAT/Peerdoc/crypto/key"
 )
 
 type Certificate interface {

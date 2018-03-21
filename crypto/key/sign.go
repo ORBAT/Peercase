@@ -2,17 +2,15 @@ package key
 
 import (
 	ec "crypto/ecdsa"
-	"math/big"
-
-	"fmt"
-
 	"encoding"
+	"fmt"
+	"math/big"
 
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
 )
 
-var Hash = ecrypto.Keccak256
+var hash = ecrypto.Keccak256
 
 type ErrSignatureKeyMismatch struct{ Pub, Recovered string }
 
@@ -68,7 +66,7 @@ func (epubk *ECDSAPublic) Std() *ec.PublicKey {
 }
 
 func (epubk *ECDSAPublic) Verify(sig Signature, message []byte) (ok bool, err error) {
-	digest := Hash(message)
+	digest := hash(message)
 	ok = true
 	if len(digest) != 32 {
 		panic(fmt.Errorf("digest is required to be exactly 32 bytes (%d)", len(digest)))
@@ -105,6 +103,7 @@ type Private interface {
 	Public
 	Public() Public
 	Sign(msg []byte) Signature
+	Derive([]byte) (Private, error)
 }
 
 type ECDSAPrivate ec.PrivateKey
@@ -124,7 +123,7 @@ func (epriv *ECDSAPrivate) Verify(sig Signature, message []byte) (ok bool, err e
 }
 
 func (epriv *ECDSAPrivate) Sign(msg []byte) Signature {
-	h := Hash(msg)
+	h := hash(msg)
 	std := epriv.Std()
 	sig, err := ecrypto.Sign(h, std)
 	if err != nil {
@@ -160,6 +159,42 @@ func Generate() (Private, error) {
 	return (*ECDSAPrivate)(pk), nil
 }
 
+func (epriv *ECDSAPrivate) Derive(expansion []byte) (Private, error) {
+	tempSK := &ec.PrivateKey{
+		PublicKey: ec.PublicKey{
+			Curve: epriv.Curve,
+			X:     new(big.Int),
+			Y:     new(big.Int),
+		},
+		D: new(big.Int),
+	}
+
+	var k = new(big.Int).SetBytes(expansion)
+	var one = new(big.Int).SetInt64(1)
+	n := new(big.Int).Sub(epriv.Params().N, one)
+	k.Mod(k, n)
+	k.Add(k, one)
+
+	tempSK.D.Add(epriv.D, k)
+	tempSK.D.Mod(tempSK.D, epriv.PublicKey.Params().N)
+
+	// Compute temporary public key
+	tempX, tempY := epriv.PublicKey.ScalarBaseMult(k.Bytes())
+	tempSK.PublicKey.X, tempSK.PublicKey.Y =
+		tempSK.PublicKey.Add(
+			epriv.PublicKey.X, epriv.PublicKey.Y,
+			tempX, tempY,
+		)
+
+	// Verify temporary public key is a valid point on the reference curve
+	isOn := tempSK.Curve.IsOnCurve(tempSK.PublicKey.X, tempSK.PublicKey.Y)
+	if !isOn {
+		return nil, errors.New("Failed temporary public key IsOnCurve check.")
+	}
+
+	return (*ECDSAPrivate)(tempSK), nil
+}
+
 /*
 import "github.com/hyperledger/fabric/bccsp"
 
@@ -175,9 +210,9 @@ func KeyDeriv(k bccsp.Key, opts bccsp.KeyDerivOpts) (dk bccsp.Key, err error) {
 	// Re-randomized an ECDSA private key
 	case *bccsp.ECDSAReRandKeyOpts:
 		reRandOpts := opts.(*bccsp.ECDSAReRandKeyOpts)
-		tempSK := &ecdsa.PrivateKey{
-			PublicKey: ecdsa.PublicKey{
-				Curve: ecdsaK.privKey.Curve,
+		tempSK := &ec.PrivateKey{
+			PublicKey: ec.PublicKey{
+				Curve: epriv.Curve,
 				X:     new(big.Int),
 				Y:     new(big.Int),
 			},
@@ -186,18 +221,18 @@ func KeyDeriv(k bccsp.Key, opts bccsp.KeyDerivOpts) (dk bccsp.Key, err error) {
 
 		var k = new(big.Int).SetBytes(reRandOpts.ExpansionValue())
 		var one = new(big.Int).SetInt64(1)
-		n := new(big.Int).Sub(ecdsaK.privKey.Params().N, one)
+		n := new(big.Int).Sub(epriv.Params().N, one)
 		k.Mod(k, n)
 		k.Add(k, one)
 
-		tempSK.D.Add(ecdsaK.privKey.D, k)
-		tempSK.D.Mod(tempSK.D, ecdsaK.privKey.PublicKey.Params().N)
+		tempSK.D.Add(epriv.D, k)
+		tempSK.D.Mod(tempSK.D, epriv.PublicKey.Params().N)
 
 		// Compute temporary public key
-		tempX, tempY := ecdsaK.privKey.PublicKey.ScalarBaseMult(k.Bytes())
+		tempX, tempY := epriv.PublicKey.ScalarBaseMult(k.Bytes())
 		tempSK.PublicKey.X, tempSK.PublicKey.Y =
 			tempSK.PublicKey.Add(
-				ecdsaK.privKey.PublicKey.X, ecdsaK.privKey.PublicKey.Y,
+				epriv.PublicKey.X, epriv.PublicKey.Y,
 				tempX, tempY,
 			)
 

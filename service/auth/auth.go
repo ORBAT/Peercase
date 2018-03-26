@@ -1,6 +1,6 @@
 package auth
 
-import a "github.com/ORBAT/Peerdoc/auth"
+import a "github.com/ORBAT/Peerdoc/pkg/auth"
 
 // The Authorization service tells whether an Identity has the Grants for a Capability
 type Authorization interface {

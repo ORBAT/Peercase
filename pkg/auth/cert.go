@@ -5,18 +5,18 @@ import (
 	"encoding"
 	"sort"
 
-	"github.com/ORBAT/Peerdoc/common"
-	"github.com/ORBAT/Peerdoc/crypto/key"
+	"github.com/ORBAT/Peerdoc/pkg/common"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/sign"
 )
 
 type Certificate interface {
 	common.Digestable
-	PublicKey() key.Public
+	PublicKey() sign.PublicKey
 	Attributes() Attrs
 	// Subject returns the subject this certificate covers. Must be a / separated path. Example:
 	//  /identity/
 	// Subject() string // TODO: get everything from Attributes?
-	Fingerprint() key.Fingerprint
+	Fingerprint() sign.Fingerprint
 	encoding.TextMarshaler
 	encoding.TextUnmarshaler
 }
@@ -54,7 +54,7 @@ func (certificate) Digest() []byte {
 	panic("implement me")
 }
 
-func (certificate) PublicKey() key.Public {
+func (certificate) PublicKey() sign.PublicKey {
 	panic("implement me")
 }
 
@@ -62,7 +62,7 @@ func (certificate) Attributes() map[string][]byte {
 	panic("implement me")
 }
 
-func (certificate) Fingerprint() key.Fingerprint {
+func (certificate) Fingerprint() sign.Fingerprint {
 	panic("implement me")
 }
 

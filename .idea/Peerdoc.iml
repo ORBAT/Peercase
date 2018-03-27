@@ -3,6 +3,9 @@
   <component name="Go" enabled="true" />
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/../../attic-labs/noms" />
+    <content url="file://$MODULE_DIR$/../../ethereum/go-ethereum" />
+    <content url="file://$MODULE_DIR$/../../ipfs/go-ipfs" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

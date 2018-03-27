@@ -4,8 +4,10 @@
       <w>ecdsa</w>
       <w>epubk</w>
       <w>hashable</w>
+      <w>memoized</w>
       <w>priv</w>
       <w>pubk</w>
+      <w>pubkey</w>
       <w>secp</w>
       <w>subfolder</w>
       <w>unmarshaled</w>

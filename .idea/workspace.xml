@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go" line="47" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go" line="106" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" line="527" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75c36957-d3f1-436f-a23f-e16851e6dd19" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/Peerdoc.iml" afterPath="$PROJECT_DIR$/.idea/Peerdoc.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/teklof.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/teklof.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cmd/scratch/main.go" afterPath="$PROJECT_DIR$/cmd/scratch/main.go" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,99 +31,157 @@
     <expand />
     <select />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="sign.go" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="301">
+                    <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="sign_test.go" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="263">
+                    <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="crypto.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="52" column="47" lean-forward="false" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="identity.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/auth/identity.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keccak.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/keccak.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="threadDump2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="threadDump3.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump3.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="threadDump4.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump4.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="threadDump5.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump5.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="types.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/types.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ecies.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="192">
+                  <caret line="141" column="70" lean-forward="true" selection-start-line="141" selection-start-column="70" selection-end-line="141" selection-end-column="70" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="bytes.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="242">
+                  <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="signature_nocgo.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/signature_nocgo.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1069">
+                  <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="extended_keys.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3411">
+                  <caret line="423" column="0" lean-forward="false" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hashfuncs.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/chaincfg/chainhash/hashfuncs.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="extendedkey.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/extendedkey.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="245">
+                  <caret line="322" column="5" lean-forward="true" selection-start-line="322" selection-start-column="5" selection-end-line="322" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="extended_keys_test.go" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="14688">
+                  <caret line="918" column="0" lean-forward="true" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="address.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/address.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="230">
+                  <caret line="260" column="5" lean-forward="false" selection-start-line="260" selection-start-column="5" selection-end-line="260" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="crypto.go" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-481">
+                  <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="extendedkey_test.go" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/extendedkey_test.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4432">
+                  <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -131,38 +192,39 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>kvp</find>
-      <find>io/badger</find>
-      <find>badg</find>
-      <find>meta</find>
-      <find>recov</find>
-      <find>Hash</find>
-      <find>var ha</find>
-      <find>var _</find>
-      <find>toecd</find>
-      <find>toaddr</find>
-      <find>pub</find>
-      <find>errors.</find>
-      <find>rerand</find>
-      <find>type pri</find>
-      <find>type priv</find>
-      <find>std</find>
-      <find>derive</find>
-      <find>genera</find>
-      <find>hdw</find>
-      <find>errsi</find>
-      <find>recovere</find>
       <find>Fingerprint</find>
-      <find>Signature</find>
-      <find>secp</find>
-      <find>ecdsa si</find>
-      <find>ecdsapri</find>
-      <find>varint</find>
-      <find>hash</find>
-      <find>ecom</find>
-      <find>/common</find>
+      <find>ecryp</find>
+      <find>.wrap</find>
+      <find>parentFp</find>
+      <find>xprv</find>
+      <find>maxUint8</find>
+      <find>privKeyID</find>
+      <find>pubKeyID</find>
+      <find>addr</find>
+      <find>cfg</find>
+      <find>testVec2MasterHex</find>
+      <find>tests</find>
+      <find>goto</find>
+      <find>break</find>
+      <find>contin</find>
+      <find>testVec1MasterHex</find>
+      <find>checks</find>
+      <find>checksum</find>
+      <find>fingerp</find>
+      <find>serializedKeyLen</find>
+      <find>fingerpri</find>
+      <find>fingerprin</find>
+      <find>parentFP</find>
+      <find>u</find>
+      <find>unmar</find>
+      <find>var _</find>
+      <find>var p</find>
+      <find>error decom</find>
+      <find>pubkey strin</find>
+      <find>pubkey string is</find>
     </findStrings>
     <dirStrings>
+      <dir>$PROJECT_DIR$/../../ethereum/go-ethereum</dir>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
@@ -210,10 +272,14 @@
         <option value="$PROJECT_DIR$/pkg/crypto/hash/keccak256.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/hash/keccak/keccak.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/hash/keccak.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/keystore.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/keccak.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/datas/database_common.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/extended_keys.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" />
       </list>
     </option>
   </component>
@@ -265,50 +331,224 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="hexutil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="ecies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="go-ethereum" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="secp256k1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="merge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
               <item name="crypto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
               <item name="crypto" type="462c0819:PsiDirectoryNode" />
               <item name="sign" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+              <item name="keytree" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="btcsuite" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="btcsuite" type="462c0819:PsiDirectoryNode" />
+              <item name="btcutil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="btcsuite" type="462c0819:PsiDirectoryNode" />
+              <item name="btcutil" type="462c0819:PsiDirectoryNode" />
+              <item name="hdkeychain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="ipfs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="ipfs" type="462c0819:PsiDirectoryNode" />
+              <item name="Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="ipfs" type="462c0819:PsiDirectoryNode" />
+              <item name="Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES" type="462c0819:PsiDirectoryNode" />
+              <item name="go-ipld-format" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="ipfs" type="462c0819:PsiDirectoryNode" />
+              <item name="QmNmJZL7FQySMtE2BQuLMuZg2EB2CLEunJJUSVSc9YnnbV" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;Peerdoc&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gx" type="462c0819:PsiDirectoryNode" />
+              <item name="ipfs" type="462c0819:PsiDirectoryNode" />
+              <item name="QmNmJZL7FQySMtE2BQuLMuZg2EB2CLEunJJUSVSc9YnnbV" type="462c0819:PsiDirectoryNode" />
+              <item name="go-libp2p-host" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -317,11 +557,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
       <recent name="$PROJECT_DIR$/pkg/crypto" />
       <recent name="$PROJECT_DIR$/pkg" />
       <recent name="$PROJECT_DIR$/crypto/key" />
       <recent name="$PROJECT_DIR$/service/auth" />
-      <recent name="$PROJECT_DIR$/auth" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -336,7 +576,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.sign_test.go">
+  <component name="RunManager" selected="Go Test.TestMaximumDepth in extended_keys_test.go">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="Peerdoc" />
       <working_directory value="$PROJECT_DIR$" />
@@ -349,44 +589,50 @@
       <package value="github.com/ORBAT/Peerdoc" />
       <directory value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="go build sign.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+    <configuration name="TestBIP0032Vectors in extended_keys_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$" />
-      <go_parameters value="-i" />
-      <envs>
-        <env name="NOMS_VERSION_NEXT" value="1" />
-      </envs>
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/crypto/key/sign.go" />
-      <package value="github.com/ORBAT/Peerdoc" />
-      <directory value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="TestBla in crypto_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/key" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/ORBAT/Peerdoc/key" />
-      <pattern value="^TestBla$" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree" />
+      <pattern value="^TestBIP0032Vectors$" />
     </configuration>
-    <configuration name="TestECDSAPrivateKey_Sign in crypto_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="TestErrors in extended_keys_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/key" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/ORBAT/Peerdoc/key" />
-      <pattern value="^TestECDSAPrivateKey_Sign$" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree" />
+      <pattern value="^TestErrors$" />
     </configuration>
-    <configuration name="TestECDSAPrivate_Derive in sign_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="TestGenenerateSeed in extended_keys_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/crypto/key" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/ORBAT/Peerdoc/crypto/key" />
-      <pattern value="^TestECDSAPrivate_Derive$" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree" />
+      <pattern value="^TestGenenerateSeed$" />
+    </configuration>
+    <configuration name="TestMaximumDepth in extended_keys_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="Peerdoc" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree" />
+      <pattern value="^TestMaximumDepth$" />
+    </configuration>
+    <configuration name="TestZero in extended_keys_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="Peerdoc" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree" />
+      <pattern value="^TestZero$" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="Peerdoc" />
@@ -396,29 +642,20 @@
       <kind value="DIRECTORY" />
       <package value="github.com/ORBAT/Peerdoc" />
     </configuration>
-    <configuration name="sign_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
-      <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <package value="github.com/ORBAT/Peerdoc" />
-      <filePath value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
-    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Test.TestECDSAPrivateKey_Sign in crypto_test.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Test.TestBla in crypto_test.go" />
-      <item index="2" class="java.lang.String" itemvalue="Go Build.go build sign.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Test.TestECDSAPrivate_Derive in sign_test.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Test.sign_test.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Test.TestZero in extended_keys_test.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Test.TestBIP0032Vectors in extended_keys_test.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Test.TestGenenerateSeed in extended_keys_test.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Test.TestErrors in extended_keys_test.go" />
+      <item index="4" class="java.lang.String" itemvalue="Go Test.TestMaximumDepth in extended_keys_test.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Test.sign_test.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Test.TestECDSAPrivate_Derive in sign_test.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Build.go build sign.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Test.TestECDSAPrivateKey_Sign in crypto_test.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Test.TestBla in crypto_test.go" />
+        <item index="0" class="java.lang.String" itemvalue="Go Test.TestMaximumDepth in extended_keys_test.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Test.TestErrors in extended_keys_test.go" />
+        <item index="2" class="java.lang.String" itemvalue="Go Test.TestGenenerateSeed in extended_keys_test.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Test.TestBIP0032Vectors in extended_keys_test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Test.TestZero in extended_keys_test.go" />
       </list>
     </recent_temporary>
   </component>
@@ -429,47 +666,48 @@
     <option name="ACTIVE_ACTIONS" value=",Show package structure" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestBla_in_crypto_test_go - 2018.03.08 at 22h 46m 03s.xml">
-      <configuration name="TestBla in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestBIP0032Vectors_in_extended_keys_test_go - 2018.03.27 at 19h 54m 32s.xml">
+      <configuration name="TestBIP0032Vectors in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestBla_in_crypto_test_go - 2018.03.20 at 14h 25m 14s.xml">
-      <configuration name="TestBla in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestECDSAPrivateKey_Sign_in_sign_test_go - 2018.03.27 at 15h 31m 11s.xml">
+      <configuration name="TestECDSAPrivateKey_Sign in sign_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivateKey_Sign_in_crypto_test_go - 2018.03.08 at 22h 27m 01s.xml">
-      <configuration name="TestECDSAPrivateKey_Sign in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestECDSAPrivateKey_Sign_in_sign_test_go - 2018.03.27 at 15h 37m 56s.xml">
+      <configuration name="TestECDSAPrivateKey_Sign in sign_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivateKey_Sign_in_crypto_test_go - 2018.03.08 at 22h 41m 05s.xml">
-      <configuration name="TestECDSAPrivateKey_Sign in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestErrors_in_extended_keys_test_go - 2018.03.27 at 19h 56m 00s.xml">
+      <configuration name="TestErrors in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivateKey_Sign_in_crypto_test_go - 2018.03.08 at 22h 45m 54s.xml">
-      <configuration name="TestECDSAPrivateKey_Sign in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestGenenerateSeed_in_extended_keys_test_go - 2018.03.27 at 19h 55m 53s.xml">
+      <configuration name="TestGenenerateSeed in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivateKey_Sign_in_crypto_test_go - 2018.03.08 at 22h 47m 46s.xml">
-      <configuration name="TestECDSAPrivateKey_Sign in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestMaximumDepth_in_extended_keys_test_go - 2018.03.27 at 19h 57m 54s.xml">
+      <configuration name="TestMaximumDepth in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivateKey_Sign_in_crypto_test_go - 2018.03.20 at 16h 22m 41s.xml">
-      <configuration name="TestECDSAPrivateKey_Sign in crypto_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestZero_in_extended_keys_test_go - 2018.03.27 at 19h 48m 01s.xml">
+      <configuration name="TestZero in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivate_Derive_in_sign_test_go - 2018.03.20 at 16h 52m 19s.xml">
-      <configuration name="TestECDSAPrivate_Derive in sign_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestZero_in_extended_keys_test_go - 2018.03.27 at 19h 50m 36s.xml">
+      <configuration name="TestZero in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestECDSAPrivate_Derive_in_sign_test_go - 2018.03.20 at 16h 53m 48s.xml">
-      <configuration name="TestECDSAPrivate_Derive in sign_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestZero_in_extended_keys_test_go - 2018.03.27 at 19h 51m 41s.xml">
+      <configuration name="TestZero in extended_keys_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="sign_test_go - 2018.03.23 at 22h 23m 43s.xml">
+    <history-entry file="sign_test_go - 2018.03.27 at 15h 49m 56s.xml">
       <configuration name="sign_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1676" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21778043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21778043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23210634" sideWeight="0.5023866" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23210634" sideWeight="0.49761337" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23210634" sideWeight="0.49761337" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973932" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -544,323 +782,422 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/dgraph-io/badger/backup.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/dgraph-io/badger/protos/manifest.pb.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/dgraph-io/badger/iterator.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/dgraph-io/badger/y/iterator.go" />
-    <entry file="file://$PROJECT_DIR$/../../dgraph-io/badger/backup.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/database.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="30" lean-forward="false" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/dgraph-io/badger/options/options.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/dgraph-io/badger/options.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/go.uber.org/zap/options.go" />
-    <entry file="file://$PROJECT_DIR$/log/logger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../dgraph-io/badger/protos/backup.pb.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vendor.json" />
-    <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/ethereum/go-ethereum/crypto/crypto.go" />
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/ethereum/go-ethereum/common/types.go" />
-    <entry file="file://$PROJECT_DIR$/pkg/identity/doc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/identity/identity.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor-bla/github.com/attic-labs/noms/vendor/gx/ipfs/QmWq5PJgAQKDWQerAijYUVKW8mN5MDatK5j7VMp8rizKQd/btcec/ciphering.go" />
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/aes/cipher.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="30" column="10" lean-forward="true" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/aes/aes_gcm.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2302">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/cipher/gcm.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/aes/modes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/ecdsa/ecdsa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/doc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/extendedkey_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/example_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="170" column="38" lean-forward="false" selection-start-line="170" selection-start-column="38" selection-end-line="170" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/extendedkey.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="339" column="22" lean-forward="false" selection-start-line="339" selection-start-column="22" selection-end-line="339" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/signature_nocgo.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/signature_cgo.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/wire/msggetdata.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/keccak256.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/keccak/keccak.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/auth/cert.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#Bytes#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/auth/cert_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/auth/doc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/auth/ca.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/types.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="52" column="47" lean-forward="false" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/wire/common.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/common/types.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/txscript/sign.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="329">
+          <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/auth/identity.go">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/value_store.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="207" column="23" lean-forward="false" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/nbs/fd_cache.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-559">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/nbs/file_table_persister.go">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ipfs/go-ipfs/plugin/loader/preload.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ipfs/go-ipfs/plugin/ipld.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ipfs/go-ipfs/p2p/p2p.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="190" column="24" lean-forward="false" selection-start-line="190" selection-start-column="24" selection-end-line="190" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ipfs/go-ipfs/blocks/blocksutil/block_generator.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ipfs/go-ipfs/keystore/keystore.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1240">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ipfs/go-ipfs/merkledag/merkledag.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../gx/ipfs/QmNmJZL7FQySMtE2BQuLMuZg2EB2CLEunJJUSVSc9YnnbV/go-libp2p-host/host.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../gx/ipfs/Qme5bWv7wtjUNGsK2BNGVUFPKiuxWrsqrtvYwCLRw8YFES/go-ipld-format/format.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/nomsfs/nomsfs.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="73" column="22" lean-forward="true" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/commit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="155" column="32" lean-forward="true" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/ordered_sequences_diff.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/merge/three_way.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/bech32/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="192">
+            <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/bloom/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-26">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="87" column="17" lean-forward="true" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/btcec/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="288">
+            <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/btcec/btcec.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/signature_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="124" column="48" lean-forward="true" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/vendor/github.com/btcsuite/btcd/btcec/pubkey.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="128" column="20" lean-forward="false" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/merge/three_way_ordered_sequence.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="77" column="61" lean-forward="true" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/elliptic/elliptic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/btcec/pubkey.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="111" column="4" lean-forward="false" selection-start-line="111" selection-start-column="4" selection-end-line="119" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hash160.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/signature_cgo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/btcec/privkey.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/hexutil/json.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="108" column="39" lean-forward="false" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/secp256k1/secp256.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="125" column="5" lean-forward="false" selection-start-line="125" selection-start-column="5" selection-end-line="125" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/secp256k1/curve.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="267" column="37" lean-forward="true" selection-start-line="267" selection-start-column="37" selection-end-line="267" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-481">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/encoding/hex/hex.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="101" column="62" lean-forward="true" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/chaincfg/params.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="668" column="27" lean-forward="true" selection-start-line="668" selection-start-column="27" selection-end-line="668" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/extendedkey_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4432">
+          <caret line="277" column="0" lean-forward="true" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="141" column="70" lean-forward="true" selection-start-line="141" selection-start-column="70" selection-end-line="141" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/types.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/encoding/encoding.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="28" column="4" lean-forward="false" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/keystore.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-541">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="263">
+          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        <state relative-caret-position="301">
+          <caret line="65" column="5" lean-forward="false" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump2.txt">
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/signature_nocgo.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1069">
+          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump3.txt">
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/address.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="230">
+          <caret line="260" column="5" lean-forward="false" selection-start-line="260" selection-start-column="5" selection-end-line="260" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump4.txt">
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="3411">
+          <caret line="423" column="0" lean-forward="false" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump5.txt">
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcd/chaincfg/chainhash/hashfuncs.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="336">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/threadDump1.txt">
+    <entry file="file://$PROJECT_DIR$/../../btcsuite/btcutil/hdkeychain/extendedkey.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="435" column="0" lean-forward="true" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
+        <state relative-caret-position="245">
+          <caret line="322" column="5" lean-forward="true" selection-start-line="322" selection-start-column="5" selection-end-line="322" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/keccak.go">
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="14688">
+          <caret line="918" column="0" lean-forward="true" selection-start-line="918" selection-start-column="0" selection-end-line="918" selection-end-column="0" />
           <folding />
         </state>
       </provider>

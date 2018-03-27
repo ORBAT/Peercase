@@ -61,20 +61,17 @@ func TestECDSAPrivateKey_Sign(t *testing.T) {
 	testHash := crypto.Hash(testMsg)
 	sig := priv.Sign(testHash)
 
-	ok, err := priv.Public().Verify(sig, testHash)
+	err := priv.Public().Verify(sig, testHash)
 	assert.NoError(err, "verification should not fail")
-	assert.True(ok, "Verify should return true")
 
 	(sig.([]byte))[0] = 1
-	ok, err = priv.Public().Verify(sig, testHash)
+	err = priv.Public().Verify(sig, testHash)
 	assert.Error(err, "verification should fail")
-	assert.False(ok, "Verify should return false")
 
 	priv2 := mustGenKey()
 	sig2 := priv2.Sign(testHash)
-	ok, err = priv.Public().Verify(sig2, testHash)
+	err = priv.Public().Verify(sig2, testHash)
 	assert.Error(err, "verification should fail")
-	assert.False(ok, "Verify should return false")
 
 }
 
@@ -91,9 +88,8 @@ func TestECDSAPrivateKey_MarshalBinary(t *testing.T) {
 
 	privUnmarshal := new(ECDSAPrivateKey)
 	assert.NoError(privUnmarshal.UnmarshalBinary(bs), "unmarshal should not fail")
-	ok, err := privUnmarshal.Public().Verify(sigOrig, testHash)
+	err = privUnmarshal.Public().Verify(sigOrig, testHash)
 	require.NoError(err, "unmarshaled key should be able to verify")
-	assert.True(ok, "unmarshaled key should verify original signature")
 }
 
 var testExpansion = []byte{216, 195, 190, 88, 224, 20, 1, 204, 175, 166, 113, 5, 36, 249, 89, 23, 235, 200, 182, 20, 28, 177, 150, 106, 71, 10, 9, 89, 6, 13, 6, 93}

@@ -5,16 +5,39 @@ package sign
 import (
 	ec "crypto/ecdsa"
 	"encoding"
+	"encoding/hex"
 	"fmt"
 	"math/big"
 
-	ethco "github.com/ethereum/go-ethereum/common"
+	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
 )
 
 var hash = ecrypto.Keccak256
 
+type ErrBadSignature struct{}
+
+func (e ErrBadSignature) Error() string {
+	return "signature verification error"
+}
+
+// IsBadSignature returns true if err is about a bad signature (e.g. ErrBadSignature)
+func IsBadSignature(err error) bool {
+	type badsigger interface {
+		BadSignature() bool
+	}
+
+	_, ok := err.(badsigger)
+	return ok
+}
+
+// BadSignature always returns true for ErrBadSignature.
+func (_ ErrBadSignature) BadSignature() bool {
+	return true
+}
+
+/*
 type ErrSignMismatch struct{ Pub, Recovered ethco.Address }
 
 func (e ErrSignMismatch) Error() string {
@@ -35,11 +58,47 @@ func IsSignMismatch(err error) bool {
 func (_ ErrSignMismatch) SignMismatch() bool {
 	return true
 }
+*/
 
-// A Fingerprint uniquely identifies a signature key
-//
-// TODO: move up to crypto pkg
-type Fingerprint []byte
+// A Fingerprint uniquely identifies a public signature key
+type Fingerprint [eco.AddressLength]byte
+
+func NilFingerprint() Fingerprint {
+	return Fingerprint{}
+}
+
+func BytesToFingerprint(b []byte) Fingerprint {
+	var a Fingerprint
+	a.SetBytes(b)
+	return a
+}
+
+func HexToFingerprint(s string) Fingerprint {
+	return Fingerprint(eco.HexToAddress(s))
+}
+
+func (fp Fingerprint) IsZero() bool {
+	return fp == Fingerprint{}
+}
+
+func (fp Fingerprint) String() string { return "0x" + hex.EncodeToString(fp[:]) }
+
+// Sets the address to the value of b. If b is larger than len(a) it will panic
+func (a *Fingerprint) SetBytes(b []byte) {
+	if len(b) > len(a) {
+		b = b[len(b)-eco.AddressLength:]
+	}
+	copy(a[eco.AddressLength-len(b):], b)
+}
+func (fp Fingerprint) Bytes() []byte { return fp[:] }
+func (fp Fingerprint) Zero() {
+	for i := range fp {
+		fp[i] = 0
+	}
+}
+
+// TODO: hash type
+//func (fp Fingerprint) Hash() Hash    { return eco.BytesToHash(fp[:]) }
 
 // A Signature represents a signature
 type Signature interface {
@@ -63,7 +122,7 @@ func (ecSig ECDSASignature) Values() (r, s, v *big.Int) {
 // PublicKey is implemented by public signature keys
 type PublicKey interface {
 	Fingerprint() Fingerprint
-	Verify(sig Signature, message []byte) (ok bool, err error)
+	Verify(sig Signature, message []byte) (err error)
 	Compare(f Fingerprint) (ok bool, err error)
 	encoding.BinaryMarshaler
 	encoding.BinaryUnmarshaler
@@ -72,51 +131,93 @@ type PublicKey interface {
 // ECDSAPublicKey is an ECDSA public key
 type ECDSAPublicKey ec.PublicKey
 
-// UnmarshalBinary creates a private key with the given D value
+func PubFromECDSA(pk *ec.PublicKey) *ECDSAPublicKey {
+	return (*ECDSAPublicKey)(pk)
+}
+
+// UnmarshalBinary parses a public key in the 33-byte compressed format.
 func (epubk *ECDSAPublicKey) UnmarshalBinary(data []byte) error {
-	pub := ecrypto.ToECDSAPub(data)
+	pub, err := ecrypto.DecompressPubkey(data)
+	if err != nil {
+		return errors.Wrap(err, "error decompressing public key")
+	}
+
+	if pub.X.Cmp(pub.Curve.Params().P) >= 0 {
+		return errors.Errorf("decompressed pub key X parameter is >= P")
+	}
+	if pub.Y.Cmp(pub.Curve.Params().P) >= 0 {
+		return errors.Errorf("decompressed pub key Y parameter is >= P")
+	}
+	if !pub.Curve.IsOnCurve(pub.X, pub.Y) {
+		return errors.Errorf("decompressed pub key isn't on secp256k1 curve")
+	}
+
 	*epubk = (ECDSAPublicKey)(*pub)
 	return nil
 }
 
+// MarshalBinary encodes a public key to the 33-byte compressed format.
 func (epubk *ECDSAPublicKey) MarshalBinary() (data []byte, err error) {
-	return ecrypto.FromECDSAPub(epubk.Std()), nil
+	return ecrypto.CompressPubkey(epubk.ECDSA()), nil
 }
 
 var _ PublicKey = &ECDSAPublicKey{}
 
-// Std returns a standard ecdsa.PublicKey based on this ECDSAPublicKey
-func (epubk *ECDSAPublicKey) Std() *ec.PublicKey {
+func RecoverPubkey(sig Signature, hash []byte) (PublicKey, error) {
+	bs, ok := sig.([]byte)
+	if !ok {
+		return nil, errors.Errorf("couldn't turn sig into bytes?")
+	}
+
+	recoveredPub, err := ecrypto.SigToPub(hash, bs)
+	if err != nil {
+		return nil, errors.Wrap(err, "error turning signature to public key")
+	}
+
+	return PubFromECDSA(recoveredPub), nil
+}
+
+// ECDSA returns a standard ecdsa.PublicKey based on this ECDSAPublicKey
+func (epubk *ECDSAPublicKey) ECDSA() *ec.PublicKey {
 	return (*ec.PublicKey)(epubk)
 }
 
-func (epubk *ECDSAPublicKey) Verify(sig Signature, hash []byte) (ok bool, err error) {
-	ok = true
+func (epubk *ECDSAPublicKey) Verify(sig Signature, hash []byte) (err error) {
 	if len(hash) != 32 {
-		panic(fmt.Errorf("hash is required to be exactly 32 bytes (%d)", len(hash)))
+		return errors.Errorf("hash is required to be exactly 32 bytes (was %d)", len(hash))
 	}
 
-	sigBs := sig.([]byte)
-
-	recoveredPub, err := ecrypto.SigToPub(hash, sigBs)
-
-	if err != nil {
-		return false, errors.Wrap(err, "error turning signature to public key")
+	sigBs, ok := sig.([]byte)
+	if !ok {
+		return errors.Errorf("sig wasn't []byte?")
 	}
+	sigBs = sigBs[:len(sigBs)-1] // remove the "recovery ID" V Ethereum adds to signatures. TODO: wtf is V used for?
+	pkBs, _ := epubk.MarshalBinary()
 
-	recoveredAddr := ecrypto.PubkeyToAddress(*recoveredPub)
-	pubAddress := ecrypto.PubkeyToAddress(*epubk.Std())
-
-	if recoveredAddr != pubAddress {
-		err = ErrSignMismatch{pubAddress, recoveredAddr}
-		ok = false
+	if !ecrypto.VerifySignature(pkBs, hash, sigBs) {
+		return ErrBadSignature{}
 	}
+	/*
+		recoveredPub, err := ecrypto.SigToPub(hash, sigBs)
+
+		if err != nil {
+			return false, errors.Wrap(err, "error turning signature to public key")
+		}
+
+		recoveredAddr := ecrypto.PubkeyToAddress(*recoveredPub)
+		pubAddress := ecrypto.PubkeyToAddress(*epubk.ECDSA())
+
+		if recoveredAddr != pubAddress {
+			err = ErrSignMismatch{pubAddress, recoveredAddr}
+			ok = false
+		}
+	*/
 
 	return
 }
 
 func (epubk *ECDSAPublicKey) Fingerprint() (fp Fingerprint) {
-	return ecrypto.PubkeyToAddress(*epubk.Std()).Bytes()
+	return Fingerprint(ecrypto.PubkeyToAddress(*epubk.ECDSA()))
 }
 
 // Compare this public key to a fingerprint
@@ -135,6 +236,10 @@ type ECDSAPrivateKey ec.PrivateKey
 
 var _ PrivateKey = &ECDSAPrivateKey{}
 
+func PrivFromECDSA(pr *ec.PrivateKey) *ECDSAPrivateKey {
+	return (*ECDSAPrivateKey)(pr)
+}
+
 func (epriv *ECDSAPrivateKey) Compare(f Fingerprint) (ok bool, err error) {
 	panic("implement me")
 }
@@ -143,7 +248,7 @@ func (epriv *ECDSAPrivateKey) Fingerprint() Fingerprint {
 	return epriv.Public().Fingerprint()
 }
 
-func (epriv *ECDSAPrivateKey) Verify(sig Signature, message []byte) (ok bool, err error) {
+func (epriv *ECDSAPrivateKey) Verify(sig Signature, message []byte) error {
 	return epriv.Public().Verify(sig, message)
 }
 
@@ -153,7 +258,7 @@ func (epriv *ECDSAPrivateKey) Verify(sig Signature, message []byte) (ok bool, er
 // for signing. Callers must be aware that the given hash cannot be chosen by an adversary. Common solution is to hash
 // any input before calculating the signature.
 func (epriv *ECDSAPrivateKey) Sign(hash []byte) Signature {
-	std := epriv.Std()
+	std := epriv.ECDSA()
 	sig, err := ecrypto.Sign(hash, std)
 	if err != nil {
 		panic(err)
@@ -168,10 +273,11 @@ func (epriv *ECDSAPrivateKey) UnmarshalBinary(data []byte) error {
 }
 
 func (epriv *ECDSAPrivateKey) MarshalBinary() (data []byte, err error) {
-	return ecrypto.FromECDSA(epriv.Std()), nil
+	return ecrypto.FromECDSA(epriv.ECDSA()), nil
 }
 
-func (epriv *ECDSAPrivateKey) Std() *ec.PrivateKey {
+// ECDSA returns a standard ecdsa.PrivateKey based on this ECDSAPrivateKey
+func (epriv *ECDSAPrivateKey) ECDSA() *ec.PrivateKey {
 	return (*ec.PrivateKey)(epriv)
 }
 
@@ -196,6 +302,8 @@ func Generate() (PrivateKey, error) {
 //
 // This gives context to the signed message and prevents signing of transactions.
 func signHash(data []byte) []byte {
+	// \x19 = 25 == len from E...\n (inclusive)
+	// len(data) should be varint-encoded!
 	msg := fmt.Sprintf("\x19Ethereum Signed Message:\n%d%s", len(data), data)
 	return ecrypto.Keccak256([]byte(msg))
 }
@@ -237,54 +345,46 @@ func (epriv *ECDSAPrivateKey) Derive(expansion []byte) (PrivateKey, error) {
 }
 
 /*
-import "github.com/hyperledger/fabric/bccsp"
-
-func KeyDeriv(k bccsp.Key, opts bccsp.KeyDerivOpts) (dk bccsp.Key, err error) {
+func (kd *ecdsaPublicKeyKeyDeriver) KeyDeriv(k bccsp.Key, opts bccsp.KeyDerivOpts) (dk bccsp.Key, err error) {
 	// Validate opts
 	if opts == nil {
 		return nil, errors.New("Invalid opts parameter. It must not be nil.")
 	}
 
-	ecdsaK := k.(*ecdsaPrivateKey)
+	ecdsaK := k.(*ecdsaPublicKey)
 
 	switch opts.(type) {
 	// Re-randomized an ECDSA private key
 	case *bccsp.ECDSAReRandKeyOpts:
 		reRandOpts := opts.(*bccsp.ECDSAReRandKeyOpts)
-		tempSK := &ec.PrivateKey{
-			PublicKey: ec.PublicKey{
-				Curve: epriv.Curve,
-				X:     new(big.Int),
-				Y:     new(big.Int),
-			},
-			D: new(big.Int),
+		tempSK := &ecdsa.PublicKey{
+			Curve: ecdsaK.pubKey.Curve,
+			X:     new(big.Int),
+			Y:     new(big.Int),
 		}
 
 		var k = new(big.Int).SetBytes(reRandOpts.ExpansionValue())
 		var one = new(big.Int).SetInt64(1)
-		n := new(big.Int).Sub(epriv.Params().N, one)
+		n := new(big.Int).Sub(ecdsaK.pubKey.Params().N, one)
 		k.Mod(k, n)
 		k.Add(k, one)
 
-		tempSK.D.Add(epriv.D, k)
-		tempSK.D.Mod(tempSK.D, epriv.PublicKey.Params().N)
-
 		// Compute temporary public key
-		tempX, tempY := epriv.PublicKey.ScalarBaseMult(k.Bytes())
-		tempSK.PublicKey.X, tempSK.PublicKey.Y =
-			tempSK.PublicKey.Add(
-				epriv.PublicKey.X, epriv.PublicKey.Y,
-				tempX, tempY,
-			)
+		tempX, tempY := ecdsaK.pubKey.ScalarBaseMult(k.Bytes())
+		tempSK.X, tempSK.Y = tempSK.Add(
+			ecdsaK.pubKey.X, ecdsaK.pubKey.Y,
+			tempX, tempY,
+		)
 
 		// Verify temporary public key is a valid point on the reference curve
-		isOn := tempSK.Curve.IsOnCurve(tempSK.PublicKey.X, tempSK.PublicKey.Y)
+		isOn := tempSK.Curve.IsOnCurve(tempSK.X, tempSK.Y)
 		if !isOn {
 			return nil, errors.New("Failed temporary public key IsOnCurve check.")
 		}
 
-		return &ecdsaPrivateKey{tempSK}, nil
+		return &ecdsaPublicKey{tempSK}, nil
 	default:
 		return nil, fmt.Errorf("Unsupported 'KeyDerivOpts' provided [%v]", opts)
 	}
+}
 }*/

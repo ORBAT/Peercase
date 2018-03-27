@@ -21,7 +21,6 @@ import (
 	"math/big"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto/sign"
-	"github.com/btcsuite/btcd/chaincfg"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcutil/base58"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
@@ -48,10 +47,10 @@ const (
 	MaxSeedBytes = 64 // 512 bits
 
 	// serializedKeyLen is the length of a serialized public or private
-	// extended key.  It consists of 4 bytes version, 1 byte depth, 4 bytes
+	// extended key.  It consists of 4 bytes version, 1 byte depth, 20 bytes
 	// fingerprint, 4 bytes child number, 32 bytes chain code, and 33 bytes
 	// public/private key data.
-	serializedKeyLen = 4 + 1 + 4 + 4 + 32 + 33 // 78 bytes
+	serializedKeyLen = 4 + 1 + 20 + 4 + 32 + 33 // 94 bytes
 
 	// maxUint8 is the max positive integer which can be serialized in a uint8
 	maxUint8 = 1<<8 - 1
@@ -374,7 +373,7 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 
 // ECPubKey converts the extended key to a public signature key and returns it.
 func (k *ExtendedKey) ECPubKey() (sign.PublicKey, error) {
-	var pk sign.PublicKey
+	pk := new(sign.ECDSAPublicKey)
 	err := pk.UnmarshalBinary(k.pubKeyBytes())
 	return pk, err
 }
@@ -386,7 +385,7 @@ func (k *ExtendedKey) ECPrivKey() (sign.PrivateKey, error) {
 	if !k.isPrivate {
 		return nil, ErrNotPrivExtKey
 	}
-	var pr sign.PrivateKey
+	pr := new(sign.ECDSAPrivateKey)
 	err := pr.UnmarshalBinary(k.key)
 	return pr, err
 }
@@ -419,7 +418,7 @@ func (k *ExtendedKey) String() string {
 	binary.BigEndian.PutUint32(childNumBytes[:], k.childNum)
 
 	// The serialized format is:
-	//   version (4) || depth (1) || parent fingerprint (22)) ||
+	//   version (4) || depth (1) || parent fingerprint (20)) ||
 	//   child num (4) || chain code (32) || key data (33) || checksum (4)
 	serializedBytes := make([]byte, 0, serializedKeyLen+4)
 	serializedBytes = append(serializedBytes, k.version...)
@@ -472,7 +471,7 @@ func (k *ExtendedKey) Zero() {
 // will derive to an unusable secret key.  The ErrUnusable error will be
 // returned if this should occur, so the caller must check for it and generate a
 // new seed accordingly.
-func NewMaster(seed []byte, net *chaincfg.Params) (*ExtendedKey, error) {
+func NewMaster(seed []byte) (*ExtendedKey, error) {
 	// Per [BIP32], the seed must be in range [MinSeedBytes, MaxSeedBytes].
 	if len(seed) < MinSeedBytes || len(seed) > MaxSeedBytes {
 		return nil, ErrInvalidSeedLen
@@ -496,7 +495,7 @@ func NewMaster(seed []byte, net *chaincfg.Params) (*ExtendedKey, error) {
 		return nil, ErrUnusableSeed
 	}
 
-	var parentFP sign.Fingerprint
+	parentFP := sign.NilFingerprint()
 	return NewExtendedKey(PrivKeyID(), secretKey, chainCode,
 		parentFP, 0, 0, true), nil
 }
@@ -512,7 +511,7 @@ func NewKeyFromString(key string) (*ExtendedKey, error) {
 	}
 
 	// The serialized format is:
-	//   version (4) || depth (1) || parent fingerprint (4)) ||
+	//   version (4) || depth (1) || parent fingerprint (20)) ||
 	//   child num (4) || chain code (32) || key data (33) || checksum (4)
 
 	// Split the payload and checksum up and ensure the checksum matches.

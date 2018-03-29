@@ -57,11 +57,13 @@ const (
 )
 
 func PrivKeyID() []byte {
-	return []byte{0x04, 0x88, 0xad, 0xe4} // starts with xprv
+	// Prefix PPRV, bs [193 122 176 214] (3246043351)
+	return []byte{0xc1, 0x7a, 0xb0, 0xd6} // starts with PPRV
 }
 
 func PubKeyID() []byte {
-	return []byte{0x04, 0x88, 0xb2, 0x1e} // starts with xpub
+	// Prefix PPUB, bs [193 124 117 179] (3246159284)
+	return []byte{0xc1, 0x7c, 0x75, 0xb3} // starts with PPUB
 }
 
 var (
@@ -361,13 +363,11 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 	}
 
 	// Get the associated public extended key version bytes.
-	version := PubKeyID()
-
 	// Convert it to an extended public key.  The key for the new extended
 	// key will simply be the pubkey of the current extended private key.
 	//
 	// This is the function N((k,c)) -> (K, c) from [BIP32].
-	return NewExtendedKey(version, k.pubKeyBytes(), k.chainCode, k.parentFP,
+	return NewExtendedKey(PubKeyID(), k.pubKeyBytes(), k.chainCode, k.parentFP,
 		k.depth, k.childNum, false), nil
 }
 

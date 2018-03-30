@@ -85,6 +85,8 @@ func (ecSig ECDSASignature) Values() (r, s, v *big.Int) {
 	return r, s, v
 }
 
+// TODO: Pub key recovery from sig + hash
+
 // PublicKey is implemented by public signature keys
 type PublicKey interface {
 	Fingerprint() Fingerprint

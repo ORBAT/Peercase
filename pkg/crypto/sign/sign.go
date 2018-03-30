@@ -97,6 +97,9 @@ func PubFromECDSA(pk *ec.PublicKey) *ECDSAPublicKey {
 
 // UnmarshalBinary parses a public key in the 33-byte compressed format.
 func (epubk *ECDSAPublicKey) UnmarshalBinary(data []byte) error {
+	if len(data) == 0 {
+		return errors.New("tried to unmarshal empty data")
+	}
 	pub, err := ecrypto.DecompressPubkey(data)
 	if err != nil {
 		return errors.Wrap(err, "error decompressing public key")
@@ -189,6 +192,16 @@ type PrivateKey interface {
 	Derive([]byte) (PrivateKey, error)
 }
 
+// Generate generates a new private signature key.
+func Generate() (PrivateKey, error) {
+	pk, err := ecrypto.GenerateKey()
+	if err != nil {
+		return nil, err
+	}
+
+	return (*ECDSAPrivateKey)(pk), nil
+}
+
 type ECDSAPrivateKey ec.PrivateKey
 
 var _ PrivateKey = &ECDSAPrivateKey{}
@@ -239,15 +252,6 @@ func (epriv *ECDSAPrivateKey) ECDSA() *ec.PrivateKey {
 
 func (epriv *ECDSAPrivateKey) Public() PublicKey {
 	return (*ECDSAPublicKey)(&epriv.PublicKey)
-}
-
-func Generate() (PrivateKey, error) {
-	pk, err := ecrypto.GenerateKey()
-	if err != nil {
-		return nil, err
-	}
-
-	return (*ECDSAPrivateKey)(pk), nil
 }
 
 func (epriv *ECDSAPrivateKey) Derive(expansion []byte) (PrivateKey, error) {

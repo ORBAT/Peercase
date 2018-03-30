@@ -4,8 +4,6 @@ import (
 	"testing"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto"
-	eco "github.com/ethereum/go-ethereum/common"
-	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -17,40 +15,6 @@ func mustGenKey() PrivateKey {
 		panic(err)
 	} else {
 		return k
-	}
-}
-
-var testAddrHex = "970e8128ab834e8eac17ab8e3812f010678cf791"
-var testPrivHex = "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032"
-
-func TestBla(t *testing.T) {
-	key, _ := ecrypto.HexToECDSA(testPrivHex)
-
-	addr := eco.HexToAddress(testAddrHex)
-
-	msg := ecrypto.Keccak256([]byte("foo"))
-	sig, err := ecrypto.Sign(msg, key)
-	if err != nil {
-		t.Errorf("Sign error: %s", err)
-	}
-	recoveredPub, err := ecrypto.Ecrecover(msg, sig)
-	if err != nil {
-		t.Errorf("ECRecover error: %s", err)
-	}
-	pubKey := ecrypto.ToECDSAPub(recoveredPub)
-	recoveredAddr := ecrypto.PubkeyToAddress(*pubKey)
-	if addr != recoveredAddr {
-		t.Errorf("Address mismatch: want: %x have: %x", addr, recoveredAddr)
-	}
-
-	// should be equal to SigToPub
-	recoveredPub2, err := ecrypto.SigToPub(msg, sig)
-	if err != nil {
-		t.Errorf("ECRecover error: %s", err)
-	}
-	recoveredAddr2 := ecrypto.PubkeyToAddress(*recoveredPub2)
-	if addr != recoveredAddr2 {
-		t.Errorf("Address mismatch: want: %x have: %x", addr, recoveredAddr2)
 	}
 }
 
@@ -101,5 +65,5 @@ func TestECDSAPrivate_Derive(t *testing.T) {
 	_, err := priv.Derive(testExpansion)
 	require.NoError(err, "Derive should not fail")
 	// TODO: test that derives a pub key
-	t.Error("WIP")
+	t.Skip("Not done yet")
 }

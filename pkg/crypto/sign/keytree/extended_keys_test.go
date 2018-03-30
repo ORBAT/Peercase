@@ -807,15 +807,15 @@ func TestZero(t *testing.T) {
 		// Test vector 1
 		{
 			name:   "test vector 1 chain m",
-			master: "995c39ef3268592794f9fbe1eb60e7f0601fc8b4f4cae75e9130a8fe8cf5c812b29d46dbe83a58d04209c0bb1887e040a8588fde4f6019ee26326f93ba219344",
-			extKey: "xprv9s21ZrQH143K3QTDL4LXw2F7HEK3wJUD2nW2nRk4stbPy6cq3jPPqjiChkVvvNKmPGJxWUtg6LnF5kejMRNNU3TGtRBeJgk33yuGBxrMPHi",
+			master: "c249f535b59e5f2846b256ccc2207b63f129a86c5c00345e45a0a914668951b90d4f08d51429c3bc2e46d7e28c3ebc3277a87178544f99ea2114e983afcc5670",
+			extKey: "PPRV11y81oP5rDiw1PStARF5rd3jB57EFsN7BhdgmveoER3sqccJyuzTrymwPWfJiQ1GQv1Hj2Fg2VJPpm3weG6S59GvXW9LbU2duNC7Z18Ji4fXPo7uWbjZLQYCmhaBvP6pHr",
 		},
 
 		// Test vector 2
 		{
 			name:   "test vector 2 chain m",
-			master: "fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c696663605d5a5754514e4b484542",
-			extKey: "xprv9s21ZrQH143K31xYSDQpPDxsXRTUcvj2iNHm5NUtrGiGG5e2DtALGdso3pGz6ssrdK4PFmM8NSpSBHNqPqm55Qn3LqFtT2emdEXVYsCzC2U",
+			master: "582b4ecd90e90af5f95f95b45ba28e46fa76ddc4ac9db3ff93be1b68b129762d31ef4933fc20ef094e6118924e0066569f4012fe58f7c0b817cd1d225b5bc8e3",
+			extKey: "PPRV11y81oP5rDiw1PStARF5rd3jB57EFsN7BhdhLfSmC9ydTF3mCgacYJfTYfja7KvphC8Ygw4VoNHB1RjvUdDXBiyZeY4JVgmJ8HusV8S5b35bCq1Li99RHcb42vD73SVBXr",
 		},
 	}
 

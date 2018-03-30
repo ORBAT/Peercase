@@ -14,6 +14,15 @@ import (
 
 const testSeed = "995c39ef3268592794f9fbe1eb60e7f0601fc8b4f4cae75e9130a8fe8cf5c812b29d46dbe83a58d04209c0bb1887e040a8588fde4f6019ee26326f93ba219344"
 
+func mustNewMaster(seed string) *ExtendedKey {
+	s := mustParseHex(seed)
+	m, err := NewMaster(s)
+	if err != nil {
+		panic(err)
+	}
+	return m
+}
+
 func mustParseHex(s string) []byte {
 	bs, err := hex.DecodeString(s)
 	if err != nil {
@@ -39,13 +48,22 @@ func TestNewMaster(t *testing.T) {
 
 func TestNewKeyFromString(t *testing.T) {
 	require := require.New(t)
-	s := mustParseHex(testSeed)
-	mk, _ := NewMaster(s)
+	mk := mustNewMaster(testSeed)
 	mkStr := mk.String()
 	mkFromS, err := NewKeyFromString(mkStr)
 	require.NoError(err, "NewKeyFromString should not fail")
 	require.Equal(mk, mkFromS, "key generated from string should be the same as the original one")
 	// TODO: test error cases
+}
+
+func TestExtendedKey_Child(t *testing.T) {
+	require := require.New(t)
+	assert := assert.New(t)
+	mk := mustNewMaster(testSeed)
+
+	ch, err := mk.Child(0)
+	require.NoError(err, "Child(0) should not fail")
+	assert.Equal(mk.Fingerprint(), ch.ParentFingerprint(), "")
 }
 
 // TODO: port the BIP32 tests (or a sane subset in any case) over somehow?

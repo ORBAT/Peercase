@@ -22,6 +22,7 @@ import (
 	"crypto/rand"
 	"crypto/sha512"
 	"encoding/binary"
+	"encoding/hex"
 	"fmt"
 	"math/big"
 
@@ -402,7 +403,7 @@ func (k *ExtendedKey) Fingerprint() (sign.Fingerprint, error) {
 	// TODO: memoize!
 	pk, err := k.ECPubKey()
 	if err != nil {
-		return sign.NilFingerprint(), errors.Wrap(err, "error getting pub key")
+		return sign.NilFingerprint(), errors.Wrap(err, "error getting public key from extended key")
 	}
 	return pk.Fingerprint(), nil
 }
@@ -564,6 +565,8 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 		childNum, isPrivate), nil
 }
 
+// TODO: UnmarshalText/MarshalText for ExtendedKey
+
 // NewKeyFromString returns a new extended key instance from a base58-encoded
 // extended key.
 func NewKeyFromString(key string) (*ExtendedKey, error) {
@@ -591,4 +594,9 @@ func GenerateSeed(length uint8) ([]byte, error) {
 	}
 
 	return buf, nil
+}
+
+// SeedToHex returns a hexadecimal representation of s
+func SeedToHex(s []byte) string {
+	return hex.EncodeToString(s)
 }

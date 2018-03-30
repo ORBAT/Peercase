@@ -97,7 +97,6 @@ func (fp Fingerprint) Zero() {
 	}
 }
 
-// TODO: hash type
 //func (fp Fingerprint) Hash() Hash    { return eco.BytesToHash(fp[:]) }
 
 // A Signature represents a signature
@@ -122,7 +121,7 @@ func (ecSig ECDSASignature) Values() (r, s, v *big.Int) {
 // PublicKey is implemented by public signature keys
 type PublicKey interface {
 	Fingerprint() Fingerprint
-	Verify(sig Signature, message []byte) (err error)
+	Verify(sig Signature, message common.Hashable) (err error)
 	Compare(f Fingerprint) (ok bool, err error)
 	encoding.BinaryMarshaler
 	encoding.BinaryUnmarshaler
@@ -182,11 +181,7 @@ func (epubk *ECDSAPublicKey) ECDSA() *ec.PublicKey {
 	return (*ec.PublicKey)(epubk)
 }
 
-func (epubk *ECDSAPublicKey) Verify(sig Signature, hash []byte) (err error) {
-	if len(hash) != 32 {
-		return errors.Errorf("hash is required to be exactly 32 bytes (was %d)", len(hash))
-	}
-
+func (epubk *ECDSAPublicKey) Verify(sig Signature, h common.Hashable) (err error) {
 	sigBs, ok := sig.([]byte)
 	if !ok {
 		return errors.Errorf("sig wasn't []byte?")
@@ -194,7 +189,7 @@ func (epubk *ECDSAPublicKey) Verify(sig Signature, hash []byte) (err error) {
 	sigBs = sigBs[:len(sigBs)-1] // remove the "recovery ID" V Ethereum adds to signatures. TODO: wtf is V used for?
 	pkBs, _ := epubk.MarshalBinary()
 
-	if !ecrypto.VerifySignature(pkBs, hash, sigBs) {
+	if !ecrypto.VerifySignature(pkBs, h.Hash().Bytes(), sigBs) {
 		return ErrBadSignature{}
 	}
 	/*
@@ -228,7 +223,7 @@ func (epubk *ECDSAPublicKey) Compare(f Fingerprint) (ok bool, err error) {
 type PrivateKey interface {
 	PublicKey
 	Public() PublicKey
-	Sign(msg []byte) Signature
+	Sign(h common.Hashable) Signature
 	Derive([]byte) (PrivateKey, error)
 }
 
@@ -248,18 +243,17 @@ func (epriv *ECDSAPrivateKey) Fingerprint() Fingerprint {
 	return epriv.Public().Fingerprint()
 }
 
-func (epriv *ECDSAPrivateKey) Verify(sig Signature, message []byte) error {
-	return epriv.Public().Verify(sig, message)
+func (epriv *ECDSAPrivateKey) Verify(sig Signature, h common.Hashable) error {
+	return epriv.Public().Verify(sig, h)
 }
 
-// Sign calculates an ECDSA signature for a given hash. The hash must be exactly 32 bytes.
+// Sign calculates an ECDSA signature for a given Hashable.
 //
 // This function is susceptible to chosen plaintext attacks that can leak information about the private key that is used
-// for signing. Callers must be aware that the given hash cannot be chosen by an adversary. Common solution is to hash
-// any input before calculating the signature.
-func (epriv *ECDSAPrivateKey) Sign(hash []byte) Signature {
+// for signing. Callers must be aware that the hash cannot be chosen by an adversary
+func (epriv *ECDSAPrivateKey) Sign(h common.Hashable) Signature {
 	std := epriv.ECDSA()
-	sig, err := ecrypto.Sign(hash, std)
+	sig, err := ecrypto.Sign(h.Hash().Bytes(), std)
 	if err != nil {
 		panic(err)
 	}

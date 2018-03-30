@@ -294,20 +294,6 @@ func Generate() (PrivateKey, error) {
 	return (*ECDSAPrivateKey)(pk), nil
 }
 
-// signHash is a helper function that calculates a hash for the given message
-// that can be safely used to calculate a signature from.
-//
-// The hash is calulcated as
-//   keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
-//
-// This gives context to the signed message and prevents signing of transactions.
-func signHash(data []byte) []byte {
-	// \x19 = 25 == len from E...\n (inclusive)
-	// len(data) should be varint-encoded!
-	msg := fmt.Sprintf("\x19Ethereum Signed Message:\n%d%s", len(data), data)
-	return ecrypto.Keccak256([]byte(msg))
-}
-
 func (epriv *ECDSAPrivateKey) Derive(expansion []byte) (PrivateKey, error) {
 	tempSK := &ec.PrivateKey{
 		PublicKey: ec.PublicKey{

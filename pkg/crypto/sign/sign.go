@@ -11,8 +11,7 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/ORBAT/Peerdoc/pkg/common"
-	"github.com/ORBAT/Peerdoc/pkg/crypto"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/hash"
 	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
@@ -21,7 +20,7 @@ import (
 
 const (
 	// FingerprintLen is the length of the Fingerprint in bytes
-	FingerprintLen = 20
+	FingerprintLen = hash.ByteLen
 )
 
 // A Fingerprint uniquely identifies a public signature key
@@ -42,7 +41,7 @@ func BytesToFingerprint(b []byte) Fingerprint {
 // HexToFingerprint turns s into a Fingerprint. If the number of bytes in s != FingerprintLen, HexToFingerprint will
 // panic. s may have a "0x" prefix.
 func HexToFingerprint(s string) Fingerprint {
-	BytesToFingerprint(eco.FromHex(s))
+	return BytesToFingerprint(eco.FromHex(s))
 }
 
 func (fp Fingerprint) IsZero() bool {
@@ -85,12 +84,12 @@ func (ecSig ECDSASignature) Values() (r, s, v *big.Int) {
 	return r, s, v
 }
 
-// TODO: Pub key recovery from sig + hash
+// TODO(ORBAT): Pub key recovery from sig + hash
 
 // PublicKey is implemented by public signature keys
 type PublicKey interface {
 	Fingerprint() Fingerprint
-	Verify(sig Signature, message common.Hashable) (err error)
+	Verify(sig Signature, message hash.Hashable) (err error)
 	Compare(f Fingerprint) (ok bool, err error)
 	encoding.BinaryMarshaler
 	encoding.BinaryUnmarshaler
@@ -132,7 +131,7 @@ func (epubk *ECDSAPublicKey) MarshalBinary() (data []byte, err error) {
 	return ecrypto.CompressPubkey(epubk.ECDSA()), nil
 }
 
-// TODO: turn this + the one for PrivateKey into actual tests
+// TODO(ORBAT): turn this + the one for PrivateKey into actual tests
 var _ PublicKey = &ECDSAPublicKey{}
 
 func RecoverPubkey(sig Signature, hash []byte) (PublicKey, error) {
@@ -154,15 +153,15 @@ func (epubk *ECDSAPublicKey) ECDSA() *ec.PublicKey {
 	return (*ec.PublicKey)(epubk)
 }
 
-func (epubk *ECDSAPublicKey) Verify(sig Signature, h common.Hashable) (err error) {
+func (epubk *ECDSAPublicKey) Verify(sig Signature, h hash.Hashable) (err error) {
 	sigBs, ok := sig.([]byte)
 	if !ok {
 		return errors.Errorf("sig wasn't []byte?")
 	}
-	sigBs = sigBs[:len(sigBs)-1] // remove the "recovery ID" V Ethereum adds to signatures. TODO: wtf is V used for?
+	sigBs = sigBs[:len(sigBs)-1] // remove the "recovery ID" V Ethereum adds to signatures. TODO(ORBAT): wtf is V used for?
 	pkBs, _ := epubk.MarshalBinary()
 
-	if !ecrypto.VerifySignature(pkBs, h.Hash().Bytes(), sigBs) {
+	if !ecrypto.VerifySignature(pkBs, ecrypto.Keccak256(h.Hash().Bytes()), sigBs) {
 		return ErrBadSignature{}
 	}
 	/*
@@ -196,7 +195,7 @@ func (epubk *ECDSAPublicKey) Compare(f Fingerprint) (ok bool, err error) {
 type PrivateKey interface {
 	PublicKey
 	Public() PublicKey
-	Sign(h common.Hashable) Signature
+	Sign(h hash.Hashable) Signature
 	Derive([]byte) (PrivateKey, error)
 	DeriveSymmetric(keyIdx uint32, context string, out []byte) (n int, err error)
 }
@@ -227,7 +226,7 @@ func (epriv *ECDSAPrivateKey) Fingerprint() Fingerprint {
 	return epriv.Public().Fingerprint()
 }
 
-func (epriv *ECDSAPrivateKey) Verify(sig Signature, h common.Hashable) error {
+func (epriv *ECDSAPrivateKey) Verify(sig Signature, h hash.Hashable) error {
 	return epriv.Public().Verify(sig, h)
 }
 
@@ -235,9 +234,10 @@ func (epriv *ECDSAPrivateKey) Verify(sig Signature, h common.Hashable) error {
 //
 // This function is susceptible to chosen plaintext attacks that can leak information about the private key that is used
 // for signing. Callers must be aware that the hash cannot be chosen by an adversary
-func (epriv *ECDSAPrivateKey) Sign(h common.Hashable) Signature {
+func (epriv *ECDSAPrivateKey) Sign(h hash.Hashable) Signature {
 	std := epriv.ECDSA()
-	sig, err := ecrypto.Sign(h.Hash().Bytes(), std)
+	// icky double hash because Sign expects a 32 byte hash, and Hash is only 20
+	sig, err := ecrypto.Sign(ecrypto.Keccak256(h.Hash().Bytes()), std)
 	if err != nil {
 		panic(err)
 	}
@@ -269,14 +269,14 @@ func (epriv *ECDSAPrivateKey) Public() PublicKey {
 // EOF happens after reading some but not all the bytes, ReadFull returns ErrUnexpectedEOF. On return, n == len(buf) if
 // and only if err == nil.
 func (epriv *ECDSAPrivateKey) DeriveSymmetric(keyIdx uint32, context string, out []byte) (n int, err error) {
-	saltBytes := make([]byte, common.HashLength)
+	saltBytes := make([]byte, hash.ByteLen)
 	binary.BigEndian.PutUint32(saltBytes, keyIdx)
-	saltBytes = crypto.Hash(saltBytes).Bytes() // TODO: hashing the index might be pointless?
+	saltBytes = hash.Of(saltBytes).Bytes() // TODO(ORBAT): hashing the index might be pointless?
 
-	// TODO: MarshalBinary never returns errors right now, so this is OK for now. Might need to eventually handle
+	// TODO(ORBAT): MarshalBinary never returns errors right now, so this is OK for now. Might need to eventually handle
 	keyBs, _ := epriv.MarshalBinary()
 
-	kdf := hkdf.New(crypto.NewHash, crypto.Hash(keyBs).Bytes(), saltBytes, []byte(context))
+	kdf := hkdf.New(hash.New, hash.Of(keyBs).Bytes(), saltBytes, []byte(context))
 	return io.ReadFull(kdf, out)
 }
 

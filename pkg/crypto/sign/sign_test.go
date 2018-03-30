@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ORBAT/Peerdoc/pkg/crypto"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/hash"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -26,7 +26,7 @@ func TestECDSAPrivateKey_Sign(t *testing.T) {
 	assert := assert.New(t)
 	priv := mustGenKey(1)
 
-	testHash := crypto.Hash(testMsg)
+	testHash := hash.Of(testMsg)
 	sig := priv.Sign(testHash)
 
 	err := priv.Public().Verify(sig, testHash)
@@ -49,7 +49,7 @@ func TestECDSAPrivateKey_MarshalBinary(t *testing.T) {
 	//noinspection GoImportUsedAsName
 	require := require.New(t)
 	priv := mustGenKey(1)
-	testHash := crypto.Hash(testMsg)
+	testHash := hash.Of(testMsg)
 	sigOrig := priv.Sign(testHash)
 
 	bs, err := priv.MarshalBinary()
@@ -101,6 +101,6 @@ func TestECDSAPrivate_Derive(t *testing.T) {
 	priv := mustGenKey(1)
 	_, err := priv.Derive(testExpansion)
 	require.NoError(err, "Derive should not fail")
-	// TODO: test that derives a pub key
+	// TODO(ORBAT): test that derives a pub key
 	t.Skip("Not done yet")
 }

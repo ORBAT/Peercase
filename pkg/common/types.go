@@ -1,6 +1,8 @@
 package common
 
-// Digestables produce digests of themselves
-type Digestable interface {
-	Digest() []byte
+// A Hashable can produce a hash of itself
+type Hashable interface {
+	Hash() []byte
 }
+
+// TODO: hash type

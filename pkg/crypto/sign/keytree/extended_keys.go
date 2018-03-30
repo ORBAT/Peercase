@@ -27,6 +27,7 @@ import (
 	"math/big"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto/sign"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree/internal"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcutil/base58"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
@@ -63,15 +64,15 @@ const (
 )
 
 // PrivateKeyVer returns private key version bytes. When base58-encoded, each private key starts with PPRV
-func PrivateKeyVer() []byte {
+func PrivateKeyVer() [4]byte {
 	// Prefix PPRV, bs [193 122 176 214] (3246043351)
-	return []byte{0xc1, 0x7a, 0xb0, 0xd6}
+	return [...]byte{0xc1, 0x7a, 0xb0, 0xd6}
 }
 
 // PublicKeyVer returns public key version bytes. When base58-encoded, each public key starts with PPUB
-func PublicKeyVer() []byte {
+func PublicKeyVer() [4]byte {
 	// Prefix PPUB, bs [193 124 117 179] (3246159284)
-	return []byte{0xc1, 0x7c, 0x75, 0xb3}
+	return [...]byte{0xc1, 0x7c, 0x75, 0xb3}
 }
 
 var (
@@ -110,7 +111,6 @@ var (
 
 	// ErrBadChecksum describes an error in which the checksum encoded with
 	// a serialized extended key does not match the calculated value.
-	ErrBadChecksum = errors.New("bad extended key checksum")
 
 	// ErrInvalidKeyLen describes an error in which the provided serialized
 	// key is not the expected length.
@@ -132,7 +132,7 @@ type ExtendedKey struct {
 	depth     uint8
 	parentFP  sign.Fingerprint
 	childNum  uint32
-	version   []byte
+	version   [4]byte
 	isPrivate bool
 }
 
@@ -141,7 +141,7 @@ type ExtendedKey struct {
 // convenience method used to create a populated struct. This function should
 // only by used by applications that need to create custom ExtendedKeys. All
 // other applications should just use NewMaster, Child, or Neuter.
-func NewExtendedKey(version, key, chainCode []byte, parentFP sign.Fingerprint, depth uint8,
+func NewExtendedKey(version [4]byte, key, chainCode []byte, parentFP sign.Fingerprint, depth uint8,
 	childNum uint32, isPrivate bool) *ExtendedKey {
 
 	// NOTE: The pubKey field is intentionally left nil so it is only
@@ -176,7 +176,7 @@ func (k *ExtendedKey) pubKeyBytes() []byte {
 	if len(k.pubKey) == 0 {
 		pkx, pky := ecrypto.S256().ScalarBaseMult(k.key)
 		pubKey := sign.PubFromECDSA(&ecdsa.PublicKey{Curve: ecrypto.S256(), X: pkx, Y: pky})
-		// TODO: right now MarshalBinary never fails, so this is safe-ish, but this should probably be handled
+		// TODO(ORBAT): right now MarshalBinary never fails, so this is safe-ish, but this should probably be handled
 		k.pubKey, _ = pubKey.MarshalBinary()
 	}
 
@@ -342,7 +342,7 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 		childX, childY := ecrypto.S256().Add(ilx, ily, pubKey.X, pubKey.Y)
 		pk := sign.PubFromECDSA(&ecdsa.PublicKey{Curve: ecrypto.S256(), X: childX, Y: childY})
 
-		// TODO: right now MarshalBinary never fails, so this is safe-ish, but this should probably be handled
+		// TODO(ORBAT): right now MarshalBinary never fails, so this is safe-ish, but this should probably be handled
 		childKey, _ = pk.MarshalBinary()
 	}
 
@@ -381,7 +381,7 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 
 // ECPubKey converts the extended key to a public signature key and returns it.
 func (k *ExtendedKey) ECPubKey() (sign.PublicKey, error) {
-	// TODO: memoize!
+	// TODO(ORBAT): memoize!
 	pk := new(sign.ECDSAPublicKey)
 	err := pk.UnmarshalBinary(k.pubKeyBytes())
 	return pk, err
@@ -399,13 +399,23 @@ func (k *ExtendedKey) ECPrivKey() (sign.PrivateKey, error) {
 	return pr, err
 }
 
-func (k *ExtendedKey) Fingerprint() (sign.Fingerprint, error) {
-	// TODO: memoize!
+// MaybeFingerprint returns the fingerprint for this key, or an error if unsuccessful.
+func (k *ExtendedKey) MaybeFingerprint() (sign.Fingerprint, error) {
+	// TODO(ORBAT): memoize!
 	pk, err := k.ECPubKey()
 	if err != nil {
 		return sign.NilFingerprint(), errors.Wrap(err, "error getting public key from extended key")
 	}
 	return pk.Fingerprint(), nil
+}
+
+// Fingerprint returns this key's fingerprint. If it fails, it will panic. See MaybeFingerprint.
+func (k *ExtendedKey) Fingerprint() sign.Fingerprint {
+	fp, err := k.MaybeFingerprint()
+	if err != nil {
+		panic(err)
+	}
+	return fp
 }
 
 // paddedAppend appends the src byte slice to dst, returning the new slice.
@@ -444,7 +454,7 @@ func (k *ExtendedKey) Zero() {
 	zero(k.pubKey)
 	zero(k.chainCode)
 	k.parentFP.Zero()
-	k.version = nil
+	k.version = [4]byte{}
 	k.key = nil
 	k.depth = 0
 	k.childNum = 0
@@ -460,7 +470,7 @@ func (k *ExtendedKey) Bytes() []byte {
 	//   version (4) || depth (1) || parent fingerprint (20)) ||
 	//   child num (4) || chain code (32) || key data (33) || checksum (4)
 	serializedBytes := make([]byte, 0, serializedKeyLen+4)
-	serializedBytes = append(serializedBytes, k.version...)
+	serializedBytes = append(serializedBytes, k.version[:]...)
 	serializedBytes = append(serializedBytes, k.depth)
 	serializedBytes = append(serializedBytes, k.parentFP.Bytes()...)
 	serializedBytes = append(serializedBytes, childNumBytes[:]...)
@@ -474,6 +484,24 @@ func (k *ExtendedKey) Bytes() []byte {
 
 	checkSum := chainhash.DoubleHashB(serializedBytes)[:4]
 	return append(serializedBytes, checkSum...)
+}
+
+func (k *ExtendedKey) toWire() *internal.WireFmt {
+	w := &internal.WireFmt{
+		Version:  k.version,
+		Depth:    k.depth,
+		ParentFP: k.parentFP,
+	}
+	// childnum, chainCode, keydata
+	binary.BigEndian.PutUint32(w.ChildNum[:], k.childNum)
+	copy(w.ChainCode[:], k.chainCode)
+	panic("WIP")
+	if k.isPrivate {
+		// TODO: priv key + padding
+	} else {
+		// TODO: pubKeyBytes
+	}
+	return w
 }
 
 // NewMaster creates a new master node for use in creating a hierarchical
@@ -518,6 +546,11 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 		return nil, ErrInvalidKeyLen
 	}
 
+	w := internal.WireFmt{}
+	if err := w.UnmarshalBinary(bs); err != nil {
+		return nil, errors.Wrap(err, "error unmarshaling key bytes")
+	}
+
 	// The serialized format is:
 	//   version (4) || depth (1) || parent fingerprint (20)) ||
 	//   child num (4) || chain code (32) || key data (33) || checksum (4)
@@ -527,11 +560,12 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 	checkSum := bs[len(bs)-4:]
 	expectedCheckSum := chainhash.DoubleHashB(payload)[:4]
 	if !bytes.Equal(checkSum, expectedCheckSum) {
-		return nil, ErrBadChecksum
+		return nil, errors.New("bad extended key checksum")
 	}
 
 	// Deserialize each of the payload fields.
-	version := payload[:4]
+	var version [4]byte
+	copy(version[:], payload[:4])
 	depth := payload[4:5][0]
 	parentFPbs := payload[5:25] // orig 5:9 == 4
 	var parentFP sign.Fingerprint
@@ -565,7 +599,7 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 		childNum, isPrivate), nil
 }
 
-// TODO: UnmarshalText/MarshalText for ExtendedKey
+// TODO(ORBAT): UnmarshalText/MarshalText for ExtendedKey
 
 // NewKeyFromString returns a new extended key instance from a base58-encoded
 // extended key.

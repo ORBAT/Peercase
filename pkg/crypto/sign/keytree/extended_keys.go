@@ -1,9 +1,14 @@
 // package keytree implements hierarchical deterministic key generation
 //
-// Based on btcsuite's hdkeychain.
-// Copyright (c) 2014-2016 The btcsuite developers
-// Use of this source code is governed by an ISC
-// license that can be found in the LICENSE file.
+// Based on btcsuite's hdkeychain, copyright (c) 2014-2016 The btcsuite developers.
+// Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby
+// granted, provided that the above copyright notice and this permission notice appear in all copies.
+//
+// THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+// INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+// AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+// PERFORMANCE OF THIS SOFTWARE.
 package keytree
 
 // References:
@@ -30,7 +35,7 @@ import (
 const (
 	// RecommendedSeedLen is the recommended length in bytes for a seed
 	// to a master node.
-	RecommendedSeedLen = 32 // 256 bits
+	RecommendedSeedLen = 64 // 512 bits
 
 	// HardenedKeyStart is the index at which a hardended key starts.  Each
 	// extended key has 2^31 normal child keys and 2^31 hardned child keys.
@@ -56,14 +61,16 @@ const (
 	maxUint8 = 1<<8 - 1
 )
 
-func PrivKeyID() []byte {
+// PrivateKeyVer returns private key version bytes. When base58-encoded, each private key starts with PPRV
+func PrivateKeyVer() []byte {
 	// Prefix PPRV, bs [193 122 176 214] (3246043351)
-	return []byte{0xc1, 0x7a, 0xb0, 0xd6} // starts with PPRV
+	return []byte{0xc1, 0x7a, 0xb0, 0xd6}
 }
 
-func PubKeyID() []byte {
+// PublicKeyVer returns public key version bytes. When base58-encoded, each public key starts with PPUB
+func PublicKeyVer() []byte {
 	// Prefix PPUB, bs [193 124 117 179] (3246159284)
-	return []byte{0xc1, 0x7c, 0x75, 0xb3} // starts with PPUB
+	return []byte{0xc1, 0x7c, 0x75, 0xb3}
 }
 
 var (
@@ -112,7 +119,7 @@ var (
 
 // masterKey is the master key used along with a random seed used to generate
 // the master node in the hierarchical tree.
-var masterKey = []byte("Bitcoin seed")
+var masterKey = []byte("Peerdoc seed")
 
 // ExtendedKey houses all the information needed to support a hierarchical
 // deterministic extended key.  See the package overview documentation for
@@ -367,12 +374,13 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 	// key will simply be the pubkey of the current extended private key.
 	//
 	// This is the function N((k,c)) -> (K, c) from [BIP32].
-	return NewExtendedKey(PubKeyID(), k.pubKeyBytes(), k.chainCode, k.parentFP,
+	return NewExtendedKey(PublicKeyVer(), k.pubKeyBytes(), k.chainCode, k.parentFP,
 		k.depth, k.childNum, false), nil
 }
 
 // ECPubKey converts the extended key to a public signature key and returns it.
 func (k *ExtendedKey) ECPubKey() (sign.PublicKey, error) {
+	// TODO: memoize!
 	pk := new(sign.ECDSAPublicKey)
 	err := pk.UnmarshalBinary(k.pubKeyBytes())
 	return pk, err
@@ -391,6 +399,7 @@ func (k *ExtendedKey) ECPrivKey() (sign.PrivateKey, error) {
 }
 
 func (k *ExtendedKey) Fingerprint() (sign.Fingerprint, error) {
+	// TODO: memoize!
 	pk, err := k.ECPubKey()
 	if err != nil {
 		return sign.NilFingerprint(), errors.Wrap(err, "error getting pub key")
@@ -413,29 +422,7 @@ func (k *ExtendedKey) String() string {
 	if len(k.key) == 0 {
 		return "zeroed extended key"
 	}
-
-	var childNumBytes [4]byte
-	binary.BigEndian.PutUint32(childNumBytes[:], k.childNum)
-
-	// The serialized format is:
-	//   version (4) || depth (1) || parent fingerprint (20)) ||
-	//   child num (4) || chain code (32) || key data (33) || checksum (4)
-	serializedBytes := make([]byte, 0, serializedKeyLen+4)
-	serializedBytes = append(serializedBytes, k.version...)
-	serializedBytes = append(serializedBytes, k.depth)
-	serializedBytes = append(serializedBytes, k.parentFP.Bytes()...)
-	serializedBytes = append(serializedBytes, childNumBytes[:]...)
-	serializedBytes = append(serializedBytes, k.chainCode...)
-	if k.isPrivate {
-		serializedBytes = append(serializedBytes, 0x00)
-		serializedBytes = paddedAppend(32, serializedBytes, k.key)
-	} else {
-		serializedBytes = append(serializedBytes, k.pubKeyBytes()...)
-	}
-
-	checkSum := chainhash.DoubleHashB(serializedBytes)[:4]
-	serializedBytes = append(serializedBytes, checkSum...)
-	return base58.Encode(serializedBytes)
+	return base58.Encode(k.Bytes())
 }
 
 // zero sets all bytes in the passed slice to zero.  This is used to
@@ -463,6 +450,31 @@ func (k *ExtendedKey) Zero() {
 	k.isPrivate = false
 }
 
+// Bytes returns a binary representation of the ExtendedKey
+func (k *ExtendedKey) Bytes() []byte {
+	var childNumBytes [4]byte
+	binary.BigEndian.PutUint32(childNumBytes[:], k.childNum)
+
+	// The serialized format is:
+	//   version (4) || depth (1) || parent fingerprint (20)) ||
+	//   child num (4) || chain code (32) || key data (33) || checksum (4)
+	serializedBytes := make([]byte, 0, serializedKeyLen+4)
+	serializedBytes = append(serializedBytes, k.version...)
+	serializedBytes = append(serializedBytes, k.depth)
+	serializedBytes = append(serializedBytes, k.parentFP.Bytes()...)
+	serializedBytes = append(serializedBytes, childNumBytes[:]...)
+	serializedBytes = append(serializedBytes, k.chainCode...)
+	if k.isPrivate {
+		serializedBytes = append(serializedBytes, 0x00)
+		serializedBytes = paddedAppend(32, serializedBytes, k.key)
+	} else {
+		serializedBytes = append(serializedBytes, k.pubKeyBytes()...)
+	}
+
+	checkSum := chainhash.DoubleHashB(serializedBytes)[:4]
+	return append(serializedBytes, checkSum...)
+}
+
 // NewMaster creates a new master node for use in creating a hierarchical
 // deterministic key chain.  The seed must be between 128 and 512 bits and
 // should be generated by a cryptographically secure random generation source.
@@ -478,7 +490,7 @@ func NewMaster(seed []byte) (*ExtendedKey, error) {
 	}
 
 	// First take the HMAC-SHA512 of the master key and the seed data:
-	//   I = HMAC-SHA512(Key = "Bitcoin seed", Data = S)
+	//   I = HMAC-SHA512(Key = "Peerdoc seed", Data = S)
 	hmac512 := hmac.New(sha512.New, masterKey)
 	hmac512.Write(seed)
 	lr := hmac512.Sum(nil)
@@ -496,17 +508,12 @@ func NewMaster(seed []byte) (*ExtendedKey, error) {
 	}
 
 	parentFP := sign.NilFingerprint()
-	return NewExtendedKey(PrivKeyID(), secretKey, chainCode,
+	return NewExtendedKey(PrivateKeyVer(), secretKey, chainCode,
 		parentFP, 0, 0, true), nil
 }
 
-// NewKeyFromString returns a new extended key instance from a base58-encoded
-// extended key.
-func NewKeyFromString(key string) (*ExtendedKey, error) {
-	// The base58-decoded extended key must consist of a serialized payload
-	// plus an additional 4 bytes for the checksum.
-	decoded := base58.Decode(key)
-	if len(decoded) != serializedKeyLen+4 {
+func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
+	if len(bs) != serializedKeyLen+4 {
 		return nil, ErrInvalidKeyLen
 	}
 
@@ -515,8 +522,8 @@ func NewKeyFromString(key string) (*ExtendedKey, error) {
 	//   child num (4) || chain code (32) || key data (33) || checksum (4)
 
 	// Split the payload and checksum up and ensure the checksum matches.
-	payload := decoded[:len(decoded)-4]
-	checkSum := decoded[len(decoded)-4:]
+	payload := bs[:len(bs)-4]
+	checkSum := bs[len(bs)-4:]
 	expectedCheckSum := chainhash.DoubleHashB(payload)[:4]
 	if !bytes.Equal(checkSum, expectedCheckSum) {
 		return nil, ErrBadChecksum
@@ -555,6 +562,14 @@ func NewKeyFromString(key string) (*ExtendedKey, error) {
 
 	return NewExtendedKey(version, keyData, chainCode, parentFP, depth,
 		childNum, isPrivate), nil
+}
+
+// NewKeyFromString returns a new extended key instance from a base58-encoded
+// extended key.
+func NewKeyFromString(key string) (*ExtendedKey, error) {
+	// The base58-decoded extended key must consist of a serialized payload
+	// plus an additional 4 bytes for the checksum.
+	return NewKeyFromBytes(base58.Decode(key))
 }
 
 // GenerateSeed returns a cryptographically secure random seed that can be used

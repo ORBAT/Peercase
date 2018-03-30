@@ -9,56 +9,12 @@ import (
 	"fmt"
 	"math/big"
 
+	"github.com/ORBAT/Peerdoc/pkg/common"
 	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
 )
 
-var hash = ecrypto.Keccak256
-
-type ErrBadSignature struct{}
-
-func (e ErrBadSignature) Error() string {
-	return "signature verification error"
-}
-
-// IsBadSignature returns true if err is about a bad signature (e.g. ErrBadSignature)
-func IsBadSignature(err error) bool {
-	type badsigger interface {
-		BadSignature() bool
-	}
-
-	_, ok := err.(badsigger)
-	return ok
-}
-
-// BadSignature always returns true for ErrBadSignature.
-func (_ ErrBadSignature) BadSignature() bool {
-	return true
-}
-
-/*
-type ErrSignMismatch struct{ Pub, Recovered ethco.Address }
-
-func (e ErrSignMismatch) Error() string {
-	return fmt.Sprintf("signature mismatch: key is %s, got %s", e.Pub.String(), e.Recovered.String())
-}
-
-// IsSignMismatch returns true if err is about signature mismatch (e.g. ErrSignMismatch)
-func IsSignMismatch(err error) bool {
-	type mismatcher interface {
-		SignMismatch() bool
-	}
-
-	_, ok := err.(mismatcher)
-	return ok
-}
-
-// SignMismatch always returns true for ErrSignMismatch.
-func (_ ErrSignMismatch) SignMismatch() bool {
-	return true
-}
-*/
 const (
 	// FingerprintLen is the length of the Fingerprint in bytes
 	FingerprintLen = 20
@@ -165,6 +121,7 @@ func (epubk *ECDSAPublicKey) MarshalBinary() (data []byte, err error) {
 	return ecrypto.CompressPubkey(epubk.ECDSA()), nil
 }
 
+// TODO: turn this + the one for PrivateKey into actual tests
 var _ PublicKey = &ECDSAPublicKey{}
 
 func RecoverPubkey(sig Signature, hash []byte) (PublicKey, error) {
@@ -327,6 +284,37 @@ func (epriv *ECDSAPrivateKey) Derive(expansion []byte) (PrivateKey, error) {
 	}
 
 	return (*ECDSAPrivateKey)(tempSK), nil
+}
+
+type ErrBadSignature struct{}
+
+func (e ErrBadSignature) Error() string {
+	return "signature verification error"
+}
+
+// IsBadSignature returns true if err is about a bad signature (e.g. ErrBadSignature)
+func IsBadSignature(err error) bool {
+	type badsigger interface {
+		BadSignature() bool
+	}
+
+	_, ok := err.(badsigger)
+	return ok
+}
+
+// BadSignature always returns true for ErrBadSignature.
+func (_ ErrBadSignature) BadSignature() bool {
+	return true
+}
+
+// PubIsECDSA is implemented by ECDSA PublicKeys
+type PubIsECDSA interface {
+	ECDSA() *ec.PublicKey
+}
+
+// PrivIsECDSA is implemented by ECDSA PrivateKeys
+type PrivIsECDSA interface {
+	ECDSA() *ec.PrivateKey
 }
 
 /*

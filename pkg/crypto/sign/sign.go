@@ -5,14 +5,18 @@ package sign
 import (
 	ec "crypto/ecdsa"
 	"encoding"
+	"encoding/binary"
 	"encoding/hex"
 	"fmt"
+	"io"
 	"math/big"
 
 	"github.com/ORBAT/Peerdoc/pkg/common"
+	"github.com/ORBAT/Peerdoc/pkg/crypto"
 	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
+	"golang.org/x/crypto/hkdf"
 )
 
 const (
@@ -28,14 +32,17 @@ func NilFingerprint() Fingerprint {
 	return Fingerprint{}
 }
 
+// BytesToFingerprint turns b into a Fingerprint. If len(b) != FingerprintLen, SetBytes will panic.
 func BytesToFingerprint(b []byte) Fingerprint {
 	var a Fingerprint
 	a.SetBytes(b)
 	return a
 }
 
+// HexToFingerprint turns s into a Fingerprint. If the number of bytes in s != FingerprintLen, HexToFingerprint will
+// panic. s may have a "0x" prefix.
 func HexToFingerprint(s string) Fingerprint {
-	return Fingerprint(eco.HexToAddress(s))
+	BytesToFingerprint(eco.FromHex(s))
 }
 
 func (fp Fingerprint) IsZero() bool {
@@ -44,12 +51,12 @@ func (fp Fingerprint) IsZero() bool {
 
 func (fp Fingerprint) String() string { return "0x" + hex.EncodeToString(fp[:]) }
 
-// Sets the address to the value of b. If b is larger than FingerprintLen, b will be truncated from the left
-func (a *Fingerprint) SetBytes(b []byte) {
-	if len(b) > len(a) {
-		b = b[len(b)-FingerprintLen:]
+// SetBytes sets the value of fp from b. If len(b) != FingerprintLen, SetBytes will panic.
+func (fp *Fingerprint) SetBytes(b []byte) {
+	if len(b) != FingerprintLen {
+		panic(errors.Errorf("Fingerprint SetBytes called with %d bytes, expecting %d", len(b), FingerprintLen))
 	}
-	copy(a[FingerprintLen-len(b):], b)
+	copy(fp[:], b)
 }
 func (fp Fingerprint) Bytes() []byte { return fp[:] }
 func (fp Fingerprint) Zero() {
@@ -58,9 +65,8 @@ func (fp Fingerprint) Zero() {
 	}
 }
 
-//func (fp Fingerprint) Hash() Hash    { return eco.BytesToHash(fp[:]) }
-
-// A Signature represents a signature
+// A Signature represents a cryptographic signature. Each PublicKey / PrivateKey implementation must define their own.
+// See ECDSASignature for the default ECDSA implementation.
 type Signature interface {
 }
 
@@ -190,6 +196,7 @@ type PrivateKey interface {
 	Public() PublicKey
 	Sign(h common.Hashable) Signature
 	Derive([]byte) (PrivateKey, error)
+	DeriveSymmetric(keyIdx uint32, context string, out []byte) (n int, err error)
 }
 
 // Generate generates a new private signature key.
@@ -252,6 +259,23 @@ func (epriv *ECDSAPrivateKey) ECDSA() *ec.PrivateKey {
 
 func (epriv *ECDSAPrivateKey) Public() PublicKey {
 	return (*ECDSAPublicKey)(&epriv.PublicKey)
+}
+
+// DeriveSymmetric derives a symmetric key from this private key and writes it to out. keyIdx is the index of the key to
+// generate, and context is a short description of the context the key will be used in, such as "write sign key". It returns
+// the number of bytes copied and an error if fewer bytes were read. The error is EOF only if no bytes were read. If an
+// EOF happens after reading some but not all the bytes, ReadFull returns ErrUnexpectedEOF. On return, n == len(buf) if
+// and only if err == nil.
+func (epriv *ECDSAPrivateKey) DeriveSymmetric(keyIdx uint32, context string, out []byte) (n int, err error) {
+	saltBytes := make([]byte, common.HashLength)
+	binary.BigEndian.PutUint32(saltBytes, keyIdx)
+	saltBytes = crypto.Hash(saltBytes).Bytes() // TODO: hashing the index might be pointless?
+
+	// TODO: MarshalBinary never returns errors right now, so this is OK for now. Might need to eventually handle
+	keyBs, _ := epriv.MarshalBinary()
+
+	kdf := hkdf.New(crypto.NewHash, crypto.Hash(keyBs).Bytes(), saltBytes, []byte(context))
+	return io.ReadFull(kdf, out)
 }
 
 func (epriv *ECDSAPrivateKey) Derive(expansion []byte) (PrivateKey, error) {

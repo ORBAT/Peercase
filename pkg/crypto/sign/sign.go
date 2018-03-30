@@ -59,10 +59,15 @@ func (_ ErrSignMismatch) SignMismatch() bool {
 	return true
 }
 */
+const (
+	// FingerprintLen is the length of the Fingerprint in bytes
+	FingerprintLen = 20
+)
 
 // A Fingerprint uniquely identifies a public signature key
-type Fingerprint [eco.AddressLength]byte
+type Fingerprint [FingerprintLen]byte
 
+// NilFingerprint returns an empty Fingerprint
 func NilFingerprint() Fingerprint {
 	return Fingerprint{}
 }
@@ -83,12 +88,12 @@ func (fp Fingerprint) IsZero() bool {
 
 func (fp Fingerprint) String() string { return "0x" + hex.EncodeToString(fp[:]) }
 
-// Sets the address to the value of b. If b is larger than len(a) it will panic
+// Sets the address to the value of b. If b is larger than FingerprintLen, b will be truncated from the left
 func (a *Fingerprint) SetBytes(b []byte) {
 	if len(b) > len(a) {
-		b = b[len(b)-eco.AddressLength:]
+		b = b[len(b)-FingerprintLen:]
 	}
-	copy(a[eco.AddressLength-len(b):], b)
+	copy(a[FingerprintLen-len(b):], b)
 }
 func (fp Fingerprint) Bytes() []byte { return fp[:] }
 func (fp Fingerprint) Zero() {

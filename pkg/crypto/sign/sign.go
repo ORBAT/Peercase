@@ -12,6 +12,8 @@ import (
 	"math/big"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto/hash"
+	"github.com/ORBAT/Peerdoc/pkg/util/buffer"
+	"github.com/attic-labs/noms/go/types"
 	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
@@ -57,11 +59,30 @@ func (fp *Fingerprint) SetBytes(b []byte) {
 	}
 	copy(fp[:], b)
 }
+
 func (fp Fingerprint) Bytes() []byte { return fp[:] }
+
 func (fp Fingerprint) Zero() {
 	for i := range fp {
 		fp[i] = 0
 	}
+}
+
+var fingerprintNomsType = types.MakeStructType("Fingerprint", types.StructField{Name: "bytes", Type: types.BlobType})
+
+var fingerprintNomsTempl = types.MakeStructTemplate("Fingerprint", []string{"bytes"})
+
+func (fp Fingerprint) MarshalNoms(vrw types.ValueReadWriter) (val types.Value, err error) {
+	if fp.IsZero() {
+		return nil, errors.New("can't marshal zero Fingerprint")
+	}
+	buf := buffer.Bytes(fp[:])
+	fpBlob := types.NewBlob(vrw, &buf)
+	return fingerprintNomsTempl.NewStruct([]types.Value{fpBlob}), nil
+}
+
+func (_ Fingerprint) MarshalNomsType() (t *types.Type, err error) {
+	return fingerprintNomsType, nil
 }
 
 // A Signature represents a cryptographic signature. Each PublicKey / PrivateKey implementation must define their own.

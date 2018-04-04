@@ -6,6 +6,7 @@
       <w>ecdsa</w>
       <w>epubk</w>
       <w>hashable</w>
+      <w>ints</w>
       <w>memoized</w>
       <w>peerdoc</w>
       <w>pprv</w>
@@ -14,9 +15,13 @@
       <w>pubk</w>
       <w>pubkey</w>
       <w>secp</w>
+      <w>someproto</w>
+      <w>struct</w>
       <w>subfolder</w>
+      <w>toml</w>
       <w>unmarshaled</w>
       <w>unprefixed</w>
+      <w>varint</w>
     </words>
   </dictionary>
 </component>

@@ -9,11 +9,13 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"math/big"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto/hash"
 	"github.com/ORBAT/Peerdoc/pkg/util/buffer"
-	"github.com/attic-labs/noms/go/types"
+	"github.com/attic-labs/noms/go/marshal"
+	nomstypes "github.com/attic-labs/noms/go/types"
 	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
@@ -77,20 +79,38 @@ func (fp Fingerprint) Zero() {
 	}
 }
 
-var fingerprintNomsType = types.MakeStructType("Fingerprint", types.StructField{Name: "bytes", Type: types.BlobType})
+// TODO(ORBAT): move noms-specific stuff to an internal package so that it doesn't get exposed to users of this package
 
-var fingerprintNomsTempl = types.MakeStructTemplate("Fingerprint", []string{"bytes"})
+var fingerprintNomsType = nomstypes.MakeStructType("Fingerprint", nomstypes.StructField{Name: "bytes", Type: nomstypes.BlobType})
 
-func (fp Fingerprint) MarshalNoms(vrw types.ValueReadWriter) (val types.Value, err error) {
+var fingerprintNomsTempl = nomstypes.MakeStructTemplate("Fingerprint", []string{"bytes"})
+
+func (fp Fingerprint) MarshalNoms(vrw nomstypes.ValueReadWriter) (val nomstypes.Value, err error) {
 	if fp.IsZero() {
-		return nil, errors.New("can't marshal zero Fingerprint")
+		return nil, errors.Wrap(ErrWrongFingerprintLen(0), "MarshalNoms error")
 	}
 	buf := buffer.Bytes(fp[:])
-	fpBlob := types.NewBlob(vrw, &buf)
-	return fingerprintNomsTempl.NewStruct([]types.Value{fpBlob}), nil
+	fpBlob := nomstypes.NewBlob(vrw, &buf)
+	return fingerprintNomsTempl.NewStruct([]nomstypes.Value{fpBlob}), nil
 }
 
-func (_ Fingerprint) MarshalNomsType() (t *types.Type, err error) {
+func (fp *Fingerprint) UnmarshalNoms(v nomstypes.Value) error {
+	var fromNoms struct {
+		Bytes nomstypes.Blob `noms:"original"`
+	}
+
+	err := marshal.Unmarshal(v, &fromNoms)
+	if err != nil {
+		return errors.Wrap(err, "couldn't unmarshal Fingerprint to temp struct")
+	}
+	bs, err := ioutil.ReadAll(fromNoms.Bytes.Reader())
+	if err != nil {
+		return errors.Wrap(err, "couldn't read from Blob")
+	}
+	return errors.Wrap(fp.SetBytes(bs), "couldn't make Fingerprint from bytes")
+}
+
+func (_ Fingerprint) MarshalNomsType() (t *nomstypes.Type, err error) {
 	return fingerprintNomsType, nil
 }
 

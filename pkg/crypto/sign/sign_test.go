@@ -6,6 +6,9 @@ import (
 	"testing"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto/hash"
+	"github.com/attic-labs/noms/go/chunks"
+	"github.com/attic-labs/noms/go/datas"
+	"github.com/attic-labs/noms/go/types"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -103,4 +106,30 @@ func TestECDSAPrivate_Derive(t *testing.T) {
 	require.NoError(err, "Derive should not fail")
 	// TODO(ORBAT): test that derives a pub key
 	t.Skip("Not done yet")
+}
+
+func randomFingerprint(seed int64) Fingerprint {
+	fpbs := make([]byte, FingerprintLen)
+	rand.Seed(seed)
+	rand.Read(fpbs)
+	return BytesToFingerprint(fpbs)
+}
+
+func newMemNoms(ns string) (chunks.ChunkStore, datas.Database) {
+	store := chunks.NewMemoryStoreFactory().CreateStore(ns)
+	db := datas.NewDatabase(store)
+	return store, db
+}
+
+func TestFingerprint_MarshalNoms(t *testing.T) {
+	//noinspection GoImportUsedAsName
+	assert := assert.New(t)
+	//noinspection GoImportUsedAsName
+	require := require.New(t)
+	_, db := newMemNoms("ns")
+	fp := randomFingerprint(1)
+	v, err := fp.MarshalNoms(db)
+	require.NoError(err, "MarshalNoms should not fail")
+	assert.EqualValues(fingerprintNomsType, types.TypeOf(v), "MarshalNoms should return a value of the correct type")
+	t.Log(fp, v)
 }

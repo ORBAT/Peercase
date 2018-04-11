@@ -569,7 +569,9 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 	depth := payload[4:5][0]
 	parentFPbs := payload[5:25] // orig 5:9 == 4
 	var parentFP sign.Fingerprint
-	parentFP.SetBytes(parentFPbs)
+	if err := parentFP.SetBytes(parentFPbs); err != nil {
+		return nil, errors.Wrap(err, "parent sig malformed")
+	}
 	childNum := binary.BigEndian.Uint32(payload[25:29]) // orig 9:13 == 4
 	chainCode := payload[29:61]                         // orig 13:45 == 32
 	keyData := payload[61:94]                           // orig 45:78 == 33

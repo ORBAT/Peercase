@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" line="851" />
-    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" line="49" />
-    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" line="538" />
-    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" line="466" />
-    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" line="488" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys_test.go" line="851" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys_test.go" line="49" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" line="538" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" line="466" />
+    <bookmark url="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" line="488" />
     <bookmark url="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" line="112" />
     <bookmark url="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/make_type.go" line="76" />
     <bookmark url="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" line="147" />
@@ -15,15 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75c36957-d3f1-436f-a23f-e16851e6dd19" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/storage/obj_graph.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/pubkey.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/teklof.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/teklof.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/path.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/scratch/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/scratch/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/internal/wire_format.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/sign.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/sign.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" afterDir="false" />
     </list>
@@ -50,74 +49,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pubkey.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/storage/pubkey.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataset.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/dataset.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="obj_graph.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/storage/obj_graph.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-726">
-              <caret line="142" column="1" lean-forward="true" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assertion_forward.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/stretchr/testify/assert/assertion_forward.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="617" column="21" selection-start-line="617" selection-start-column="21" selection-end-line="617" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crypto.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1183">
-              <caret line="132" column="29" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="extended_keys.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="382" column="44" selection-start-line="382" selection-start-column="44" selection-end-line="382" selection-end-column="44" />
+            <state relative-caret-position="226">
+              <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ecies.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
+      <file leaf-file-name="path.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            <state relative-caret-position="131">
+              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="builder.go" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/strings/builder.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="path_test.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -125,17 +88,53 @@
       <file leaf-file-name="sign.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
+            <state relative-caret-position="165">
+              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="id.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/util/random/id.go">
+      <file leaf-file-name="sign_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="186">
+              <caret line="104" selection-start-line="104" selection-end-line="113" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bytes.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hash_type.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hash_type_test.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="regexp.go" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/regexp/regexp.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="943" column="18" selection-start-line="943" selection-start-column="18" selection-end-line="943" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -151,13 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>omitEmpty</find>
-      <find>big</find>
-      <find>less</find>
-      <find>marshaltype</find>
-      <find>newMetaTuple</find>
-      <find>ContType</find>
-      <find>Content</find>
       <find>omitempt</find>
       <find>omitz</find>
       <find>fingerprintNomsTempl</find>
@@ -179,8 +171,15 @@
       <find>epRef</find>
       <find>encryptedBlob</find>
       <find>PublicKey</find>
-      <find>ecdsa.</find>
       <find>cran</find>
+      <find>extended</find>
+      <find>ecdsa.</find>
+      <find>keytree</find>
+      <find>testExpansion</find>
+      <find>Parse(</find>
+      <find>IsEmpty</find>
+      <find>StringLen</find>
+      <find>HardenedKeyStart</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../../ipfs</dir>
@@ -203,13 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/less.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/csv-invert/main.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/make_type.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/cmd/noms/splore/noms_splore.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/opcache_compare.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/primitives_test.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/simplify.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/integer.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/schema.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/walk_refs.go" />
@@ -242,7 +234,6 @@
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/nomsfs/nomsfs.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/util/datetime/date_time.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.go" />
         <option value="$PROJECT_DIR$/pkg/storage/storage.go" />
@@ -252,8 +243,16 @@
         <option value="$PROJECT_DIR$/pkg/storage/obj_graph.go" />
         <option value="$PROJECT_DIR$/pkg/storage/pubkey.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/event.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
         <option value="$PROJECT_DIR$/cmd/scratch/main.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/extkey/extended_keys.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/extended/path.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go" />
       </list>
     </option>
   </component>
@@ -284,6 +283,82 @@
             <path>
               <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
               <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="cmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="hash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="marshal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="decent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="decent" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="noms" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="url-fetch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -304,6 +379,47 @@
               <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
               <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="hash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+              <item name="extended" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
@@ -449,7 +565,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Test.TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="Peerdoc" />
       <working_directory value="$PROJECT_DIR$" />
@@ -462,7 +578,7 @@
       <package value="github.com/ORBAT/Peerdoc" />
       <directory value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build scratch_1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
       <working_directory value="$PROJECT_DIR$" />
       <go_parameters value="-i" />
@@ -470,48 +586,45 @@
         <env name="NOMS_VERSION_NEXT" value="1" />
       </envs>
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/cmd/scratch/main.go" />
+      <filePath value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.go" />
       <package value="github.com/ORBAT/Peerdoc" />
       <directory value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="go build scratch_2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$" />
-      <go_parameters value="-i -ldflags &quot;-X math/big.debugFloat=true&quot;" />
-      <envs>
-        <env name="NOMS_VERSION_NEXT" value="1" />
-      </envs>
-      <kind value="FILE" />
-      <filePath value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.go" />
-      <package value="github.com/ORBAT/Peerdoc" />
-      <directory value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="TestConfig in github.com/attic-labs/noms/go/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/../../attic-labs/noms/go/config" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/extended" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/attic-labs/noms/go/config" />
-      <pattern value="^TestConfig$" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
+      <pattern value="^TestKeyPath_String$" />
     </configuration>
-    <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Peerdoc" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/hash" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/hash" />
+      <pattern value="^TestParse$" />
+    </configuration>
+    <configuration name="TestParseFingerprint in github.com/ORBAT/Peerdoc/pkg/crypto/sign" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
       <working_directory value="$PROJECT_DIR$/pkg/crypto/sign" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
-      <pattern value="^TestFingerprint_MarshalNoms$" />
+      <pattern value="^TestParseFingerprint$" />
     </configuration>
-    <configuration name="TestProtocol in github.com/attic-labs/noms/go/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/../../attic-labs/noms/go/config" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign/extended" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/attic-labs/noms/go/config" />
-      <pattern value="^TestProtocol$" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
+      <pattern value="^TestParseKeyPath$" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="Peerdoc" />
@@ -522,57 +635,57 @@
       <package value="github.com/ORBAT/Peerdoc" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestProtocol in github.com/attic-labs/noms/go/config" />
-      <item itemvalue="Go Test.TestConfig in github.com/attic-labs/noms/go/config" />
-      <item itemvalue="Go Build.go build scratch_2.go" />
-      <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Test.TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
+      <item itemvalue="Go Test.TestParseFingerprint in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
+      <item itemvalue="Go Build.go build scratch_1.go" />
+      <item itemvalue="Go Test.TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" />
+      <item itemvalue="Go Test.TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
+      <item itemvalue="Go Test.TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build scratch_2.go" />
-        <item itemvalue="Go Test.TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
-        <item itemvalue="Go Test.TestConfig in github.com/attic-labs/noms/go/config" />
-        <item itemvalue="Go Test.TestProtocol in github.com/attic-labs/noms/go/config" />
+        <item itemvalue="Go Test.TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
+        <item itemvalue="Go Test.TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
+        <item itemvalue="Go Test.TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" />
+        <item itemvalue="Go Build.go build scratch_1.go" />
+        <item itemvalue="Go Test.TestParseFingerprint in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
       </list>
     </recent_temporary>
   </component>
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_MODE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
-    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,Show Private Members" />
   </component>
   <component name="TestHistory">
-    <history-entry file="config_test_go - 2018.04.03 at 22h 38m 40s.xml">
-      <configuration name="config_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_in_github_com_ORBAT_Peerdoc_pkg_crypto_hash - 2018.04.11 at 20h 59m 26s.xml">
+      <configuration name="TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="config_test_go - 2018.04.03 at 22h 40m 00s.xml">
-      <configuration name="config_test.go" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_in_github_com_ORBAT_Peerdoc_pkg_crypto_hash - 2018.04.11 at 21h 00m 54s.xml">
+      <configuration name="TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestProtocol_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 22h 53m 29s.xml">
-      <configuration name="TestProtocol in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParse_in_github_com_ORBAT_Peerdoc_pkg_crypto_hash - 2018.04.11 at 21h 01m 05s.xml">
+      <configuration name="TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestProtocol_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 22h 54m 05s.xml">
-      <configuration name="TestProtocol in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParseKeyPath_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 09m 46s.xml">
+      <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestProtocol_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 22h 54m 45s.xml">
-      <configuration name="TestProtocol in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParseKeyPath_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 10m 29s.xml">
+      <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestConfig_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 23h 04m 22s.xml">
-      <configuration name="TestConfig in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParseKeyPath_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 10m 52s.xml">
+      <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 07m 27s.xml">
-      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParseKeyPath_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 11m 39s.xml">
+      <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 09m 24s.xml">
-      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParseKeyPath_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 21m 18s.xml">
+      <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 11m 00s.xml">
-      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestParseKeyPath_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 23m 09s.xml">
+      <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 12m 17s.xml">
-      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    <history-entry file="TestKeyPath_String_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign_extended - 2018.04.11 at 21h 25m 47s.xml">
+      <configuration name="TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -583,13 +696,13 @@
       <window_info anchor="right" id="Cargo" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5023866" side_tool="true" weight="0.23210634" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761337" weight="0.23714586" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49761337" visible="true" weight="0.23714586" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32924336" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924336" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4858342" visible="true" weight="0.23317014" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48555708" visible="true" weight="0.23317014" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32738718" />
-      <window_info id="Structure" order="1" sideWeight="0.5141658" side_tool="true" visible="true" weight="0.23317014" />
+      <window_info id="Structure" order="1" sideWeight="0.5144429" side_tool="true" visible="true" weight="0.23317014" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.51022494" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -656,90 +769,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/nomdl/parser.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/encoding/binary/varint.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="219" column="27" selection-start-line="219" selection-start-column="27" selection-end-line="219" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/math/big/float.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/math/big/int.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/noms_kind.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-455">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/list.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/collection.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/value.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/set.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/list_editor.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/struct.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -771,14 +800,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go">
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/internal/wire_format.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
@@ -963,24 +985,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="382" column="44" selection-start-line="382" selection-start-column="44" selection-end-line="382" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1000,8 +1008,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="142" column="1" lean-forward="true" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+        <state relative-caret-position="273">
+          <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/hash/hash.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/hash/base32.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/regexp/regexp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="943" column="18" selection-start-line="943" selection-start-column="18" selection-end-line="943" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="104" selection-start-line="104" selection-end-line="113" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/strings/builder.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>

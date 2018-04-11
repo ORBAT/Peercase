@@ -546,10 +546,10 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 		return nil, ErrInvalidKeyLen
 	}
 
-	w := internal.WireFmt{}
-	if err := w.UnmarshalBinary(bs); err != nil {
-		return nil, errors.Wrap(err, "error unmarshaling key bytes")
-	}
+	//w := internal.WireFmt{}
+	//if err := w.UnmarshalBinary(bs); err != nil {
+	//	return nil, errors.Wrap(err, "error unmarshaling key bytes")
+	//}
 
 	// The serialized format is:
 	//   version (4) || depth (1) || parent fingerprint (20)) ||

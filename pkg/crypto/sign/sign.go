@@ -21,12 +21,18 @@ import (
 )
 
 const (
-	// FingerprintLen is the length of the Fingerprint in bytes
+	// FingerprintLen is the length of the Fingerprint in bytes. Same as the hash length (20)
 	FingerprintLen = hash.ByteLen
 )
 
+type ErrWrongFingerprintLen int
+
+func (e ErrWrongFingerprintLen) Error() string {
+	return fmt.Sprintf("bad Fingerprint length, expected %d but got %d", FingerprintLen, e)
+}
+
 // A Fingerprint uniquely identifies a public signature key
-type Fingerprint [FingerprintLen]byte
+type Fingerprint hash.Hash
 
 // NilFingerprint returns an empty Fingerprint
 func NilFingerprint() Fingerprint {
@@ -36,7 +42,9 @@ func NilFingerprint() Fingerprint {
 // BytesToFingerprint turns b into a Fingerprint. If len(b) != FingerprintLen, SetBytes will panic.
 func BytesToFingerprint(b []byte) Fingerprint {
 	var a Fingerprint
-	a.SetBytes(b)
+	if err := a.SetBytes(b); err != nil {
+		panic(err)
+	}
 	return a
 }
 
@@ -52,12 +60,13 @@ func (fp Fingerprint) IsZero() bool {
 
 func (fp Fingerprint) String() string { return "0x" + hex.EncodeToString(fp[:]) }
 
-// SetBytes sets the value of fp from b. If len(b) != FingerprintLen, SetBytes will panic.
-func (fp *Fingerprint) SetBytes(b []byte) {
+// SetBytes sets the value of fp from b. If len(b) != FingerprintLen, SetBytes will return an error.
+func (fp *Fingerprint) SetBytes(b []byte) error {
 	if len(b) != FingerprintLen {
-		panic(errors.Errorf("Fingerprint SetBytes called with %d bytes, expecting %d", len(b), FingerprintLen))
+		return ErrWrongFingerprintLen(len(b))
 	}
 	copy(fp[:], b)
+	return nil
 }
 
 func (fp Fingerprint) Bytes() []byte { return fp[:] }

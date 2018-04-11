@@ -1,19 +1,25 @@
 package main
 
 import (
+	crand "crypto/rand"
+	"encoding/binary"
+	"io"
 	"io/ioutil"
 	"math/rand"
 	"strings"
 	"time"
 
 	"github.com/ORBAT/Peerdoc/log"
-	"github.com/ORBAT/Peerdoc/pkg/crypto/hash"
 	"github.com/ORBAT/Peerdoc/pkg/crypto/sign"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree"
 	"github.com/attic-labs/noms/go/chunks"
 	"github.com/attic-labs/noms/go/datas"
 	"github.com/attic-labs/noms/go/marshal"
 	"github.com/attic-labs/noms/go/nomdl"
 	"github.com/attic-labs/noms/go/types"
+	"github.com/ethereum/go-ethereum/crypto/ecies"
+	"github.com/google/uuid"
+	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )
 
@@ -41,57 +47,6 @@ type epRef struct {
 	PayloadRef  types.Ref `noms:"original"` // Ref<Blob>
 }
 
-type CryptoInfo struct {
-	Method      string
-	Fingerprint sign.Fingerprint
-	KeyIdx      uint32
-}
-
-var cryptoInfoTempl = types.MakeStructTemplate("CryptoInfo", []string{"method", "fingerprint", "keyIdx"})
-
-func (ci CryptoInfo) MarshalNoms(vrw types.ValueReadWriter) (val types.Value, err error) {
-	fpNoms, err := ci.Fingerprint.MarshalNoms(vrw)
-	if err != nil {
-		return nil, err
-	}
-	ciNoms := cryptoInfoTempl.NewStruct([]types.Value{types.String(ci.Method), fpNoms, types.Number(ci.KeyIdx)})
-	return ciNoms, nil
-}
-
-func NewCryptoInfo(method string, fp sign.Fingerprint, keyIdx uint32) CryptoInfo {
-	return CryptoInfo{
-		Method:      method,
-		Fingerprint: fp,
-		KeyIdx:      keyIdx,
-	}
-}
-
-type EncryptedRef struct {
-	CryptoInfo
-	Payload types.Ref `noms:"original"` // Ref<Blob>
-}
-
-func (EncryptedRef) ContType() ContentType {
-	return ContentEncrRef
-}
-
-type EncryptedBlob struct {
-	CryptoInfo
-	Payload types.Blob `noms:"original"`
-}
-
-func (EncryptedBlob) ContType() ContentType {
-	return ContentEncrBlob
-}
-
-type Container struct {
-	Contents map[string]*Node
-}
-
-func (Container) ContType() ContentType {
-	return ContentContainer
-}
-
 type ContentType string
 
 const (
@@ -100,14 +55,69 @@ const (
 	ContentEncrBlob  = ContentType("EncryptedBlob")
 )
 
+type EncryptMethod string
+
+const (
+	EncMethodECIES = EncryptMethod("ecies")
+	EncMethodDARE  = EncryptMethod("dare")
+)
+
 type Content interface {
 	ContType() ContentType
 }
 
+type Decryptable interface {
+	Decrypt(k *keytree.ExtendedKey, idx uint32) io.Reader
+}
+
+type CryptoInfo struct {
+	Method      EncryptMethod
+	Fingerprint sign.Fingerprint
+	KeyIdx      uint32
+}
+
+func NewCryptoInfo(method EncryptMethod, fp sign.Fingerprint, keyIdx uint32) CryptoInfo {
+	return CryptoInfo{
+		Method:      method,
+		Fingerprint: fp,
+		KeyIdx:      keyIdx,
+	}
+}
+
+type encryptedRef struct {
+	Payload types.Ref `noms:"original"` // Ref<Blob>
+}
+
+func (encryptedRef) ContType() ContentType {
+	return ContentEncrRef
+}
+
+type encryptedBlob struct {
+	Payload types.Blob `noms:"original"`
+}
+
+func (encryptedBlob) ContType() ContentType {
+	return ContentEncrBlob
+}
+
+type Container struct {
+	Contents map[string]*Node
+	Keys     struct {
+		Read     sign.Fingerprint
+		WriteSig sign.Fingerprint
+	}
+}
+
+func (Container) ContType() ContentType {
+	return ContentContainer
+}
+
 type Metadata struct {
+	Name    string
 	Creator sign.Fingerprint
-	Ctime   types.Number
-	ID      string
+	Ctime   int64
+	Mtime   int64
+	ID      string // this only needs to be unique within a directory, not globally (???)
 }
 
 type Node struct {
@@ -116,35 +126,75 @@ type Node struct {
 	Parent   *Node   `noms:"original"` // Ref<Cycle<Node>>
 }
 
-type CreateEncType func() types.Struct
-
-func EncECIES(date []byte) types.Struct {
-	panic("WIP")
+type Encrypted struct {
+	cont struct {
+		Info CryptoInfo
+		Data types.Struct `noms:"original"` // either encryptedBlob or encryptedRef depending on Info
+	}
 }
 
-func NewMetadata(ctor sign.Fingerprint) Metadata {
+func (e *Encrypted) Decrypt(k *keytree.ExtendedKey, idx int) io.Reader {
+	switch e.cont.Info.Method {
+	case EncMethodDARE: // symmetric, so encryptedRef
+
+	case EncMethodECIES: // asymmetric, so encryptedBlob
+	}
+	panic("wip")
+}
+
+func idxToBytes(i uint32) []byte {
+	bs := make([]byte, 4)
+	binary.BigEndian.PutUint32(bs, i)
+	return bs
+}
+
+type DoEncrypt func() (Encrypted, error)
+
+func EncECIES(data []byte, k *keytree.ExtendedKey, keyIdx uint32) (DoEncrypt, error) {
+	pub, err := k.ECPubKey()
+	if err != nil {
+		errors.Wrap(err, "error getting pub key from extended key")
+		return nil, err
+	}
+	eciesK := ecies.ImportECDSAPublic(pub.(sign.PubIsECDSA).ECDSA())
+	return func() (enc Encrypted, err error) {
+		bs, err := ecies.Encrypt(crand.Reader, eciesK, data, idxToBytes(keyIdx), nil)
+		if err != nil {
+			return enc, errors.Wrap(err, "error doing ECIES")
+		}
+		ci := NewCryptoInfo(EncMethodECIES, k.Fingerprint(), keyIdx)
+
+	}, nil
+}
+
+func EncDARE(src io.Reader) DoEncrypt {
+
+}
+
+func NewMetadata(name string, ctor sign.Fingerprint) Metadata {
 	nowUnix := time.Now().Unix()
 	md := Metadata{
 		Creator: ctor,
-		Ctime:   types.Number(nowUnix),
+		Ctime:   nowUnix,
+		Mtime:   nowUnix,
+		Name:    name,
 	}
-	idbs := make([]byte, hash.ByteLen)
-	rand.Seed(nowUnix)
-	rand.Read(idbs)
-	h := hash.Of(idbs)
-	md.ID = h.String()
+	md.ID = uuid.New().String()
 	return md
 }
 
-func NewLeafNode(md Metadata, createBlob CreateEncType) *Node {
+func NewEncrypted(md Metadata, createBlob DoEncrypt) *Node {
 	panic("WIP")
 }
 
 var nodeType = nomdl.MustParseType(`Struct Node {
 	metadata: Struct Metadata {
-		creator: Blob, // a fingerprint  
+		creator: Struct Fingerprint {
+				bytes: Blob,
+			}, // a fingerprint  
 		ctime: Number,
 		id: String,
+		name: String,
 	},
 	contents: Struct Encrypted {
 		info: Struct CryptoInfo {
@@ -156,29 +206,36 @@ var nodeType = nomdl.MustParseType(`Struct Node {
 		},
 		data: Ref<Blob> | Blob
 	} | Struct Container {
-		children: Map<String, Cycle<Node>>,
+		children: Map<String, Cycle<Node>>, // map from ID -> Node
+		keys: Struct {
+			writeSig: Struct Fingerprint {bytes: Blob},
+			read: Struct Fingerprint {bytes: Blob},
+		},
 	},
-	parent: Ref<Cycle<Node>>,
+	parent?: Ref<Cycle<Node>>,
 }`)
 
 var cryptoInfoType, encryptedType, containerType *types.Type
 
 func init() {
-	nodeDesc := nodeType.Desc.(types.StructDesc)
-	contentType, _ := nodeDesc.Field("contents")
-	contentCompound := contentType.Desc.(types.CompoundDesc)
+	cryptoInfoType = marshal.MustMarshalType(&CryptoInfo{})
+	encryptedType = types.MakeStructTypeFromFields("Encrypted", map[string]*types.Type{"info": cryptoInfoType, "data": nomdl.MustParseType(`Ref<Blob> | Blob`)})
+	//containerType = types.
+	/*	nodeDesc := nodeType.Desc.(types.StructDesc)
+		contentType, _ := nodeDesc.Field("contents")
+		contentCompound := contentType.Desc.(types.CompoundDesc)
 
-	for _, elemType := range contentCompound.ElemTypes {
-		switch elemType.Desc.(types.StructDesc).Name {
-		case "Encrypted":
-			encryptedType = elemType
-		case "Container":
-			contentType = elemType
+		for _, elemType := range contentCompound.ElemTypes {
+			switch elemType.Desc.(types.StructDesc).Name {
+			case "Encrypted":
+				encryptedType = elemType
+			case "Container":
+				contentType = elemType
+			}
 		}
-	}
 
-	encryptedType, _ = nodeDesc.Field("contents")
-	cryptoInfoType, _ = encryptedType.Desc.(types.StructDesc).Field("info")
+		encryptedType, _ = nodeDesc.Field("contents")
+		cryptoInfoType, _ = encryptedType.Desc.(types.StructDesc).Field("info")*/
 }
 
 /*
@@ -194,26 +251,6 @@ func init() {
           contents: Struct Symlink {
               targetPath: String,
             } | Struct File {
-              data: Ref<Blob>,
-            } | Struct Directory {
-              entries: Map<String, Cycle<Inode>>,
-            },
-        }`
-*/
-
-/*
-`Struct Node {
-          attr: Struct Attr {
-            ctime: Number,
-            gid: Number,
-            mode: Number,
-            mtime: Number,
-            uid: Number,
-            xattr: Map<String, Blob>,
-          },
-          contents: Struct EncryptedPayload {
-              method: String,
-
               data: Ref<Blob>,
             } | Struct Directory {
               entries: Map<String, Cycle<Inode>>,

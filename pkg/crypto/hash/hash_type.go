@@ -6,7 +6,6 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/pkg/errors"
 )
 
@@ -18,8 +17,8 @@ const (
 	StringLen = 32
 )
 
-// TODO(ORBAT): support different hash lengths and formats? Ethereum's crypto stuff expects 32 bytes, and Noms wants 20
-// bytes.
+// TODO(ORBAT): support different hash lengths and formats?
+// Ethereum's crypto stuff expects 32 bytes, and Noms wants 20 bytes.
 
 // A Hashable can either produce a hash of itself, or is already a hash
 type Hashable interface {
@@ -29,15 +28,14 @@ type Hashable interface {
 // A Hash represents a hash with ByteLen bytes
 type Hash [ByteLen]byte
 
-// From turns b into a Hash. If len(b) != ByteLen, From will panic
-func From(b []byte) Hash {
+// From turns b into a Hash. If len(b) != ByteLen, From will return an error
+func From(b []byte) (h Hash, err error) {
 	bl := len(b)
 	if bl != ByteLen {
-		panic(errors.Errorf("can't convert %d bytes to a Hash, need %d", bl, ByteLen))
+		return h, errors.Errorf("can't convert %d bytes to a Hash, need %d", bl, ByteLen)
 	}
-	var h Hash
 	copy(h[:], b)
-	return h
+	return
 }
 
 func (h Hash) Bytes() []byte { return h[:] }
@@ -61,24 +59,34 @@ func (h Hash) Format(s fmt.State, c rune) {
 	fmt.Fprintf(s, "%"+string(c), h[:])
 }
 
+func IsHash(str string) bool {
+	return pattern.FindString(str) != ""
+}
+
 // UnmarshalText parses a string hash
 func (h *Hash) UnmarshalText(input []byte) error {
 	str := string(input)
-	match := pattern.FindStringSubmatch(str)
-	if match == nil {
+	match := pattern.FindString(str)
+	if match == "" {
 		return errors.Errorf(`"%s" is not a valid hash string`, str)
 	}
 	bs, err := encoding.DecodeString(str)
 	if err != nil {
 		return errors.Wrap(err, "error decoding input")
 	}
-	*h = From(bs)
-	return nil
+	*h, err = From(bs)
+	return err
 }
 
-// MarshalText returns the hex representation of h.
+// Parse a string as a Hash. Same as UnmarshalText
+func Parse(str string) (h Hash, err error) {
+	err = h.UnmarshalText([]byte(str))
+	return
+}
+
+// MarshalText returns the string representation of h. Same as h.String()
 func (h Hash) MarshalText() ([]byte, error) {
-	return hexutil.Bytes(h[:]).MarshalText()
+	return []byte(h.String()), nil
 }
 
 // Sets h to other
@@ -86,11 +94,4 @@ func (h *Hash) Set(other Hash) {
 	for i, v := range other {
 		h[i] = v
 	}
-}
-func NilHash() Hash {
-	return Hash{}
-}
-
-func EmptyHash(h Hash) bool {
-	return h == Hash{}
 }

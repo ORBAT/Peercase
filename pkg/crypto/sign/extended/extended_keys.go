@@ -1,4 +1,4 @@
-// package keytree implements hierarchical deterministic key generation
+// package extended implements hierarchical deterministic key generation, i.e. extended keys.
 //
 // Based on btcsuite's hdkeychain, copyright (c) 2014-2016 The btcsuite developers.
 // Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby
@@ -9,7 +9,7 @@
 // INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
 // AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 // PERFORMANCE OF THIS SOFTWARE.
-package keytree
+package extended
 
 // References:
 //   [BIP32]: BIP0032 - Hierarchical Deterministic Wallets
@@ -27,7 +27,7 @@ import (
 	"math/big"
 
 	"github.com/ORBAT/Peerdoc/pkg/crypto/sign"
-	"github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree/internal"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended/internal"
 	"github.com/btcsuite/btcd/chaincfg/chainhash"
 	"github.com/btcsuite/btcutil/base58"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
@@ -122,10 +122,10 @@ var (
 // the master node in the hierarchical tree.
 var masterKey = []byte("Peerdoc seed")
 
-// ExtendedKey houses all the information needed to support a hierarchical
+// Key houses all the information needed to support a hierarchical
 // deterministic extended key.  See the package overview documentation for
 // more details on how to use extended keys.
-type ExtendedKey struct {
+type Key struct {
 	key       []byte // This will be the pubkey for extended pub keys
 	pubKey    []byte // This will only be set for extended priv keys
 	chainCode []byte
@@ -136,17 +136,17 @@ type ExtendedKey struct {
 	isPrivate bool
 }
 
-// NewExtendedKey returns a new instance of an extended key with the given
+// NewKey returns a new instance of an extended key with the given
 // fields.  No error checking is performed here as it's only intended to be a
 // convenience method used to create a populated struct. This function should
 // only by used by applications that need to create custom ExtendedKeys. All
 // other applications should just use NewMaster, Child, or Neuter.
-func NewExtendedKey(version [4]byte, key, chainCode []byte, parentFP sign.Fingerprint, depth uint8,
-	childNum uint32, isPrivate bool) *ExtendedKey {
+func NewKey(version [4]byte, key, chainCode []byte, parentFP sign.Fingerprint, depth uint8,
+	childNum uint32, isPrivate bool) *Key {
 
 	// NOTE: The pubKey field is intentionally left nil so it is only
 	// computed and memoized as required.
-	return &ExtendedKey{
+	return &Key{
 		key:       key,
 		chainCode: chainCode,
 		depth:     depth,
@@ -165,7 +165,7 @@ func NewExtendedKey(version [4]byte, key, chainCode []byte, parentFP sign.Finger
 // is since it's already in the correct form.  However, when the extended key is
 // a private key, the public key will be calculated and memoized so future
 // accesses can simply return the cached result.
-func (k *ExtendedKey) pubKeyBytes() []byte {
+func (k *Key) pubKeyBytes() []byte {
 	// Just return the key if it's already an extended public key.
 	if !k.isPrivate {
 		return k.key
@@ -188,7 +188,7 @@ func (k *ExtendedKey) pubKeyBytes() []byte {
 // A private extended key can be used to derive both hardened and non-hardened
 // child private and public extended keys.  A public extended key can only be
 // used to derive non-hardened child public extended keys.
-func (k *ExtendedKey) IsPrivate() bool {
+func (k *Key) IsPrivate() bool {
 	return k.isPrivate
 }
 
@@ -196,13 +196,13 @@ func (k *ExtendedKey) IsPrivate() bool {
 //
 // The root key has depth zero, and the field has a maximum of 255 due to
 // how depth is serialized.
-func (k *ExtendedKey) Depth() uint8 {
+func (k *Key) Depth() uint8 {
 	return k.depth
 }
 
 // ParentFingerprint returns a fingerprint of the parent extended key from which
 // this one was derived.
-func (k *ExtendedKey) ParentFingerprint() sign.Fingerprint {
+func (k *Key) ParentFingerprint() sign.Fingerprint {
 	return k.parentFP
 }
 
@@ -227,7 +227,7 @@ func (k *ExtendedKey) ParentFingerprint() sign.Fingerprint {
 // index does not derive to a usable child.  The ErrInvalidChild error will be
 // returned if this should occur, and the caller is expected to ignore the
 // invalid child and simply increment to the next index.
-func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
+func (k *Key) Child(i uint32) (*Key, error) {
 	// Prevent derivation of children beyond the max allowed depth.
 	if k.depth == maxUint8 {
 		return nil, ErrDeriveBeyondMaxDepth
@@ -352,7 +352,7 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 	if err != nil {
 		return nil, errors.Wrap(err, "error getting parent signature")
 	}
-	return NewExtendedKey(k.version, childKey, childChainCode, pk.Fingerprint(),
+	return NewKey(k.version, childKey, childChainCode, pk.Fingerprint(),
 		k.depth+1, i, isPrivate), nil
 }
 
@@ -364,7 +364,7 @@ func (k *ExtendedKey) Child(i uint32) (*ExtendedKey, error) {
 // private key, so it is not capable of signing transactions or deriving
 // child extended private keys.  However, it is capable of deriving further
 // child extended public keys.
-func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
+func (k *Key) Neuter() (*Key, error) {
 	// Already an extended public key.
 	if !k.isPrivate {
 		return k, nil
@@ -375,12 +375,12 @@ func (k *ExtendedKey) Neuter() (*ExtendedKey, error) {
 	// key will simply be the pubkey of the current extended private key.
 	//
 	// This is the function N((k,c)) -> (K, c) from [BIP32].
-	return NewExtendedKey(PublicKeyVer(), k.pubKeyBytes(), k.chainCode, k.parentFP,
+	return NewKey(PublicKeyVer(), k.pubKeyBytes(), k.chainCode, k.parentFP,
 		k.depth, k.childNum, false), nil
 }
 
 // ECPubKey converts the extended key to a public signature key and returns it.
-func (k *ExtendedKey) ECPubKey() (sign.PublicKey, error) {
+func (k *Key) ECPubKey() (sign.PublicKey, error) {
 	// TODO(ORBAT): memoize!
 	pk := new(sign.ECDSAPublicKey)
 	err := pk.UnmarshalBinary(k.pubKeyBytes())
@@ -390,7 +390,7 @@ func (k *ExtendedKey) ECPubKey() (sign.PublicKey, error) {
 // ECPrivKey converts the extended key to a private signature key and returns it. As you might imagine this is only
 // possible if the extended key is a private extended key (as determined by the IsPrivate function).  The
 // ErrNotPrivExtKey error will be returned if this function is called on a public extended key.
-func (k *ExtendedKey) ECPrivKey() (sign.PrivateKey, error) {
+func (k *Key) ECPrivKey() (sign.PrivateKey, error) {
 	if !k.isPrivate {
 		return nil, ErrNotPrivExtKey
 	}
@@ -400,7 +400,7 @@ func (k *ExtendedKey) ECPrivKey() (sign.PrivateKey, error) {
 }
 
 // MaybeFingerprint returns the fingerprint for this key, or an error if unsuccessful.
-func (k *ExtendedKey) MaybeFingerprint() (sign.Fingerprint, error) {
+func (k *Key) MaybeFingerprint() (sign.Fingerprint, error) {
 	// TODO(ORBAT): memoize!
 	pk, err := k.ECPubKey()
 	if err != nil {
@@ -410,7 +410,7 @@ func (k *ExtendedKey) MaybeFingerprint() (sign.Fingerprint, error) {
 }
 
 // Fingerprint returns this key's fingerprint. If it fails, it will panic. See MaybeFingerprint.
-func (k *ExtendedKey) Fingerprint() sign.Fingerprint {
+func (k *Key) Fingerprint() sign.Fingerprint {
 	fp, err := k.MaybeFingerprint()
 	if err != nil {
 		panic(err)
@@ -429,7 +429,7 @@ func paddedAppend(size uint, dst, src []byte) []byte {
 }
 
 // String returns the extended key as a human-readable base58-encoded string.
-func (k *ExtendedKey) String() string {
+func (k *Key) String() string {
 	if len(k.key) == 0 {
 		return "zeroed extended key"
 	}
@@ -449,7 +449,7 @@ func zero(b []byte) {
 // used to explicitly clear key material from memory for enhanced security
 // against memory scraping.  This function only clears this particular key and
 // not any children that have already been derived.
-func (k *ExtendedKey) Zero() {
+func (k *Key) Zero() {
 	zero(k.key)
 	zero(k.pubKey)
 	zero(k.chainCode)
@@ -461,8 +461,8 @@ func (k *ExtendedKey) Zero() {
 	k.isPrivate = false
 }
 
-// Bytes returns a binary representation of the ExtendedKey
-func (k *ExtendedKey) Bytes() []byte {
+// Bytes returns a binary representation of the Key
+func (k *Key) Bytes() []byte {
 	var childNumBytes [4]byte
 	binary.BigEndian.PutUint32(childNumBytes[:], k.childNum)
 
@@ -486,7 +486,7 @@ func (k *ExtendedKey) Bytes() []byte {
 	return append(serializedBytes, checkSum...)
 }
 
-func (k *ExtendedKey) toWire() *internal.WireFmt {
+func (k *Key) toWire() *internal.WireFmt {
 	w := &internal.WireFmt{
 		Version:  k.version,
 		Depth:    k.depth,
@@ -512,7 +512,7 @@ func (k *ExtendedKey) toWire() *internal.WireFmt {
 // will derive to an unusable secret key.  The ErrUnusable error will be
 // returned if this should occur, so the caller must check for it and generate a
 // new seed accordingly.
-func NewMaster(seed []byte) (*ExtendedKey, error) {
+func NewMaster(seed []byte) (*Key, error) {
 	// Per [BIP32], the seed must be in range [MinSeedBytes, MaxSeedBytes].
 	if len(seed) < MinSeedBytes || len(seed) > MaxSeedBytes {
 		return nil, ErrInvalidSeedLen
@@ -537,11 +537,11 @@ func NewMaster(seed []byte) (*ExtendedKey, error) {
 	}
 
 	parentFP := sign.NilFingerprint()
-	return NewExtendedKey(PrivateKeyVer(), secretKey, chainCode,
+	return NewKey(PrivateKeyVer(), secretKey, chainCode,
 		parentFP, 0, 0, true), nil
 }
 
-func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
+func NewKeyFromBytes(bs []byte) (*Key, error) {
 	if len(bs) != serializedKeyLen+4 {
 		return nil, ErrInvalidKeyLen
 	}
@@ -597,15 +597,15 @@ func NewKeyFromBytes(bs []byte) (*ExtendedKey, error) {
 		}
 	}
 
-	return NewExtendedKey(version, keyData, chainCode, parentFP, depth,
+	return NewKey(version, keyData, chainCode, parentFP, depth,
 		childNum, isPrivate), nil
 }
 
-// TODO(ORBAT): UnmarshalText/MarshalText for ExtendedKey
+// TODO(ORBAT): UnmarshalText/MarshalText for Key
 
 // NewKeyFromString returns a new extended key instance from a base58-encoded
 // extended key.
-func NewKeyFromString(key string) (*ExtendedKey, error) {
+func NewKeyFromString(key string) (*Key, error) {
 	// The base58-decoded extended key must consist of a serialized payload
 	// plus an additional 4 bytes for the checksum.
 	return NewKeyFromBytes(base58.Decode(key))

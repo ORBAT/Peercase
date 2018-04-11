@@ -10,6 +10,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+// cksumLen is the checksum length in bytes
 const cksumLen = 4
 
 var (

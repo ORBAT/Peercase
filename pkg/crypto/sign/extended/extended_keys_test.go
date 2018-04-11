@@ -1,4 +1,4 @@
-package keytree
+package extended
 
 import (
 	"bytes"
@@ -14,7 +14,7 @@ import (
 
 const testSeed = "995c39ef3268592794f9fbe1eb60e7f0601fc8b4f4cae75e9130a8fe8cf5c812b29d46dbe83a58d04209c0bb1887e040a8588fde4f6019ee26326f93ba219344"
 
-func mustNewMaster(seed string) *ExtendedKey {
+func mustNewMaster(seed string) *Key {
 	s := mustParseHex(seed)
 	m, err := NewMaster(s)
 	if err != nil {
@@ -29,6 +29,30 @@ func mustParseHex(s string) []byte {
 		panic("error parsing hex")
 	}
 	return bs
+}
+
+// TODO(ORBAT): move this to the internal pkg
+func TestWireFormat_MarshalBinary(t *testing.T) {
+	require := require.New(t)
+	assert := assert.New(t)
+	mk := mustNewMaster(testSeed)
+	bs := mk.Bytes()
+
+	w := mk.toWire()
+
+	wbs, err := w.MarshalBinary()
+	require.NoError(err, "wire format marshaling should not fail")
+	assert.Equal(bs, wbs, "should have gotten the same bytes we started with")
+}
+
+func TestBla(t *testing.T) {
+	s, _ := GenerateSeed(RecommendedSeedLen)
+	mk, err := NewMaster(s)
+	if err != nil {
+		t.Error("master key gen failed because of", err)
+	}
+
+	t.Log(hex.EncodeToString(s), mk.String(), mk.Bytes())
 }
 
 func TestGenerateSeed(t *testing.T) {
@@ -615,7 +639,7 @@ func TestGenenerateSeed(t *testing.T) {
 
 /*
 
-// TestExtendedKeyAPI ensures the API on the ExtendedKey type works as intended.
+// TestExtendedKeyAPI ensures the API on the Key type works as intended.
 func TestExtendedKeyAPI(t *testing.T) {
 	tests := []struct {
 		name       string
@@ -840,7 +864,7 @@ func TestZero(t *testing.T) {
 	// Use a closure to test that a key is zeroed since the tests create
 	// keys in different ways and need to test the same things multiple
 	// times.
-	testZeroed := func(i int, testName string, key *ExtendedKey) bool {
+	testZeroed := func(i int, testName string, key *Key) bool {
 		// Zeroing a key should result in it no longer being private
 		if key.IsPrivate() {
 			t.Errorf("IsPrivate #%d (%s): mismatched key type -- "+

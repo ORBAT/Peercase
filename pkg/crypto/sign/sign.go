@@ -6,7 +6,6 @@ import (
 	ec "crypto/ecdsa"
 	"encoding"
 	"encoding/binary"
-	"encoding/hex"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -16,7 +15,6 @@ import (
 	"github.com/ORBAT/Peerdoc/pkg/util/buffer"
 	"github.com/attic-labs/noms/go/marshal"
 	nomstypes "github.com/attic-labs/noms/go/types"
-	eco "github.com/ethereum/go-ethereum/common"
 	ecrypto "github.com/ethereum/go-ethereum/crypto"
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/hkdf"
@@ -41,26 +39,23 @@ func NilFingerprint() Fingerprint {
 	return Fingerprint{}
 }
 
-// BytesToFingerprint turns b into a Fingerprint. If len(b) != FingerprintLen, SetBytes will panic.
-func BytesToFingerprint(b []byte) Fingerprint {
-	var a Fingerprint
-	if err := a.SetBytes(b); err != nil {
-		panic(err)
-	}
-	return a
+// BytesToFingerprint turns b into a Fingerprint. If len(b) != FingerprintLen, BytesToFingerprint will return an error
+func BytesToFingerprint(b []byte) (fp Fingerprint, err error) {
+	err = fp.SetBytes(b)
+	return
 }
 
-// HexToFingerprint turns s into a Fingerprint. If the number of bytes in s != FingerprintLen, HexToFingerprint will
-// panic. s may have a "0x" prefix.
-func HexToFingerprint(s string) Fingerprint {
-	return BytesToFingerprint(eco.FromHex(s))
+// ParseFingerprint parses s as a fingerprint.
+func ParseFingerprint(s string) (Fingerprint, error) {
+	h, err := hash.Parse(s)
+	return Fingerprint(h), err
 }
 
 func (fp Fingerprint) IsZero() bool {
 	return fp == Fingerprint{}
 }
 
-func (fp Fingerprint) String() string { return "0x" + hex.EncodeToString(fp[:]) }
+func (fp Fingerprint) String() string { return hash.Hash(fp).String() }
 
 // SetBytes sets the value of fp from b. If len(b) != FingerprintLen, SetBytes will return an error.
 func (fp *Fingerprint) SetBytes(b []byte) error {

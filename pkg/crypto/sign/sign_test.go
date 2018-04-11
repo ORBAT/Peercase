@@ -25,7 +25,6 @@ func mustGenKey(seed int64) PrivateKey {
 }
 
 func TestECDSAPrivateKey_Sign(t *testing.T) {
-	//noinspection GoImportUsedAsName
 	assert := assert.New(t)
 	priv := mustGenKey(1)
 
@@ -47,9 +46,7 @@ func TestECDSAPrivateKey_Sign(t *testing.T) {
 }
 
 func TestECDSAPrivateKey_MarshalBinary(t *testing.T) {
-	//noinspection GoImportUsedAsName
 	assert := assert.New(t)
-	//noinspection GoImportUsedAsName
 	require := require.New(t)
 	priv := mustGenKey(1)
 	testHash := hash.Of(testMsg)
@@ -72,9 +69,7 @@ func TestECDSAPrivateKey_DeriveSymmetric(t *testing.T) {
 		keyLen  = 64
 		testCtx = "test context"
 	)
-	//noinspection GoImportUsedAsName
 	assert := assert.New(t)
-	//noinspection GoImportUsedAsName
 	require := require.New(t)
 
 	key1Bs := make([]byte, keyLen)
@@ -99,7 +94,6 @@ func TestECDSAPrivateKey_DeriveSymmetric(t *testing.T) {
 
 func TestECDSAPrivate_Derive(t *testing.T) {
 	//	assert := assert.New(t)
-	//noinspection GoImportUsedAsName
 	require := require.New(t)
 	priv := mustGenKey(1)
 	_, err := priv.Derive(testExpansion)
@@ -112,7 +106,19 @@ func randomFingerprint(seed int64) Fingerprint {
 	fpbs := make([]byte, FingerprintLen)
 	rand.Seed(seed)
 	rand.Read(fpbs)
-	return BytesToFingerprint(fpbs)
+	fp, err := BytesToFingerprint(fpbs)
+	if err != nil {
+		panic(err)
+	}
+	return fp
+}
+
+func TestParseFingerprint(t *testing.T) {
+	fp := randomFingerprint(1)
+	fps := fp.String()
+	fromS, err := ParseFingerprint(fps)
+	require.NoError(t, err, "parsing fingerprint from string should not fail")
+	assert.Equal(t, fp, fromS)
 }
 
 func newMemNoms(ns string) (chunks.ChunkStore, datas.Database) {
@@ -122,9 +128,7 @@ func newMemNoms(ns string) (chunks.ChunkStore, datas.Database) {
 }
 
 func TestFingerprint_MarshalNoms(t *testing.T) {
-	//noinspection GoImportUsedAsName
 	assert := assert.New(t)
-	//noinspection GoImportUsedAsName
 	require := require.New(t)
 	_, db := newMemNoms("ns")
 	fp := randomFingerprint(1)

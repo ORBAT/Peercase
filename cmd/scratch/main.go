@@ -11,7 +11,7 @@ import (
 
 	"github.com/ORBAT/Peerdoc/log"
 	"github.com/ORBAT/Peerdoc/pkg/crypto/sign"
-	"github.com/ORBAT/Peerdoc/pkg/crypto/sign/keytree"
+	"github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended"
 	"github.com/attic-labs/noms/go/chunks"
 	"github.com/attic-labs/noms/go/datas"
 	"github.com/attic-labs/noms/go/marshal"
@@ -67,7 +67,7 @@ type Content interface {
 }
 
 type Decryptable interface {
-	Decrypt(k *keytree.ExtendedKey, idx uint32) io.Reader
+	Decrypt(k *extended.Key, idx uint32) io.Reader
 }
 
 type CryptoInfo struct {
@@ -133,7 +133,7 @@ type Encrypted struct {
 	}
 }
 
-func (e *Encrypted) Decrypt(k *keytree.ExtendedKey, idx int) io.Reader {
+func (e *Encrypted) Decrypt(k *extended.Key, idx int) io.Reader {
 	switch e.cont.Info.Method {
 	case EncMethodDARE: // symmetric, so encryptedRef
 
@@ -150,7 +150,7 @@ func idxToBytes(i uint32) []byte {
 
 type DoEncrypt func() (Encrypted, error)
 
-func EncECIES(data []byte, k *keytree.ExtendedKey, keyIdx uint32) (DoEncrypt, error) {
+func EncECIES(data []byte, k *extended.Key, keyIdx uint32) (DoEncrypt, error) {
 	pub, err := k.ECPubKey()
 	if err != nil {
 		errors.Wrap(err, "error getting pub key from extended key")

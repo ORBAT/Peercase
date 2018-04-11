@@ -11,17 +11,21 @@
     <bookmark url="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" line="147" />
     <bookmark url="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" line="211" />
     <bookmark url="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/encoding_test.go" line="188" />
+    <bookmark url="file://$PROJECT_DIR$/cmd/scratch/main.go" line="164" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75c36957-d3f1-436f-a23f-e16851e6dd19" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/storage/obj_graph.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/storage/pubkey.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/teklof.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/teklof.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/scratch/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/scratch/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/log/logger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/sign.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/sign.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,97 +50,93 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pubkey.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/storage/pubkey.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataset.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/dataset.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="obj_graph.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/storage/obj_graph.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="71" column="43" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="71" selection-end-column="43" />
+            <state relative-caret-position="-726">
+              <caret line="142" column="1" lean-forward="true" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="importer.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/importer.go">
+      <file leaf-file-name="assertion_forward.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/stretchr/testify/assert/assertion_forward.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="102" column="59" lean-forward="true" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
+            <state relative-caret-position="304">
+              <caret line="617" column="21" selection-start-line="617" selection-start-column="21" selection-end-line="617" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/event.go">
+      <file leaf-file-name="crypto.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="109" column="56" selection-start-line="109" selection-start-column="56" selection-end-line="109" selection-end-column="56" />
+            <state relative-caret-position="1183">
+              <caret line="132" column="29" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="three_way.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/merge/three_way.go">
+      <file leaf-file-name="extended_keys.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1101">
-              <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+            <state relative-caret-position="302">
+              <caret line="382" column="44" selection-start-line="382" selection-start-column="44" selection-end-line="382" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="commit.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/commit.go">
+      <file leaf-file-name="ecies.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="302">
+              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="intro.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/doc/intro.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="287">
-                <caret line="88" column="303" selection-start-line="88" selection-start-column="300" selection-end-line="88" selection-end-column="303" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cli-tour.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/doc/cli-tour.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="232">
-                <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/database.go">
+      <file leaf-file-name="sign.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+            <state relative-caret-position="302">
+              <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="storage.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/storage/storage.go">
+      <file leaf-file-name="id.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/util/random/id.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="11" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="11" />
+            <state relative-caret-position="160">
+              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nomsfs.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/nomsfs/nomsfs.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-534" />
           </provider>
         </entry>
       </file>
@@ -151,48 +151,49 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mulww</find>
-      <find>mulw</find>
-      <find>validate</find>
-      <find>intDecoder</find>
-      <find>tag</find>
-      <find>nomsTags</find>
-      <find>interface {</find>
-      <find>concatKDF</find>
-      <find>number</find>
-      <find>isSameTargetType</find>
-      <find>reade</find>
-      <find>&quot;ogi</find>
-      <find>typeFields</find>
-      <find>newblob</find>
-      <find>origina</find>
-      <find>structdesc</find>
-      <find>.Head()</find>
-      <find>ds.HeadV</find>
-      <find>\bref\b</find>
-      <find>type.bl</find>
-      <find>types.ref</find>
-      <find>refIndex</find>
-      <find>.targetvalue(</find>
-      <find>fi</find>
-      <find>ref&lt;</find>
-      <find>validateLast</find>
-      <find>ref</find>
-      <find>garbag</find>
-      <find>merge</find>
-      <find>merg</find>
+      <find>omitEmpty</find>
+      <find>big</find>
+      <find>less</find>
+      <find>marshaltype</find>
+      <find>newMetaTuple</find>
+      <find>ContType</find>
+      <find>Content</find>
+      <find>omitempt</find>
+      <find>omitz</find>
+      <find>fingerprintNomsTempl</find>
+      <find>omitem</find>
+      <find>decry</find>
+      <find>Encrypted</find>
+      <find>map[</find>
+      <find>removeCommon</find>
+      <find>nomsFile</find>
+      <find>containe</find>
+      <find>datetim</find>
+      <find>db.</find>
+      <find>doHeadUpdate</find>
+      <find>newcommi</find>
+      <find>rand.reader</find>
+      <find>rand</find>
+      <find>.reader</find>
+      <find>putui</find>
+      <find>epRef</find>
+      <find>encryptedBlob</find>
+      <find>PublicKey</find>
+      <find>ecdsa.</find>
+      <find>cran</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../../ipfs</dir>
       <dir>$PROJECT_DIR$/../../attic-labs/noms</dir>
       <dir>$PROJECT_DIR$/../../ethereum/go-ethereum</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/../../attic-labs/noms/go/ipfs</dir>
-      <dir>$PROJECT_DIR$/../../attic-labs/noms/go/</dir>
       <dir>$PROJECT_DIR$/../../attic-labs/noms/go/nbs</dir>
-      <dir>$PROJECT_DIR$/../../attic-labs/noms/</dir>
       <dir>$PROJECT_DIR$/../../attic-labs/noms/go</dir>
       <dir>$PROJECT_DIR$/../../attic-labs/noms/samples</dir>
+      <dir>$PROJECT_DIR$/../../attic-labs/noms/go/</dir>
+      <dir>$PROJECT_DIR$/../../attic-labs/noms/go/types</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/../../attic-labs/noms/</dir>
     </dirStrings>
   </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.10/libexec" />
@@ -202,15 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/nomdl/parser_test.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/path.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/merge/candidate.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/encode_human_readable.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/less.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/csv-invert/main.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/make_type.go" />
@@ -228,7 +220,6 @@
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/ngql/types.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/ngql/query_test.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/noms_kind.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/marshal/decode.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/encoding_test.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/marshal/decode_test.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/value_stats.go" />
@@ -243,16 +234,26 @@
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/ipfs/options.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/cli/nomsconfig/.nomsconfig" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/cli/nomsconfig/README.md" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" />
         <option value="$PROJECT_DIR$/../gofiddle/src/math/big/float.go" />
         <option value="$PROJECT_DIR$/../gofiddle/src/math/big/arith_decl_pure.go" />
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/marshal/encode.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/ipfs/protocol.go" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.go" />
         <option value="$PROJECT_DIR$/log/logger.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/write.go" />
-        <option value="$PROJECT_DIR$/cmd/scratch/main.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/nomsfs/nomsfs.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/util/datetime/date_time.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.go" />
         <option value="$PROJECT_DIR$/pkg/storage/storage.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/marshal/decode.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/marshal/encode.go" />
+        <option value="$PROJECT_DIR$/pkg/storage/doc.go" />
+        <option value="$PROJECT_DIR$/pkg/storage/obj_graph.go" />
+        <option value="$PROJECT_DIR$/pkg/storage/pubkey.go" />
+        <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/event.go" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
+        <option value="$PROJECT_DIR$/cmd/scratch/main.go" />
       </list>
     </option>
   </component>
@@ -267,40 +268,108 @@
     <option name="width" value="1676" />
     <option name="height" value="1050" />
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Declaration redundancyGo</id>
-          </State>
-          <State>
-            <id>GeneralGo</id>
-          </State>
-          <State>
-            <id>Go</id>
-          </State>
-          <State>
-            <id>Probable bugsGo</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>GoRedundantTypeDeclInCompositeLit</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="cmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="cmd" type="462c0819:PsiDirectoryNode" />
+              <item name="scratch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="rand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="math" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="math" type="462c0819:PsiDirectoryNode" />
+              <item name="rand" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -341,139 +410,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="marshal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="types" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="decent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="decent" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="scratch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,18 +423,18 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../attic-labs/noms/go" />
-    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Go" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../../attic-labs/noms/go/types" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pkg/util/buf" />
       <recent name="$PROJECT_DIR$/pkg/crypto/hash" />
       <recent name="$PROJECT_DIR$/pkg/crypto/sign/keytree/genprefix" />
       <recent name="$PROJECT_DIR$/pkg/crypto/sign/keytree" />
       <recent name="$PROJECT_DIR$/pkg/crypto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../attic-labs/noms/go/types" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -559,6 +495,15 @@
       <package value="github.com/attic-labs/noms/go/config" />
       <pattern value="^TestConfig$" />
     </configuration>
+    <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Peerdoc" />
+      <working_directory value="$PROJECT_DIR$/pkg/crypto/sign" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
+      <pattern value="^TestFingerprint_MarshalNoms$" />
+    </configuration>
     <configuration name="TestProtocol in github.com/attic-labs/noms/go/config" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
       <working_directory value="$PROJECT_DIR$/../../attic-labs/noms/go/config" />
@@ -576,49 +521,29 @@
       <kind value="DIRECTORY" />
       <package value="github.com/ORBAT/Peerdoc" />
     </configuration>
-    <configuration name="config_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="Peerdoc" />
-      <working_directory value="$PROJECT_DIR$/../../attic-labs/noms/go/config" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <package value="github.com/ORBAT/Peerdoc" />
-      <filePath value="$PROJECT_DIR$/../../attic-labs/noms/go/config/config_test.go" />
-    </configuration>
     <list>
       <item itemvalue="Go Test.TestProtocol in github.com/attic-labs/noms/go/config" />
-      <item itemvalue="Go Test.config_test.go" />
       <item itemvalue="Go Test.TestConfig in github.com/attic-labs/noms/go/config" />
       <item itemvalue="Go Build.go build scratch_2.go" />
       <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Test.TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build scratch_2.go" />
+        <item itemvalue="Go Test.TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
         <item itemvalue="Go Test.TestConfig in github.com/attic-labs/noms/go/config" />
         <item itemvalue="Go Test.TestProtocol in github.com/attic-labs/noms/go/config" />
-        <item itemvalue="Go Test.config_test.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
-    <option name="ACTIVE_ACTIONS" value=",Show Private Members,ALPHA_COMPARATOR,Show package structure" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestConfig_String_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 22h 03m 31s.xml">
-      <configuration name="TestConfig_String in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestConfig_String_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 22h 05m 46s.xml">
-      <configuration name="TestConfig_String in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestProtocol_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 22h 14m 20s.xml">
-      <configuration name="TestProtocol in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="config_test_go - 2018.04.03 at 22h 35m 59s.xml">
-      <configuration name="config_test.go" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="config_test_go - 2018.04.03 at 22h 38m 40s.xml">
       <configuration name="config_test.go" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -637,23 +562,36 @@
     <history-entry file="TestConfig_in_github_com_attic-labs_noms_go_config - 2018.04.03 at 23h 04m 22s.xml">
       <configuration name="TestConfig in github.com/attic-labs/noms/go/config" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 07m 27s.xml">
+      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 09m 24s.xml">
+      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 11m 00s.xml">
+      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFingerprint_MarshalNoms_in_github_com_ORBAT_Peerdoc_pkg_crypto_sign - 2018.04.04 at 18h 12m 17s.xml">
+      <configuration name="TestFingerprint_MarshalNoms in github.com/ORBAT/Peerdoc/pkg/crypto/sign" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="0" width="1676" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49333334" visible="true" weight="0.23072216" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Cargo" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5023866" side_tool="true" weight="0.23210634" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32822084" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32924336" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761337" weight="0.23714586" />
-      <window_info id="Structure" order="1" sideWeight="0.50666666" side_tool="true" weight="0.21778043" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32924336" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924336" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4858342" visible="true" weight="0.23317014" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32738718" />
+      <window_info id="Structure" order="1" sideWeight="0.5141658" side_tool="true" visible="true" weight="0.23317014" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.51022494" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -714,344 +652,357 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../gofiddle/src/math/big/arith_386.s" />
-    <entry file="file://$PROJECT_DIR$/../gofiddle/src/math/big/arith_decl_pure.go" />
-    <entry file="file://$PROJECT_DIR$/../gofiddle/src/math/big/arith_decl.go" />
-    <entry file="file://$PROJECT_DIR$/../gofiddle/src/math/big/arith.go" />
-    <entry file="file://$PROJECT_DIR$/../gofiddle/src/math/big/float.go" />
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/number_util.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/nomdl/parser.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="1" selection-start-line="13" selection-end-line="34" selection-end-column="1" />
+        <state relative-caret-position="242">
+          <caret line="72" column="15" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/encoding/binary/varint.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/codec.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="218" column="21" selection-start-line="218" selection-start-column="21" selection-end-line="218" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/ngql/types.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="491" column="30" selection-start-line="491" selection-start-column="30" selection-end-line="491" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/number.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/ipfs/protocol.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/ipfs/protocol_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="264" column="4" selection-start-line="264" selection-start-column="4" selection-end-line="264" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/nbs/store.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="149" column="5" lean-forward="true" selection-start-line="139" selection-end-line="149" selection-end-column="5" />
+        <state relative-caret-position="274">
+          <caret line="219" column="27" selection-start-line="219" selection-start-column="27" selection-end-line="219" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/math/big/float.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="1568" column="16" selection-start-line="1568" selection-start-column="16" selection-end-line="1568" selection-end-column="16" />
+        <state relative-caret-position="226">
+          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hashing.go">
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/math/big/int.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../go.uber.org/zap/global.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/math/big/ftoa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/nbs/persisting_chunk_source.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="15" lean-forward="true" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+        <state relative-caret-position="234">
+          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        <state relative-caret-position="568">
+          <caret line="81" column="18" selection-start-line="81" selection-start-column="18" selection-end-line="81" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/noms_kind.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="-455">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/list.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="336">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/collection.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/value.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/set.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="102" column="15" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/list_editor.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/struct.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/string.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/sequence.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/meta_sequence.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="266" column="45" selection-start-line="266" selection-start-column="45" selection-end-line="266" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/marshal/encode_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="259" column="38" selection-start-line="259" selection-start-column="31" selection-end-line="259" selection-end-column="38" />
+        <state relative-caret-position="324">
+          <caret line="352" column="41" selection-start-line="352" selection-start-column="41" selection-end-line="352" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/blob.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="221" lean-forward="true" selection-start-line="221" selection-end-line="221" />
+        <state relative-caret-position="394">
+          <caret line="174" column="11" lean-forward="true" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/ref.go">
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="130" column="28" lean-forward="true" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+        <state relative-caret-position="226">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        <state relative-caret-position="368">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/marshal/decode.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/direntry.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="382">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/encode_human_readable.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/nodefs/defaultnode.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="420" column="13" selection-start-line="420" selection-start-column="13" selection-end-line="420" selection-end-column="13" />
+        <state relative-caret-position="728">
+          <caret line="157" selection-start-line="147" selection-start-column="98" selection-end-line="157" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/url-fetch/fetch.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/types.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="148" column="25" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="148" selection-end-column="25" />
+        <state relative-caret-position="416">
+          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/read.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/nodefs/api.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="154" column="31" lean-forward="true" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="31" />
+        <state relative-caret-position="880">
+          <caret line="110" column="80" lean-forward="true" selection-start-line="110" selection-start-column="80" selection-end-line="110" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/struct.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/pathfs/api.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="354" column="22" lean-forward="true" selection-start-line="354" selection-start-column="22" selection-end-line="354" selection-end-column="22" />
+        <state relative-caret-position="559">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../go.uber.org/zap/field.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/nodefs/files.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="214" column="5" selection-start-line="214" selection-start-column="5" selection-end-line="214" selection-end-column="5" />
+        <state relative-caret-position="309">
+          <caret line="127" column="14" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/logger.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/read.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="334">
+          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/remote_database_handlers.go">
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/hanwen/go-fuse/fuse/api.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="480" column="13" selection-start-line="480" selection-start-column="13" selection-end-line="480" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/type_desc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
-          <caret line="100" column="12" lean-forward="true" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/write.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/poke/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="86" column="69" selection-start-line="86" selection-start-column="69" selection-end-line="86" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/util/jsontonoms/json_to_noms.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/xml-import/xml_importer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="120" column="36" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/marshal/encode_type_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="471" column="27" lean-forward="true" selection-start-line="471" selection-start-column="27" selection-end-line="471" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/marshal/encode.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7392">
-          <caret line="462" selection-start-line="462" selection-end-line="462" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/doc/cli-tour.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="232">
-            <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/doc/intro.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="287">
-            <caret line="88" column="303" selection-start-line="88" selection-start-column="300" selection-end-line="88" selection-end-column="303" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="132" column="18" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/commit.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="71" column="43" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="71" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/merge/three_way.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1101">
-          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/importer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="102" column="59" lean-forward="true" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/event.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="109" column="56" selection-start-line="109" selection-start-column="56" selection-end-line="109" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/database.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/storage/storage.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="11" />
+        <state relative-caret-position="162">
+          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/nomsfs/nomsfs.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-534" />
+        <state relative-caret-position="614">
+          <caret line="459" lean-forward="true" selection-start-line="459" selection-end-line="459" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/number.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/marshal/decode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="237" column="21" lean-forward="true" selection-start-line="237" selection-start-column="21" selection-end-line="237" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/marshal/encode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="242" lean-forward="true" selection-start-line="242" selection-end-line="242" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../google/uuid/version4.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/util/datetime/date_time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/database.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/database_common.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="246" column="5" selection-start-line="246" selection-start-column="5" selection-end-line="246" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/commit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/samples/go/decent/lib/event.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="156" selection-start-line="156" selection-end-line="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/rand/rand.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/p2p/rlpx.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="439" column="34" selection-start-line="439" selection-start-column="34" selection-end-line="439" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/doc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/authn/identity.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/util/random/id.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/pubkey.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/dataset.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/obj_graph.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="391" column="4" selection-start-line="391" selection-start-column="4" selection-end-line="391" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/ecies/ecies.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="382" column="44" selection-start-line="382" selection-start-column="44" selection-end-line="382" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/crypto/crypto.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1183">
+          <caret line="132" column="29" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/vendor/github.com/stretchr/testify/assert/assertion_forward.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="617" column="21" selection-start-line="617" selection-start-column="21" selection-end-line="617" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/scratch/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-726">
+          <caret line="142" column="1" lean-forward="true" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+        </state>
       </provider>
     </entry>
   </component>

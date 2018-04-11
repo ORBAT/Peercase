@@ -3,11 +3,17 @@
     <words>
       <w>authn</w>
       <w>blep</w>
+      <w>crypto</w>
+      <w>ctime</w>
       <w>ecdsa</w>
+      <w>ecies</w>
+      <w>encr</w>
       <w>epubk</w>
       <w>hashable</w>
       <w>ints</w>
       <w>memoized</w>
+      <w>mtime</w>
+      <w>nomdl</w>
       <w>peerdoc</w>
       <w>pprv</w>
       <w>ppub</w>

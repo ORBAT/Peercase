@@ -98,6 +98,7 @@ func (fp *Fingerprint) UnmarshalNoms(v nomstypes.Value) error {
 	if err != nil {
 		return errors.Wrap(err, "couldn't unmarshal Fingerprint to temp struct")
 	}
+	ioutil.TempDir()
 	bs, err := ioutil.ReadAll(fromNoms.Bytes.Reader())
 	if err != nil {
 		return errors.Wrap(err, "couldn't read from Blob")

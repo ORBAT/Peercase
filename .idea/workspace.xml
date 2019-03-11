@@ -15,19 +15,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75c36957-d3f1-436f-a23f-e16851e6dd19" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/path.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/scratch/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/scratch/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/extended_keys_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/keytree/internal/wire_format.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/extended/internal/wire_format.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/sign.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/sign.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,94 +39,89 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Peerdoc" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="extended_keys.go" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
+            <state relative-caret-position="-366">
+              <caret line="497" column="4" selection-start-line="497" selection-start-column="4" selection-end-line="497" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="path.go" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/genprefix/main.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/internal/wire_format.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="40" column="15" lean-forward="true" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="-162">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="builder.go" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/strings/builder.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="path_test.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign.go" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+            <state relative-caret-position="390">
+              <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sign_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/storage/doc.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="104" selection-start-line="104" selection-end-line="113" selection-end-column="1" />
+            <state relative-caret-position="28">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bytes.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/authn/identity.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/storage/pubkey.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="84">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hash_type.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pkg/storage/obj_graph.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hash_type_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="regexp.go" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/regexp/regexp.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="943" column="18" selection-start-line="943" selection-start-column="18" selection-end-line="943" selection-end-column="18" />
+            <state relative-caret-position="168">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -150,7 +137,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>omitempt</find>
       <find>omitz</find>
       <find>fingerprintNomsTempl</find>
       <find>omitem</find>
@@ -180,6 +166,7 @@
       <find>IsEmpty</find>
       <find>StringLen</find>
       <find>HardenedKeyStart</find>
+      <find>harden</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../../ipfs</dir>
@@ -195,14 +182,13 @@
       <dir>$PROJECT_DIR$/../../attic-labs/noms/</dir>
     </dirStrings>
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.10/libexec" />
+  <component name="GOROOT" path="/usr/local/Cellar/go/1.11.5/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/integer.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/samples/go/csv/schema.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/walk_refs.go" />
         <option value="$PROJECT_DIR$/../../attic-labs/noms/go/types/value_decoder.go" />
@@ -246,26 +232,21 @@
         <option value="$PROJECT_DIR$/cmd/scratch/main.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/sign/extkey/extended_keys.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go" />
-        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/sign/sign_test.go" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/hash/hash_type.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/sign/extended/path.go" />
         <option value="$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go" />
+        <option value="$PROJECT_DIR$/notes.md" />
+        <option value="$PROJECT_DIR$/pkg/crypto/sign/sign.go" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="4" />
-    <option name="width" value="1676" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -273,219 +254,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="hash" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="marshal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="types" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="decent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="decent" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="noms" type="462c0819:PsiDirectoryNode" />
-              <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="url-fetch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="scratch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-              <item name="hash" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-              <item name="extended" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-              <item name="sign" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
-              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="crypto" type="462c0819:PsiDirectoryNode" />
-              <item name="rand" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.10" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
-              <item name="rand" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -526,11 +294,150 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="authn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="hash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+              <item name="extended" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+              <item name="extended" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+              <item name="sign" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Peerdoc" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Peerdoc" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="buffer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.11.5" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.11.5" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.11.5" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Peerdoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.11.5" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="io" type="462c0819:PsiDirectoryNode" />
+              <item name="ioutil" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="go" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -538,7 +445,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../attic-labs/noms/go" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Go" />
   </component>
   <component name="RecentsManager">
@@ -577,6 +484,7 @@
       <filePath value="$PROJECT_DIR$" />
       <package value="github.com/ORBAT/Peerdoc" />
       <directory value="$PROJECT_DIR$" />
+      <method v="2" />
     </configuration>
     <configuration name="go build scratch_1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
@@ -589,6 +497,7 @@
       <filePath value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.go" />
       <package value="github.com/ORBAT/Peerdoc" />
       <directory value="$PROJECT_DIR$" />
+      <method v="2" />
     </configuration>
     <configuration name="TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
@@ -598,6 +507,7 @@
       <kind value="PACKAGE" />
       <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
       <pattern value="^TestKeyPath_String$" />
+      <method v="2" />
     </configuration>
     <configuration name="TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
@@ -607,6 +517,7 @@
       <kind value="PACKAGE" />
       <package value="github.com/ORBAT/Peerdoc/pkg/crypto/hash" />
       <pattern value="^TestParse$" />
+      <method v="2" />
     </configuration>
     <configuration name="TestParseFingerprint in github.com/ORBAT/Peerdoc/pkg/crypto/sign" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
@@ -616,6 +527,7 @@
       <kind value="PACKAGE" />
       <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
       <pattern value="^TestParseFingerprint$" />
+      <method v="2" />
     </configuration>
     <configuration name="TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Peerdoc" />
@@ -625,6 +537,7 @@
       <kind value="PACKAGE" />
       <package value="github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
       <pattern value="^TestParseKeyPath$" />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="Peerdoc" />
@@ -633,10 +546,11 @@
       <framework value="gotest" />
       <kind value="DIRECTORY" />
       <package value="github.com/ORBAT/Peerdoc" />
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestParseFingerprint in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
       <item itemvalue="Go Build.go build scratch_1.go" />
+      <item itemvalue="Go Test.TestParseFingerprint in github.com/ORBAT/Peerdoc/pkg/crypto/sign" />
       <item itemvalue="Go Test.TestParse in github.com/ORBAT/Peerdoc/pkg/crypto/hash" />
       <item itemvalue="Go Test.TestParseKeyPath in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
       <item itemvalue="Go Test.TestKeyPath_String in github.com/ORBAT/Peerdoc/pkg/crypto/sign/extended" />
@@ -689,29 +603,32 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="0" width="1676" height="1050" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Cargo" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5023866" side_tool="true" weight="0.23210634" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49761337" visible="true" weight="0.23714586" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32924336" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924336" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48555708" visible="true" weight="0.23317014" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32738718" />
-      <window_info id="Structure" order="1" sideWeight="0.5144429" side_tool="true" visible="true" weight="0.23317014" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.51022494" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48235294" visible="true" weight="0.24144255" />
+      <window_info id="Structure" order="1" sideWeight="0.5176471" side_tool="true" visible="true" weight="0.24144255" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32738718" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761337" weight="0.23636363" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.51022494" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32924336" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5023866" side_tool="true" weight="0.23210634" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32924336" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="PlantUML" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" x="100" y="100" width="1480" height="850" id="Documentation" order="3" type="FLOATING" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Cargo" order="3" />
+      <window_info anchor="right" x="100" y="100" width="1480" height="850" id="Documentation" order="4" type="FLOATING" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Quick Notes" order="6" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,9 +669,20 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -765,13 +693,9 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/struct.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/types/string.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -797,13 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="174" column="11" lean-forward="true" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/internal/wire_format.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -933,29 +850,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/rand/rand.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/crypto/rand/rand.go" />
     <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/p2p/rlpx.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="439" column="34" selection-start-line="439" selection-start-column="34" selection-end-line="439" selection-end-column="34" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/storage/doc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/authn/identity.go">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/util/random/id.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -964,24 +865,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/storage/pubkey.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../attic-labs/noms/go/datas/dataset.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/storage/obj_graph.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -1027,12 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1040,73 +921,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/regexp/regexp.go">
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/regexp/regexp.go" />
+    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/strings/builder.go" />
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="943" column="18" selection-start-line="943" selection-start-column="18" selection-end-line="943" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="280">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
+        <state relative-caret-position="1456">
           <caret line="104" selection-start-line="104" selection-end-line="113" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ethereum/go-ethereum/common/bytes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/hash/hash_type_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor>
+            <caret column="34" selection-start-column="34" selection-end-column="34" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/authn/identity.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="40" column="15" lean-forward="true" selection-start-line="40" selection-start-column="15" selection-end-line="40" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/internal/wire_format.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/extended_keys.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-366">
+          <caret line="497" column="4" selection-start-line="497" selection-start-column="4" selection-end-line="497" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/genprefix/main.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/doc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/obj_graph.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/storage/pubkey.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/sign.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/go/1.10/libexec/src/strings/builder.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/crypto/sign/extended/path_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="390">
+          <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
         </state>
       </provider>
     </entry>
